@@ -1,0 +1,36 @@
+[Thu Feb 21 22:10:39 2013] [info] Listening at "http://*:3000".
+[Thu Feb 21 22:10:49 2013] [debug] Your secret passphrase needs to be changed!!!
+[Thu Feb 21 22:10:49 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.70 Safari/537.17).
+[Thu Feb 21 22:10:49 2013] [debug] Routing to controller "PhoneConfiguration::Example" and action "welcome".
+[Thu Feb 21 22:10:49 2013] [debug] Rendering template "example/welcome.html.ep".
+[Thu Feb 21 22:10:50 2013] [debug] Rendering template "layouts/default.html.ep".
+[Thu Feb 21 22:10:50 2013] [debug] 200 OK (0.054236s, 18.438/s).
+[Thu Feb 21 22:10:58 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.70 Safari/537.17).
+[Thu Feb 21 22:10:58 2013] [debug] Routing to controller "PhoneConfiguration::Example" and action "welcome".
+[Thu Feb 21 22:10:58 2013] [debug] Rendering cached template example/welcome.html.ep.
+[Thu Feb 21 22:10:58 2013] [debug] Rendering cached template layouts/default.html.ep.
+[Thu Feb 21 22:10:58 2013] [debug] 200 OK (0.003515s, 284.495/s).
+[Thu Feb 21 22:11:50 2013] [info] Listening at "http://*:3000".
+[Thu Feb 21 22:11:56 2013] [debug] Your secret passphrase needs to be changed!!!
+[Thu Feb 21 22:11:56 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.70 Safari/537.17).
+[Thu Feb 21 22:11:56 2013] [debug] Routing to controller "PhoneConfiguration::Example" and action "welcome".
+[Thu Feb 21 22:11:56 2013] [debug] Rendering template "example/welcome.html.ep".
+[Thu Feb 21 22:11:56 2013] [debug] Rendering template "layouts/default.html.ep".
+[Thu Feb 21 22:11:56 2013] [debug] 200 OK (0.052905s, 18.902/s).
+[Thu Feb 21 22:11:57 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.70 Safari/537.17).
+[Thu Feb 21 22:11:57 2013] [debug] Routing to controller "PhoneConfiguration::Example" and action "welcome".
+[Thu Feb 21 22:11:57 2013] [debug] Rendering cached template example/welcome.html.ep.
+[Thu Feb 21 22:11:57 2013] [debug] Rendering cached template layouts/default.html.ep.
+[Thu Feb 21 22:11:57 2013] [debug] 200 OK (0.003633s, 275.255/s).
+[Thu Feb 21 22:12:02 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.70 Safari/537.17).
+[Thu Feb 21 22:12:02 2013] [debug] Routing to controller "PhoneConfiguration::Example" and action "welcome".
+[Thu Feb 21 22:12:02 2013] [debug] Rendering cached template example/welcome.html.ep.
+[Thu Feb 21 22:12:02 2013] [debug] Rendering cached template layouts/default.html.ep.
+[Thu Feb 21 22:12:02 2013] [debug] 200 OK (0.003572s, 279.955/s).
+[Thu Feb 21 22:13:21 2013] [info] Listening at "http://*:3000".
+[Thu Feb 21 22:13:28 2013] [debug] Your secret passphrase needs to be changed!!!
+[Thu Feb 21 22:13:28 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.70 Safari/537.17).
+[Thu Feb 21 22:13:28 2013] [debug] Routing to controller "PhoneConfiguration::Example" and action "welcome".
+[Thu Feb 21 22:13:28 2013] [debug] Rendering template "example/welcome.html.ep".
+[Thu Feb 21 22:13:28 2013] [debug] Rendering template "layouts/default.html.ep".
+[Thu Feb 21 22:13:28 2013] [debug] 200 OK (0.059155s, 16.905/s).
