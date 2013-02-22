@@ -34,3 +34,10 @@
 [Thu Feb 21 22:13:28 2013] [debug] Rendering template "example/welcome.html.ep".
 [Thu Feb 21 22:13:28 2013] [debug] Rendering template "layouts/default.html.ep".
 [Thu Feb 21 22:13:28 2013] [debug] 200 OK (0.059155s, 16.905/s).
+[Fri Feb 22 03:08:35 2013] [info] Listening at "http://*:3000".
+[Fri Feb 22 03:08:43 2013] [debug] Your secret passphrase needs to be changed!!!
+[Fri Feb 22 03:08:43 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.22+ (KHTML, like Gecko) Chromium/17.0.963.56 Chrome/17.0.963.56 Safari/535.22+).
+[Fri Feb 22 03:08:43 2013] [debug] Routing to controller "PhoneConfiguration::Example" and action "welcome".
+[Fri Feb 22 03:08:43 2013] [debug] Rendering template "example/welcome.html.ep".
+[Fri Feb 22 03:08:43 2013] [debug] Rendering template "layouts/default.html.ep".
+[Fri Feb 22 03:08:43 2013] [debug] 200 OK (0.070730s, 14.138/s).

@@ -37,8 +37,16 @@ sub init {
 
 sub get {
 	my ( $self ) = @_;
+
 	my $ua = LWP::UserAgent->new();
-	my $content = $ua->request( GET "http://$ip/".GET_TRAILER );
+	my $content = undef;
+	eval {
+		$content = $ua->request( GET "http://$ip/".GET_TRAILER );
+	};
+	if ( $! ) {
+		die( $! );
+	}
+	
 	return $content->content;
 }
 
@@ -46,7 +54,13 @@ sub post {
 	my ( $self, %args ) = @_;
 	if ( scalar( keys( %args ) ) != 0 ){
 		my $ua = LWP::UserAgent->new();
-		$ua->request( POST "http://$ip/".POST_TRAILER, [%args] );
+
+		eval {
+			$ua->request( POST "http://$ip/".POST_TRAILER, [%args] );
+		};
+		if ( $! ) {
+			die( $! );
+		} 
 	}
 	else {
 		die( "Not found any POST agruments!\n" );
@@ -59,9 +73,15 @@ sub regex_policy {
 		die( "Not all agruments found!\n" ); 	
 	}
 
+	#need DHCP->no when add static ip
+	if ( exists( $args{$IPPhone::Constants::IP} ) ){
+		$args{$IPPhone::Constants::DHCP} = 0;
+	}
+
 	my %id;
 	while ( my( $key, $value ) = each( %args ) ) {
-		if ( $content =~ /.*$key:<td><input[^>]*name="(\w+)".*/ ){
+		#Warn: static regex special to parse select and input html fields
+		if ( $content =~ /.*$key:<td[^>]*><[select|input][^>]*name="(\w+)".*/ ){
 			$id{ $1 } = $value;
 		}
 	}
