@@ -9,7 +9,22 @@ use Data::Dumper;
 
 main();
 
+sub add {
+	my (%info) = @_;
+	my @arr = (1,2,3);
+	my @arr2 = (1,2,3,4);
+	
+	$info{1} = \@arr;
+	
+	return %info;
+}
+
 sub main {
+
+my %info;
+%info = add(%info);
+
+print @{$info{1}};
 
 #	my $FH;
 #	my $content;
@@ -18,10 +33,10 @@ sub main {
 #		$content .= $_;
 #	}
 
-	my $phone = IPPhone::Settings->new();
-	$phone->init($IPPhone::Constants::IP => "192.168.73.129");
+#	my $phone = IPPhone::Settings->new();
+#	$phone->init($IPPhone::Constants::IP => "192.168.73.129");
 #	
-	my $content = $phone->get();
+#	my $content = $phone->get();
 #	
 #	my %args = ($IPPhone::Constants::STATION_NAME => "cool",
 #				$IPPhone::Constants::USER_PASSWD => "denis");
