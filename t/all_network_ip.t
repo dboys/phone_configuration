@@ -14,7 +14,7 @@ use constant PING_TIMEOUT   => 0.1;
 # Максимальное количество IP-адресов в подсети
 use constant MAX_BLOCK_SIZE => 2 ** 16;
 
-my $netmask = shift or die "Usage: $0 NETMASK\n";
+my $netmask = "192.168.1.0/24";#shift or die "Usage: $0 NETMASK\n";
 
 my $block   = Net::Netmask->new2($netmask)
     or die "$netmask is not a valid netmask";

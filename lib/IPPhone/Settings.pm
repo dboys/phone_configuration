@@ -8,16 +8,17 @@ use v5.14;
 use warnings;
 use LWP::UserAgent;
 use HTTP::Request::Common;
+use Scalar::Util qw(refaddr);
+
 use IPPhone::Constants;
+
 
 use constant {
 	GET_TRAILER 	=> "admin/advanced",
 	POST_TRAILER	=> "admin/asipura.spa"
 };
 
-#install Class::InsideOut
-
-our $ip = undef;
+my %ip;
 
 sub new {
 	my ( $class ) = @_;
@@ -28,11 +29,13 @@ sub new {
 sub init {
 	my ( $self, %args ) = @_;
 	if ( scalar( keys( %args ) ) != 0 ){
-		$ip = $args{$IPPhone::Constants::IP};
+		$ip{refaddr $self} = $args{$IPPhone::Constants::IP};
 	}
 	else {
 		die( "Not found IP address!\n" );
 	}
+	
+	return 1;
 }
 
 sub get {
@@ -41,7 +44,7 @@ sub get {
 	my $ua = LWP::UserAgent->new();
 	my $content = undef;
 	eval {
-		$content = $ua->request( GET "http://$ip/".GET_TRAILER );
+		$content = $ua->request( GET "http://$ip{refaddr $self}/".GET_TRAILER );
 	};
 	if ( $! ) {
 		die( $! );
@@ -56,7 +59,7 @@ sub post {
 		my $ua = LWP::UserAgent->new();
 
 		eval {
-			$ua->request( POST "http://$ip/".POST_TRAILER, [%args] );
+			$ua->request( POST "http://$ip{refaddr $self}/".POST_TRAILER, [%args] );
 		};
 		if ( $! ) {
 			die( $! );
@@ -65,6 +68,8 @@ sub post {
 	else {
 		die( "Not found any POST agruments!\n" );
 	}
+	
+	return 1;
 }
 
 sub regex_policy {
@@ -89,11 +94,13 @@ sub regex_policy {
 	return %id;
 }
 
-sub UPDATE {
+sub update {
 	my ( $self, %args ) = @_;
 	my $html = $self->get();
 	my %conf = $self->regex_policy( $html, %args );
 	$self->post( %conf );
+	
+	return 1;
 }
 
 1;
