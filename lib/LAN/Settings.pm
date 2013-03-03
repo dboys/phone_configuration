@@ -23,7 +23,7 @@ our @alive_ip;
 
 my %ports = (
         udp => {
-           	3306      => {}
+           	5060      => {}
             }
         );
 
@@ -110,6 +110,60 @@ sub check_ip {
 	}
 	
 	return @open_ports;
+}
+
+sub devices_info {
+	my ( $self ) = @_;
+	
+	my $resp = undef;
+	if ( scalar(keys %ip_port) != 0 ) {
+		while ( my ($ip, $port) = each (%ip_port) ) {
+			my %inet = (
+						PeerAddr => $ip,
+						PeerPort => $port, #always 5060
+						Proto   => "udp"
+					   );
+			$resp = $self->send_recv_sip( %inet );
+		}
+	}
+	else {
+		die("Don't available ip and ports\n");
+	}
+
+	return $resp;
+}
+
+sub send_recv_sip {
+	my ( $self, %inet ) = @_;
+	
+	my $socket = IO::Socket::INET->new(%inet)
+									or die ("Can't create socket $!\n");
+	$socket->autoflush(1);
+	
+	print $socket	'OPTIONS sip: anonymous' , '@' , $inet{PeerAddr} , ' SIP/2.0' , "\015\012",
+		'Via: SIP/2.0/UDP ' , $socket->sockhost() , ':' , $socket->sockport() , ';branch=z9hG4bK' , time() , rand(1000000000) , "\015\012",
+		'Max-Forwards: 70' , "\015\012",
+		'To: <sip: anonymous', '@' , $inet{PeerAddr} , '>' , "\015\012",
+		'From: GNU/Linux <sip:denis@' , $socket->sockhost() , '>;tag=' , time() , rand(1000000000) , "\015\012",
+		'Call-ID: ' , time() , rand(1000000000) , '@' , $socket->sockport() , "\015\012",
+		'CSeq: 101 OPTIONS' , "\015\012",
+		'Contact: <sip:denis', $socket->sockhost() , ':' , $socket->sockport() , '>' , "\015\012",
+		'Accept: application/sdp' , "\015\012",
+		'Content-Length: 0' , "\015\012",
+		"\015\012";
+	
+	my $resp;
+	
+	eval {
+		$socket->recv($resp, 1024);
+	};
+	if ( $! ) {
+		die( $! );
+	}
+	
+	#add the regex to parse Model of phone and IP
+	
+	return $resp;
 }
 
 sub detect {
