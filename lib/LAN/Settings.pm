@@ -35,7 +35,7 @@ sub new {
 	return $self;
 }
 
-sub net_addr {
+sub __net_addr {
 	my ( $self ) = @_;
 	my %net = %{$config{refaddr $self}};
 	if ( exists( $net{&SECTION_NET}{&NET_ADDR} ) ) {
@@ -46,18 +46,18 @@ sub net_addr {
 	}
 }
 
-sub read_config {
+sub __read_config {
 	my ( $self ) = @_;
 	my $iniconf = Config::IniFiles->new( -file => CONFIG_FILE )
-            						or die(@Config::IniFiles::errors);
+            						or die( @Config::IniFiles::errors );
     $config{refaddr $self} = $iniconf->{v};
     return 1;
 }
 
-sub ping_detect {
+sub __ping_detect {
 	my ( $self ) = @_;
 	
-	my $netmask = $self->net_addr();
+	my $netmask = $self->__net_addr();
 	my $block   = Net::Netmask->new2( $netmask )
     							or die "$netmask is not a valid netmask\n";
     my $pinger = Net::Ping->new();
@@ -72,11 +72,11 @@ sub ping_detect {
 	return 1;
 }
 
-sub ports_detect {
+sub __ports_detect {
 	my ( $self ) = @_;
 	if ( scalar( @alive_ip ) != 0 ) {
 		foreach my $ip ( @alive_ip ) {
-			my @open_ports = $self->check_ip($ip);
+			my @open_ports = $self->__check_ip($ip);
 			if ( scalar( @open_ports ) == 0 ) {
 				die ( "Don't have an open ports\n" );
 			}
@@ -86,13 +86,13 @@ sub ports_detect {
 		}
 	}
 	else {
-		die("Don't have alive ip\n");
+		die( "Don't have alive ip\n" );
 	}
 	
 	return 1;
 }
 
-sub check_ip {
+sub __check_ip {
 	my ( $self, $ip ) = @_;
 
 	my $info = check_ports( $ip, PORT_TIMEOUT, \%ports );
@@ -103,7 +103,6 @@ sub check_ip {
 #		}
 		my $command = "nc -zu $ip $port";
 		system($command);
-		print ("check ip $?");
 		if ( $? ) {
 			push ( @open_ports, $port );
 		}
@@ -123,17 +122,17 @@ sub devices_info {
 						PeerPort => $port, #always 5060
 						Proto   => "udp"
 					   );
-			$resp = $self->send_recv_sip( %inet );
+			$resp = $self->__send_recv_sip( %inet );
 		}
 	}
 	else {
-		die("Don't available ip and ports\n");
+		die( "Don't available ip and ports\n" );
 	}
 
 	return $resp;
 }
 
-sub send_recv_sip {
+sub __send_recv_sip {
 	my ( $self, %inet ) = @_;
 	
 	my $socket = IO::Socket::INET->new(%inet)
@@ -169,9 +168,9 @@ sub send_recv_sip {
 sub detect {
 	my ( $self ) = @_;
 
-	$self->read_config();
-	$self->ping_detect();
-	$self->ports_detect();
+	$self->__read_config();
+	$self->__ping_detect();
+	$self->__ports_detect();
 	
 	return %ip_port;
 }

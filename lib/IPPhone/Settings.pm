@@ -38,7 +38,7 @@ sub init {
 	return 1;
 }
 
-sub get {
+sub __get {
 	my ( $self ) = @_;
 
 	my $ua = LWP::UserAgent->new();
@@ -53,7 +53,7 @@ sub get {
 	return $content->content;
 }
 
-sub post {
+sub __post {
 	my ( $self, %args ) = @_;
 	if ( scalar( keys( %args ) ) != 0 ){
 		my $ua = LWP::UserAgent->new();
@@ -72,7 +72,7 @@ sub post {
 	return 1;
 }
 
-sub regex_policy {
+sub __regex_policy {
 	my ( $self, $content, %args ) = @_;
 	if ( !defined( $content ) || scalar(keys( %args )) == 0 ){
 		die( "Not all agruments found!\n" ); 	
@@ -96,9 +96,9 @@ sub regex_policy {
 
 sub update {
 	my ( $self, %args ) = @_;
-	my $html = $self->get();
-	my %conf = $self->regex_policy( $html, %args );
-	$self->post( %conf );
+	my $html = $self->__get();
+	my %conf = $self->__regex_policy( $html, %args );
+	$self->__post( %conf );
 	
 	return 1;
 }
