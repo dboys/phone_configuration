@@ -1,0 +1,32 @@
+% layout 'default';
+% title 'Phone Configuration';
+
+</head>
+	<LINK href="/css/layers.css" rel="stylesheet" type="text/css">
+	<body>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+		<table width="100%" border="0" cellspacing="0" cellpadding="4">
+	       <tr align="center" bgcolor="#999999">
+	            <td colspan="3" style="font-size: 160%; font-family: sans-serif">Phones Configuration</td>
+	    <form action="$url" method="post">    
+	    </table>
+	    
+	    <table border="0">
+	    	% foreach ( 1..10 ) {
+			<tr>
+			% if ( $_ % 2 == 0 ) {
+				<div class="left_layer">
+		    		<img src="/image/telephone.ico">
+					<p>Phone information</p>
+				</div>
+			%} elsif ( $_ % 2 != 0 ){
+				<div class="right_layer">
+	    			<img src="/image/user.ico">
+					<p>User information</p>
+				</div>
+			</tr>
+			%} }
+		</table>
+
+	</body>
+</head>

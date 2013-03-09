@@ -7,12 +7,16 @@ sub startup {
 
   # Documentation browser under "/perldoc"
   $self->plugin('PODRenderer');
+  $self->secret('*pOpRTm;M<;5?fk{');
 
   # Router
-  my $r = $self->routes;
+  my $r = $self->routes();
 
   # Normal route to controller
-  $r->get('/')->to('example#welcome');
+  $r->get('/')->to('phones#main');
+  
+  $r->get('/ajax')->to('phones#ajax');
+
 }
 
 1;

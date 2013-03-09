@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+.right_layer {
+	    float: right;
+	    width: 100px;
+}
+.left_layer {
+   		float: left;
+	    width: 100px;
+	    clear: both;
+}
