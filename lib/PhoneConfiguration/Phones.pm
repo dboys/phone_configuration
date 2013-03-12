@@ -3,11 +3,13 @@ use Mojo::Base 'Mojolicious::Controller';
 
 # This action will render a template
 sub main {
-  my $self = shift;
+  	my $self = shift;
 
-  # Render template "example/welcome.html.ep" with message
-  $self->render(
-    message => 'Welcome to the Mojolicious real-time web framework!');
+	$self->app()->log()->debug("main method");
+
+  	# Render template "example/welcome.html.ep" with message
+  	$self->render(
+    	message => 'Welcome to the Mojolicious real-time web framework!');
 }
 
 sub ajax {
@@ -24,6 +26,12 @@ sub ajax {
     else {
         $self->render(answer => 'Hello from Mojolicious!');
     }
+}
+
+sub test {
+	my $self = shift;
+	
+	$self->app()->log()->debug("test post method");
 }
 
 1;

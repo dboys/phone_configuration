@@ -2,9 +2,14 @@
 % title 'Phone Configuration';
 
 </head>
-	<LINK href="/css/layers.css" rel="stylesheet" type="text/css">
+	<LINK href="css/layers.css" rel="stylesheet" type="text/css">
 	<body>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/DragObject.js"></script>
+		<script src="js/DropTarget.js"></script>
+		<script src="js/dragMaster.js"></script>
+		<script src="js/helpers.js"></script>
+		
 		<table width="100%" border="0" cellspacing="0" cellpadding="4">
 	       <tr align="center" bgcolor="#999999">
 	            <td colspan="3" style="font-size: 160%; font-family: sans-serif">Phones Configuration</td>
@@ -12,21 +17,43 @@
 	    </table>
 	    
 	    <table border="0">
-	    	% foreach ( 1..10 ) {
 			<tr>
-			% if ( $_ % 2 == 0 ) {
-				<div class="left_layer">
-		    		<img src="/image/telephone.ico">
-					<p>Phone information</p>
-				</div>
-			%} elsif ( $_ % 2 != 0 ){
-				<div class="right_layer">
-	    			<img src="/image/user.ico">
-					<p>User information</p>
+				<td>
+					<div id="nested">
+						<div class="left_layer">
+				    		<img src="/image/telephone.ico">
+							<p>Phone information</p>
+						</div>
+						<div class="left_layer">
+				    		<img src="/image/telephone.ico">
+							<p>Phone information</p>
+						</div>
+					</div>
+				</td>
+				<div id="dragObjects">
+					<div class="right_layer">
+		    			<img src="/image/user.ico">
+						<p>User information1</p>
+					</div>
+					<div class="right_layer">
+		    			<img src="/image/user.ico">
+						<p>User information2</p>
+					</div>
 				</div>
 			</tr>
-			%} }
 		</table>
+		
+		<script>
+			onload = function() {
+			    var dragObjects = document.getElementById('dragObjects').getElementsByTagName('div')
+			    for(var i=0; i<dragObjects.length; i++) {
+			        new DragObject(dragObjects[i])
+			    }
+			    
+			    new DropTarget(document.getElementById('nested'))
+			    
+			}
+		</script>
 
 	</body>
 </head>

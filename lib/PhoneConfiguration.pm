@@ -16,6 +16,8 @@ sub startup {
   $r->get('/')->to('phones#main');
   
   $r->get('/ajax')->to('phones#ajax');
+  
+  $r->post('/')->to('phones#test');
 
 }
 

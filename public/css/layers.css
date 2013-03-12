@@ -2,9 +2,13 @@
 .right_layer {
 	    float: right;
 	    width: 100px;
+	    clear: both;
 }
 .left_layer {
    		float: left;
 	    width: 100px;
 	    clear: both;
+}
+.uponMe { 
+	background-color: yellow;
 }
