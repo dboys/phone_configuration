@@ -1,6 +1,8 @@
 package PhoneConfiguration::Phones;
 use Mojo::Base 'Mojolicious::Controller';
 
+use Data::Dumper;
+
 # This action will render a template
 sub main {
   	my $self = shift;
@@ -30,8 +32,9 @@ sub ajax {
 
 sub test {
 	my $self = shift;
-	
-	$self->app()->log()->debug("test post method");
+	my $headers = $self->req->headers;
+	my $cont = Dumper ($headers);
+	$self->app()->log()->debug("$cont");
 }
 
 1;

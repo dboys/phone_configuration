@@ -19,16 +19,14 @@
 	    <table border="0">
 			<tr>
 				<td>
-					<div id="nested">
-						<div class="left_layer">
+						<div id="nested1" class="left_layer">
 				    		<img src="/image/telephone.ico">
 							<p>Phone information</p>
 						</div>
-						<div class="left_layer">
+						<div id="nested2" class="left_layer">
 				    		<img src="/image/telephone.ico">
 							<p>Phone information</p>
-						</div>
-					</div>
+						</div>	
 				</td>
 				<div id="dragObjects">
 					<div class="right_layer">
@@ -50,7 +48,8 @@
 			        new DragObject(dragObjects[i])
 			    }
 			    
-			    new DropTarget(document.getElementById('nested'))
+			    new DropTarget(document.getElementById('nested1'))
+			    new DropTarget(document.getElementById('nested2'))
 			    
 			}
 		</script>
