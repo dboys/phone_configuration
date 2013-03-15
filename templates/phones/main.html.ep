@@ -19,23 +19,31 @@
 	    <table border="0">
 			<tr>
 				<td>
-						<div id="nested1" class="left_layer">
-				    		<img src="/image/telephone.ico">
-							<p>Phone information</p>
-						</div>
-						<div id="nested2" class="left_layer">
-				    		<img src="/image/telephone.ico">
-							<p>Phone information</p>
-						</div>	
+					<div id="nested1" class="left_layer">
+			    		<img src="/image/telephone.ico">
+						<p><div id="name"></div></p>
+						<p><div id="passwd"></div></p>
+						<p><div id="ip"></div></p>
+					</div>
+					<div id="nested2" class="left_layer">
+			    		<img src="/image/telephone.ico">
+						<p><div id="name"></div></p>
+						<p><div id="passwd"></div></p>
+						<p><div id="ip"></div></p>
+					</div>	
 				</td>
 				<div id="dragObjects">
 					<div class="right_layer">
 		    			<img src="/image/user.ico">
-						<p>User information1</p>
+						<p><div id="name">denis1</div></p>
+						<p><div id="passwd">denis1</div></p>
+						<p><div id="ip">denis1</div></p>
 					</div>
 					<div class="right_layer">
 		    			<img src="/image/user.ico">
-						<p>User information2</p>
+						<p><div id="name"> denis2 </div></p>
+						<p><div id="passwd">denis2</div></p>
+						<p><div id="ip">denis2</div></p>
 					</div>
 				</div>
 			</tr>
