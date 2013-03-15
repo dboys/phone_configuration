@@ -7,11 +7,7 @@ use Data::Dumper;
 sub main {
   	my $self = shift;
 
-	$self->app()->log()->debug("main method");
-
-  	# Render template "example/welcome.html.ep" with message
-  	$self->render(
-    	message => 'Welcome to the Mojolicious real-time web framework!');
+  	$self->stash( users => [ $self->db->resultset('User')->all() ] );
 }
 
 sub ajax {
@@ -34,7 +30,7 @@ sub test {
 	my $self = shift;
 	my $headers = $self->req->headers;
 	my $cont = Dumper ($headers);
-	$self->app()->log()->debug("$cont");
+	$self->app()->log()->debug($self->app->dumper($headers));
 }
 
 1;

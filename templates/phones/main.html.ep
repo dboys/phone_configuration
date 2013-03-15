@@ -33,18 +33,14 @@
 					</div>	
 				</td>
 				<div id="dragObjects">
-					<div class="right_layer">
-		    			<img src="/image/user.ico">
-						<p><div id="name">denis1</div></p>
-						<p><div id="passwd">denis1</div></p>
-						<p><div id="ip">denis1</div></p>
-					</div>
-					<div class="right_layer">
-		    			<img src="/image/user.ico">
-						<p><div id="name"> denis2 </div></p>
-						<p><div id="passwd">denis2</div></p>
-						<p><div id="ip">denis2</div></p>
-					</div>
+					<% foreach my $user( @$users ) { %>
+						<div class="right_layer">
+		    				<img src="/image/user.ico">
+							<p><div id="name"><%= $user->name() %></div></p>
+							<p><div id="passwd"><%= $user->passwd() %></div></p>
+							<p><div id="ip"><%= $user->ip() %></div></p>
+						</div>
+					<% } %>
 				</div>
 			</tr>
 		</table>

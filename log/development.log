@@ -1,0 +1,388 @@
+[Sat Mar 16 01:29:04 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Sat Mar 16 01:29:04 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "test".
+[Sat Mar 16 01:29:04 2013] [debug] bless( {
+  'headers' => {
+    'user-agent' => [
+      [
+        'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22'
+      ]
+    ],
+    'connection' => [
+      [
+        'keep-alive'
+      ]
+    ],
+    'accept' => [
+      [
+        '*/*'
+      ]
+    ],
+    'x-passwd' => [
+      [
+        '123456'
+      ]
+    ],
+    'accept-language' => [
+      [
+        'ru,en-US;q=0.8,en;q=0.6'
+      ]
+    ],
+    'cookie' => [
+      [
+        '__utma=96992031.1917202031.1363377269.1363377269.1363377269.1; __utmc=96992031; __utmz=96992031.1363377269.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)'
+      ]
+    ],
+    'accept-encoding' => [
+      [
+        'gzip,deflate,sdch'
+      ]
+    ],
+    'origin' => [
+      [
+        'http://127.0.0.1:3000'
+      ]
+    ],
+    'content-length' => [
+      [
+        '0'
+      ]
+    ],
+    'host' => [
+      [
+        '127.0.0.1:3000'
+      ]
+    ],
+    'accept-charset' => [
+      [
+        'windows-1251,utf-8;q=0.7,*;q=0.3'
+      ]
+    ],
+    'content-type' => [
+      [
+        'application/x-www-form-urlencoded'
+      ]
+    ],
+    'x-name' => [
+      [
+        'denis'
+      ]
+    ],
+    'x-ip' => [
+      [
+        '192.168.1.2'
+      ]
+    ],
+    'referer' => [
+      [
+        'http://127.0.0.1:3000/'
+      ]
+    ]
+  },
+  'normalcase' => {
+    'x-passwd' => 'x-passwd',
+    'x-name' => 'x-name',
+    'x-ip' => 'x-ip',
+    'referer' => 'Referer'
+  },
+  'max_line_size' => 10240,
+  'cache' => [],
+  'state' => 'finished'
+}, 'Mojo::Headers' )
+
+[Sat Mar 16 01:29:04 2013] [debug] Template "phones/test.html.ep" not found.
+[Sat Mar 16 01:29:04 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Sat Mar 16 01:29:08 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Sat Mar 16 01:29:08 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "test".
+[Sat Mar 16 01:29:08 2013] [debug] bless( {
+  'headers' => {
+    'user-agent' => [
+      [
+        'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22'
+      ]
+    ],
+    'connection' => [
+      [
+        'keep-alive'
+      ]
+    ],
+    'accept' => [
+      [
+        '*/*'
+      ]
+    ],
+    'x-passwd' => [
+      [
+        '123'
+      ]
+    ],
+    'accept-language' => [
+      [
+        'ru,en-US;q=0.8,en;q=0.6'
+      ]
+    ],
+    'cookie' => [
+      [
+        '__utma=96992031.1917202031.1363377269.1363377269.1363377269.1; __utmc=96992031; __utmz=96992031.1363377269.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)'
+      ]
+    ],
+    'accept-encoding' => [
+      [
+        'gzip,deflate,sdch'
+      ]
+    ],
+    'origin' => [
+      [
+        'http://127.0.0.1:3000'
+      ]
+    ],
+    'content-length' => [
+      [
+        '0'
+      ]
+    ],
+    'host' => [
+      [
+        '127.0.0.1:3000'
+      ]
+    ],
+    'accept-charset' => [
+      [
+        'windows-1251,utf-8;q=0.7,*;q=0.3'
+      ]
+    ],
+    'content-type' => [
+      [
+        'application/x-www-form-urlencoded'
+      ]
+    ],
+    'x-name' => [
+      [
+        'linux'
+      ]
+    ],
+    'x-ip' => [
+      [
+        '192.168.3.4'
+      ]
+    ],
+    'referer' => [
+      [
+        'http://127.0.0.1:3000/'
+      ]
+    ]
+  },
+  'normalcase' => {
+    'x-passwd' => 'x-passwd',
+    'x-name' => 'x-name',
+    'x-ip' => 'x-ip',
+    'referer' => 'Referer'
+  },
+  'max_line_size' => 10240,
+  'cache' => [],
+  'state' => 'finished'
+}, 'Mojo::Headers' )
+
+[Sat Mar 16 01:29:08 2013] [debug] Template "phones/test.html.ep" not found.
+[Sat Mar 16 01:29:08 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Sat Mar 16 01:29:11 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Sat Mar 16 01:29:11 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sat Mar 16 01:29:11 2013] [debug] Rendering template "phones/main.html.ep".
+[Sat Mar 16 01:29:11 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sat Mar 16 01:29:11 2013] [debug] 200 OK (0.328315s, 3.046/s).
+[Sat Mar 16 01:29:33 2013] [info] Listening at "http://*:3000".
+[Sat Mar 16 01:29:36 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Sat Mar 16 01:29:36 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sat Mar 16 01:29:36 2013] [debug] Rendering template "phones/main.html.ep".
+[Sat Mar 16 01:29:37 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sat Mar 16 01:29:37 2013] [debug] 200 OK (0.299753s, 3.336/s).
+[Sat Mar 16 01:29:42 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Sat Mar 16 01:29:42 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "test".
+[Sat Mar 16 01:29:42 2013] [debug] bless( {
+  'headers' => {
+    'user-agent' => [
+      [
+        'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22'
+      ]
+    ],
+    'connection' => [
+      [
+        'keep-alive'
+      ]
+    ],
+    'accept' => [
+      [
+        '*/*'
+      ]
+    ],
+    'x-passwd' => [
+      [
+        '123456'
+      ]
+    ],
+    'accept-language' => [
+      [
+        'ru,en-US;q=0.8,en;q=0.6'
+      ]
+    ],
+    'cookie' => [
+      [
+        '__utma=96992031.1917202031.1363377269.1363377269.1363377269.1; __utmc=96992031; __utmz=96992031.1363377269.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)'
+      ]
+    ],
+    'accept-encoding' => [
+      [
+        'gzip,deflate,sdch'
+      ]
+    ],
+    'origin' => [
+      [
+        'http://127.0.0.1:3000'
+      ]
+    ],
+    'content-length' => [
+      [
+        '0'
+      ]
+    ],
+    'host' => [
+      [
+        '127.0.0.1:3000'
+      ]
+    ],
+    'accept-charset' => [
+      [
+        'windows-1251,utf-8;q=0.7,*;q=0.3'
+      ]
+    ],
+    'content-type' => [
+      [
+        'application/x-www-form-urlencoded'
+      ]
+    ],
+    'x-name' => [
+      [
+        'denis'
+      ]
+    ],
+    'x-ip' => [
+      [
+        '192.168.1.2'
+      ]
+    ],
+    'referer' => [
+      [
+        'http://127.0.0.1:3000/'
+      ]
+    ]
+  },
+  'normalcase' => {
+    'x-passwd' => 'x-passwd',
+    'x-name' => 'x-name',
+    'x-ip' => 'x-ip',
+    'referer' => 'Referer'
+  },
+  'max_line_size' => 10240,
+  'cache' => [],
+  'state' => 'finished'
+}, 'Mojo::Headers' )
+
+[Sat Mar 16 01:29:42 2013] [debug] Template "phones/test.html.ep" not found.
+[Sat Mar 16 01:29:42 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Sat Mar 16 01:29:45 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Sat Mar 16 01:29:45 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "test".
+[Sat Mar 16 01:29:45 2013] [debug] bless( {
+  'headers' => {
+    'user-agent' => [
+      [
+        'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22'
+      ]
+    ],
+    'connection' => [
+      [
+        'keep-alive'
+      ]
+    ],
+    'accept' => [
+      [
+        '*/*'
+      ]
+    ],
+    'x-passwd' => [
+      [
+        '123'
+      ]
+    ],
+    'accept-language' => [
+      [
+        'ru,en-US;q=0.8,en;q=0.6'
+      ]
+    ],
+    'cookie' => [
+      [
+        '__utma=96992031.1917202031.1363377269.1363377269.1363377269.1; __utmc=96992031; __utmz=96992031.1363377269.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)'
+      ]
+    ],
+    'accept-encoding' => [
+      [
+        'gzip,deflate,sdch'
+      ]
+    ],
+    'origin' => [
+      [
+        'http://127.0.0.1:3000'
+      ]
+    ],
+    'content-length' => [
+      [
+        '0'
+      ]
+    ],
+    'host' => [
+      [
+        '127.0.0.1:3000'
+      ]
+    ],
+    'accept-charset' => [
+      [
+        'windows-1251,utf-8;q=0.7,*;q=0.3'
+      ]
+    ],
+    'content-type' => [
+      [
+        'application/x-www-form-urlencoded'
+      ]
+    ],
+    'x-name' => [
+      [
+        'linux'
+      ]
+    ],
+    'x-ip' => [
+      [
+        '192.168.3.4'
+      ]
+    ],
+    'referer' => [
+      [
+        'http://127.0.0.1:3000/'
+      ]
+    ]
+  },
+  'normalcase' => {
+    'x-passwd' => 'x-passwd',
+    'x-name' => 'x-name',
+    'x-ip' => 'x-ip',
+    'referer' => 'Referer'
+  },
+  'max_line_size' => 10240,
+  'cache' => [],
+  'state' => 'finished'
+}, 'Mojo::Headers' )
+
+[Sat Mar 16 01:29:45 2013] [debug] Template "phones/test.html.ep" not found.
+[Sat Mar 16 01:29:45 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Sat Mar 16 01:29:51 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Sat Mar 16 01:29:51 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sat Mar 16 01:29:51 2013] [debug] Rendering cached template phones/main.html.ep.
+[Sat Mar 16 01:29:51 2013] [debug] Rendering cached template layouts/default.html.ep.
+[Sat Mar 16 01:29:51 2013] [debug] 200 OK (0.006282s, 159.185/s).
