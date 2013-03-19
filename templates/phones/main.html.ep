@@ -19,18 +19,15 @@
 	    <table border="0">
 			<tr>
 				<td>
-					<div id="nested1" class="left_layer">
-			    		<img src="/image/telephone.ico">
-						<p><div id="name"></div></p>
-						<p><div id="passwd"></div></p>
-						<p><div id="ip"></div></p>
-					</div>
-					<div id="nested2" class="left_layer">
-			    		<img src="/image/telephone.ico">
-						<p><div id="name"></div></p>
-						<p><div id="passwd"></div></p>
-						<p><div id="ip"></div></p>
-					</div>	
+					<% while( my($key,$value) = each( %$phones ) ) { %>
+						<div id="<%= $key %>" class="left_layer">
+			    			<img src="/image/telephone.ico">
+							<p><div id="name"></div></p>
+							<p><div id="passwd"></div></p>
+							<p><div id="ip"><%= $key %></div></p>
+							<p><div id="phone"><%= $value %></div></p>
+						</div>
+					<% }%>	
 				</td>
 				<div id="dragObjects">
 					<% foreach my $user( @$users ) { %>
@@ -51,9 +48,10 @@
 			    for(var i=0; i<dragObjects.length; i++) {
 			        new DragObject(dragObjects[i])
 			    }
-			    
-			    new DropTarget(document.getElementById('nested1'))
-			    new DropTarget(document.getElementById('nested2'))
+
+			    <% while( my($key,$value) = each( %$phones ) ) { %>
+			    	new DropTarget(document.getElementById('<%= $key %>'))
+			    <% } %>	
 			    
 			}
 		</script>

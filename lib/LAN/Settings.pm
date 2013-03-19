@@ -10,9 +10,9 @@ use Config::IniFiles;
 use Nmap::Scanner;
 
 use constant {
-	SCAN_PORT		=> 5060,
+	SCAN_PORT		=> 5353,
 	PING_TIMEOUT	=> 0.1,
-	PORT_TIMEOUT	=> 5,
+	PORT_TIMEOUT	=> 200,
 	CONFIG_FILE		=> "/home/denis/build/perl/phone_configuration/lib/LAN/config",
 	SECTION_NET		=> "network",
 	NET_ADDR 		=> "net_addr"
@@ -88,7 +88,7 @@ sub __ip_scaner {
   	$scanner->udp_scan();
   	$scanner->add_scan_port( SCAN_PORT );
   	$scanner->guess_os();
-  	$scanner->max_rtt_timeout(PORT_TIMEOUT );
+  	$scanner->max_rtt_timeout( PORT_TIMEOUT );
   	$scanner->add_target( $ip );
   	
   	#instance of Nmap::Scanner::Backend::Results

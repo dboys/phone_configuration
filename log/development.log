@@ -1,14 +1,97 @@
-[Tue Mar 19 02:47:59 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
-[Tue Mar 19 02:47:59 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
-[Tue Mar 19 02:47:59 2013] [debug] new ip= 192.168.3.4
+[Tue Mar 19 10:43:11 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Tue Mar 19 10:43:11 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Tue Mar 19 10:43:12 2013] [debug] Rendering template "phones/main.html.ep".
+[Tue Mar 19 10:43:12 2013] [debug] Rendering template "layouts/default.html.ep".
+[Tue Mar 19 10:43:12 2013] [debug] 200 OK (0.206940s, 4.832/s).
+[Tue Mar 19 10:43:17 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Tue Mar 19 10:43:17 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Tue Mar 19 10:43:17 2013] [debug] new ip= 192.168.1.2
+new name= denis
+new passwd= 123456
+old ip= 192.168.2.3
+
+[Tue Mar 19 10:43:17 2013] [debug] Template "phones/update.html.ep" not found.
+[Tue Mar 19 10:43:17 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Tue Mar 19 10:43:32 2013] [debug] Inactivity timeout.
+[Tue Mar 19 10:43:32 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Tue Mar 19 10:43:32 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Tue Mar 19 10:43:32 2013] [debug] new ip= 192.168.1.2
+new name= denis
+new passwd= 123456
+old ip= 192.168.2.3
+
+[Tue Mar 19 10:43:32 2013] [debug] Template "phones/update.html.ep" not found.
+[Tue Mar 19 10:43:32 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Tue Mar 19 10:43:47 2013] [debug] Inactivity timeout.
+[Tue Mar 19 10:44:26 2013] [debug] GET /perldoc (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Tue Mar 19 10:44:26 2013] [debug] Routing to a callback.
+[Tue Mar 19 10:44:26 2013] [debug] Rendering inline template.
+[Tue Mar 19 10:44:26 2013] [debug] Rendering inline template.
+[Tue Mar 19 10:44:26 2013] [debug] 200 OK (0.231509s, 4.319/s).
+[Tue Mar 19 10:44:30 2013] [debug] GET /perldoc/Mojolicious/Guides/Routing (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Tue Mar 19 10:44:30 2013] [debug] Routing to a callback.
+[Tue Mar 19 10:44:30 2013] [debug] Rendering cached inline template.
+[Tue Mar 19 10:44:30 2013] [debug] Rendering cached inline template.
+[Tue Mar 19 10:44:30 2013] [debug] 200 OK (0.769746s, 1.299/s).
+[Tue Mar 19 10:45:34 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Tue Mar 19 10:45:34 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Tue Mar 19 10:45:34 2013] [debug] Rendering template "phones/main.html.ep".
+[Tue Mar 19 10:45:34 2013] [debug] Rendering template "layouts/default.html.ep".
+[Tue Mar 19 10:45:34 2013] [debug] 200 OK (0.486532s, 2.055/s).
+[Tue Mar 19 10:45:45 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Tue Mar 19 10:45:45 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Tue Mar 19 10:45:45 2013] [debug] new ip= 192.168.1.2
+new name= denis
+new passwd= 123456
+old ip= 192.168.2.3
+
+[Tue Mar 19 10:45:45 2013] [debug] Template "phones/update.html.ep" not found.
+[Tue Mar 19 10:45:45 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Tue Mar 19 10:45:49 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Tue Mar 19 10:45:49 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Tue Mar 19 10:45:49 2013] [debug] new ip= 192.168.3.4
 new name= linux
 new passwd= 123
+old ip= 192.168.2.4
 
-[Tue Mar 19 02:47:59 2013] [debug] Template "phones/update.html.ep" not found.
-[Tue Mar 19 02:47:59 2013] [debug] Nothing has been rendered, expecting delayed response.
-[Tue Mar 19 02:48:14 2013] [debug] Inactivity timeout.
-[Tue Mar 19 02:48:44 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
-[Tue Mar 19 02:48:44 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
-[Tue Mar 19 02:48:44 2013] [debug] Rendering template "phones/main.html.ep".
-[Tue Mar 19 02:48:44 2013] [debug] Rendering template "layouts/default.html.ep".
-[Tue Mar 19 02:48:44 2013] [debug] 200 OK (0.285219s, 3.506/s).
+[Tue Mar 19 10:45:49 2013] [debug] Template "phones/update.html.ep" not found.
+[Tue Mar 19 10:45:49 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Tue Mar 19 10:46:00 2013] [debug] Inactivity timeout.
+[Tue Mar 19 10:46:00 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Tue Mar 19 10:46:00 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Tue Mar 19 10:46:00 2013] [debug] new ip= 192.168.1.2
+new name= denis
+new passwd= 123456
+old ip= 192.168.2.3
+
+[Tue Mar 19 10:46:00 2013] [debug] Template "phones/update.html.ep" not found.
+[Tue Mar 19 10:46:00 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Tue Mar 19 10:46:05 2013] [debug] Inactivity timeout.
+[Tue Mar 19 10:46:15 2013] [debug] Inactivity timeout.
+[Tue Mar 19 11:22:13 2013] [info] Listening at "http://*:3000".
+[Tue Mar 19 11:22:25 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Tue Mar 19 11:22:25 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Tue Mar 19 11:22:26 2013] [debug] Rendering template "phones/main.html.ep".
+[Tue Mar 19 11:22:26 2013] [debug] Rendering template "layouts/default.html.ep".
+[Tue Mar 19 11:22:26 2013] [debug] 200 OK (1.293393s, 0.773/s).
+[Tue Mar 19 11:34:39 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Tue Mar 19 11:34:39 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Tue Mar 19 11:34:39 2013] [debug] Rendering template "phones/main.html.ep".
+[Tue Mar 19 11:34:39 2013] [debug] Rendering template "layouts/default.html.ep".
+[Tue Mar 19 11:34:39 2013] [debug] 200 OK (0.236671s, 4.225/s).
+[Tue Mar 19 11:34:58 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Tue Mar 19 11:34:58 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Tue Mar 19 11:34:58 2013] [debug] new ip= 192.168.3.4
+new name= linux
+new passwd= 123
+old ip= 192.168.2.3
+
+[Tue Mar 19 11:34:58 2013] [debug] Template "phones/update.html.ep" not found.
+[Tue Mar 19 11:34:58 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Tue Mar 19 11:35:13 2013] [debug] Inactivity timeout.
+[Tue Mar 19 11:38:31 2013] [info] Listening at "http://*:3000".
+[Tue Mar 19 11:38:34 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Tue Mar 19 11:38:34 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Tue Mar 19 11:38:34 2013] [debug] Rendering template "phones/main.html.ep".
+[Tue Mar 19 11:38:34 2013] [debug] Rendering template "layouts/default.html.ep".
+[Tue Mar 19 11:38:34 2013] [debug] 200 OK (0.203762s, 4.908/s).

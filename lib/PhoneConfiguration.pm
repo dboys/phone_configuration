@@ -29,8 +29,6 @@ sub startup {
   # Normal route to controller
   $r->get('/')->to('phones#main');
   
-  $r->get('/ajax')->to('phones#ajax');
-  
   $r->post('/')->to('phones#update');
 }
 
