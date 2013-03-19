@@ -31,7 +31,7 @@ sub startup {
   
   $r->get('/ajax')->to('phones#ajax');
   
-  $r->post('/')->to('phones#test');
+  $r->post('/')->to('phones#update');
 }
 
 1;

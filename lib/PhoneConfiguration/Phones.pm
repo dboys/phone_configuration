@@ -26,11 +26,17 @@ sub ajax {
     }
 }
 
-sub test {
+sub update {
 	my $self = shift;
-	my $headers = $self->req->headers;
-	my $cont = Dumper ($headers);
-	$self->app()->log()->debug($self->app->dumper($headers));
+	my $headers = $self->req->headers();
+
+	my $new_passwd 	= $headers->{'headers'}->{'x-passwd'}->[0]->[0];
+	my $new_name 	= $headers->{'headers'}->{'x-name'}->[0]->[0];
+	my $new_ip 		= $headers->{'headers'}->{'x-ip'}->[0]->[0];
+	
+	$self->app()->log()->debug(	'new ip= '.$new_ip."\n".
+								'new name= '.$new_name."\n".
+								'new passwd= '.$new_passwd."\n");
 }
 
 1;

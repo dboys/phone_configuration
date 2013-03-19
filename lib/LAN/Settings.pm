@@ -7,9 +7,10 @@ use Net::Ping;
 use Net::Netmask;
 use Scalar::Util qw (refaddr);
 use Config::IniFiles;
-use IO::Socket::PortState qw(check_ports);
+use Nmap::Scanner;
 
 use constant {
+	SCAN_PORT		=> 5060,
 	PING_TIMEOUT	=> 0.1,
 	PORT_TIMEOUT	=> 5,
 	CONFIG_FILE		=> "/home/denis/build/perl/phone_configuration/lib/LAN/config",
@@ -20,12 +21,6 @@ use constant {
 our %config;
 
 our @alive_ip;
-
-my %ports = (
-        udp => {
-           	5060      => {}
-            }
-        );
 
 our %ip_port;
 
@@ -54,7 +49,7 @@ sub __read_config {
     return 1;
 }
 
-sub __ping_detect {
+sub __ip_detect {
 	my ( $self ) = @_;
 	
 	my $netmask = $self->__net_addr();
@@ -63,7 +58,7 @@ sub __ping_detect {
     my $pinger = Net::Ping->new();
 	for my $ip ($block->enumerate) {
 	    if ( $pinger->ping($ip, PING_TIMEOUT) ) {
-	        say "$ip is alive";
+	        print( STDERR "$ip is alive" );
 	        push( @alive_ip, $ip );
 	    }
 	}
@@ -76,13 +71,7 @@ sub __ports_detect {
 	my ( $self ) = @_;
 	if ( scalar( @alive_ip ) != 0 ) {
 		foreach my $ip ( @alive_ip ) {
-			my @open_ports = $self->__check_ip($ip);
-			if ( scalar( @open_ports ) == 0 ) {
-				die ( "Don't have an open ports\n" );
-			}
-			else {
-				$ip_port{$ip} = \@open_ports;
-			}
+			$self->__ip_scaner( $ip );
 		}
 	}
 	else {
@@ -92,29 +81,38 @@ sub __ports_detect {
 	return 1;
 }
 
-sub __check_ip {
+sub __ip_scaner {
 	my ( $self, $ip ) = @_;
-
-	my $info = check_ports( $ip, PORT_TIMEOUT, \%ports );
-	my @open_ports;
-	for my $port ( keys %{$info->{udp}} ) {
-#		if ( $info->{udp}{$port}{open} ) {
-#			push ( @open_ports, $port );
-#		}
-		my $command = "nc -zu $ip $port";
-		system($command);
-		if ( $? ) {
-			push ( @open_ports, $port );
-		}
-	}
 	
-	return @open_ports;
+	my $scanner = new Nmap::Scanner;
+  	$scanner->udp_scan();
+  	$scanner->add_scan_port( SCAN_PORT );
+  	$scanner->guess_os();
+  	$scanner->max_rtt_timeout(PORT_TIMEOUT );
+  	$scanner->add_target( $ip );
+  	
+  	#instance of Nmap::Scanner::Backend::Results
+  	my $results = $scanner->scan();
+
+  	my $hosts = $results->get_host_list();
+
+ 	while (my $host = $hosts->get_next()) {
+      my $ports = $host->get_port_list();
+
+      while (my $port = $ports->get_next()) {
+      	if ( $port->state() =~ /open.*/ ) {
+        	$ip_port{$host} = $port;
+        }
+      }
+  	}
+  	
+  	return 1;
 }
 
 sub devices_info {
 	my ( $self ) = @_;
 	
-	my $resp = undef;
+	my %resp;
 	if ( scalar(keys %ip_port) != 0 ) {
 		while ( my ($ip, $port) = each (%ip_port) ) {
 			my %inet = (
@@ -122,14 +120,14 @@ sub devices_info {
 						PeerPort => $port, #always 5060
 						Proto   => "udp"
 					   );
-			$resp = $self->__send_recv_sip( %inet );
+			%resp = $self->__send_recv_sip( %inet );
 		}
 	}
 	else {
 		die( "Don't available ip and ports\n" );
 	}
 
-	return $resp;
+	return %resp;
 }
 
 sub __send_recv_sip {
@@ -160,17 +158,29 @@ sub __send_recv_sip {
 		die( $! );
 	}
 	
-	#add the regex to parse Model of phone and IP
-	
-	return $resp;
+	my $device_name = undef;
+	my $ip_device	= undef;
+	if ( $resp =~ /.*Server:[ ]*([\w|.|\/|-]*)/ ){
+		$device_name = $1;
+	}
+	if ( $resp =~ /.*To: \<sip:\w*\@([\w|.]*)/ ){
+		$ip_device = $1;
+	}
+
+	return ( $ip_device => $device_name );
 }
 
 sub detect {
 	my ( $self ) = @_;
-
-	$self->__read_config();
-	$self->__ping_detect();
-	$self->__ports_detect();
+	
+	eval {
+		$self->__read_config();
+		$self->__ip_detect();
+		$self->__ports_detect();
+	};
+	if ( $! ) {
+		die( $! );
+	}
 	
 	return %ip_port;
 }
