@@ -8,9 +8,10 @@ use Net::Netmask;
 use Scalar::Util qw (refaddr);
 use Config::IniFiles;
 use Nmap::Scanner;
+use Data::Dumper;
 
 use constant {
-	SCAN_PORT		=> 5353,
+	SCAN_PORT		=> 5060,
 	PING_TIMEOUT	=> 0.1,
 	PORT_TIMEOUT	=> 200,
 	CONFIG_FILE		=> "/home/denis/build/perl/phone_configuration/lib/LAN/config",
@@ -84,7 +85,7 @@ sub __ports_detect {
 sub __ip_scaner {
 	my ( $self, $ip ) = @_;
 	
-	my $scanner = new Nmap::Scanner;
+	my $scanner = Nmap::Scanner->new();
   	$scanner->udp_scan();
   	$scanner->add_scan_port( SCAN_PORT );
   	$scanner->guess_os();
@@ -101,11 +102,11 @@ sub __ip_scaner {
 
       while (my $port = $ports->get_next()) {
       	if ( $port->state() =~ /open.*/ ) {
-        	$ip_port{$host} = $port;
+        	$ip_port{(map {$_->addr()} $host->addresses())[0]} = $port->portid();
         }
       }
   	}
-  	
+
   	return 1;
 }
 
@@ -148,7 +149,7 @@ sub __send_recv_sip {
 		'Accept: application/sdp' , "\015\012",
 		'Content-Length: 0' , "\015\012",
 		"\015\012";
-	
+
 	my $resp;
 	
 	eval {
@@ -157,30 +158,31 @@ sub __send_recv_sip {
 	if ( $! ) {
 		die( $! );
 	}
-	
+
 	my $device_name = undef;
 	my $ip_device	= undef;
 	if ( $resp =~ /.*Server:[ ]*([\w|.|\/|-]*)/ ){
 		$device_name = $1;
 	}
-	if ( $resp =~ /.*To: \<sip:\w*\@([\w|.]*)/ ){
+	if ( $resp =~ /.*To:[ ]*\<sip:[ ]*\w*\@([\w|.]*)/ ){
 		$ip_device = $1;
 	}
-
-	return ( $ip_device => $device_name );
+	my %out = ($ip_device => $device_name);
+	
+	return %out;
 }
 
 sub detect {
 	my ( $self ) = @_;
 	
-	eval {
+	#eval {
 		$self->__read_config();
 		$self->__ip_detect();
 		$self->__ports_detect();
-	};
-	if ( $! ) {
-		die( $! );
-	}
+	#};
+	#if ( $! ) {
+	#	die( $! );
+	#}
 	
 	return %ip_port;
 }

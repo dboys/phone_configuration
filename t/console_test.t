@@ -20,6 +20,7 @@ sub main {
 			my $lan = LAN::Settings->new();
 			my %ip_port = $lan->detect();
 			my %device_info = $lan->devices_info();
+			print Dumper %device_info;
 		}
 		elsif ( $cmd =~ /update -old=([\w|\.]*) -new=([\w|\.]*) -user=([\w|\.]*) -passwd=([\w|\.]*)/ ) {
 			my $phone = IPPhone::Settings->new();

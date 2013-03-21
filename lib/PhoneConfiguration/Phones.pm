@@ -4,6 +4,7 @@ use Mojo::Base 'Mojolicious::Controller';
 use lib "../../lib";
 use IPPhone::Settings;
 use IPPhone::Constants;
+use LAN::Settings;
 
 # This action will render a template
 sub main {
@@ -11,10 +12,9 @@ sub main {
 
   	$self->stash( users => [ $self->db->resultset('User')->all() ] );
   	
-  	#my $lan = LAN::Settings->new();
-	#$lan->detect();
-	#my %device_info = $lan->devices_info();
-	my %device_info = ( '192.168.2.4'=>'SipuraSPA1','192.168.2.3'=>'SipuraSPA2' );
+  	my $lan = LAN::Settings->new();
+	$lan->detect();
+	my %device_info = $lan->devices_info();
 	$self->stash( phones => \%device_info );
 }
 
@@ -32,17 +32,17 @@ sub update {
 								'new passwd= '.$new_passwd."\n".
 								'old ip= '.$old_ip."\n");
 								
-#	my $phone = IPPhone::Settings->new();
-#	$phone->init( $IPPhone::Constants::IP => $old_ip );
-#	my %args = (	$IPPhone::Constants::IP				=> $new_ip,
-#					$IPPhone::Constants::STATION_NAME 	=> $new_name,
-#					$IPPhone::Constants::USER_PASSWD 	=> $new_passwd);
-#	if ( $phone->update( %args ) ){
-#		print( STDERR "Looks good\n" );	
-#	}
-#	else {
-#		print( STDERR "Bad\n" );
-#	}
+	my $phone = IPPhone::Settings->new();
+	$phone->init( $IPPhone::Constants::IP => $old_ip );
+	my %args = (	$IPPhone::Constants::IP				=> $new_ip,
+					$IPPhone::Constants::STATION_NAME 	=> $new_name,
+					$IPPhone::Constants::USER_PASSWD 	=> $new_passwd);
+	if ( $phone->update( %args ) ){
+		$self->app()->log()->debug( "Looks good\n" );	
+	}
+	else {
+		$self->app()->log()->debug( "Bad\n" );
+	}
 }
 
 1;
