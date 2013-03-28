@@ -19,7 +19,8 @@
 	    <table border="0">
 			<tr>
 				<td>
-					<% while( my($key,$value) = each( %$phones ) ) { %>
+					<% foreach my $phone (@$phones)	{ %>
+					<% while( my($key,$value) = each( %$phone ) ) { %>
 						<div id="<%= $key %>" class="left_layer">
 			    			<img src="/image/telephone.ico">
 							<p><div id="name"></div></p>
@@ -27,7 +28,8 @@
 							<p><div id="ip"><%= $key %></div></p>
 							<p><div id="phone"><%= $value %></div></p>
 						</div>
-					<% }%>	
+					<% }%>
+					<% }%>
 				</td>
 				<div id="dragObjects">
 					<% foreach my $user( @$users ) { %>
@@ -48,10 +50,11 @@
 			    for(var i=0; i<dragObjects.length; i++) {
 			        new DragObject(dragObjects[i])
 			    }
-
-			    <% while( my($key,$value) = each( %$phones ) ) { %>
-			    	new DropTarget(document.getElementById('<%= $key %>'))
-			    <% } %>	
+				<% foreach (@$phones)	{ %>
+			    	<% while( my($key,$value) = each( %$_ ) ) { %>
+			    		new DropTarget(document.getElementById('<%= $key %>'))
+			    	<% } %>
+			    <% } %>
 			    
 			}
 		</script>

@@ -5,17 +5,35 @@ use lib "../../lib";
 use IPPhone::Settings;
 use IPPhone::Constants;
 use LAN::Settings;
+use Mojo::UserAgent;
+use Data::Dumper;
 
 # This action will render a template
 sub main {
   	my $self = shift;
-
+	
+	#another timeout variant
+#	Mojo::IOLoop->stream($self->tx->connection)->timeout(300);
+#	
   	$self->stash( users => [ $self->db->resultset('User')->all() ] );
-  	
-  	my $lan = LAN::Settings->new();
-	$lan->detect();
-	my %device_info = $lan->devices_info();
-	$self->stash( phones => \%device_info );
+#  	
+#  	my $lan = LAN::Settings->new();
+#	$lan->detect();
+#	my @device_info = $lan->devices_info();
+	
+	my @device_info = test();
+
+	$self->render(phones => [@device_info]);
+}
+
+sub test {
+	my @device_info ;
+	foreach (1..2 ){
+		my %hash = ($_=>$_);
+		push(@device_info, \%hash);
+	}
+	
+	return @device_info;
 }
 
 sub update {
@@ -30,13 +48,15 @@ sub update {
 	$self->app()->log()->debug(	'new ip= '.$new_ip."\n".
 								'new name= '.$new_name."\n".
 								'new passwd= '.$new_passwd."\n".
-								'old ip= '.$old_ip."\n");
+								'old ip= '.$old_ip."\n" );
 								
 	my $phone = IPPhone::Settings->new();
-	$phone->init( $IPPhone::Constants::IP => $old_ip );
-	my %args = (	$IPPhone::Constants::IP				=> $new_ip,
-					$IPPhone::Constants::STATION_NAME 	=> $new_name,
-					$IPPhone::Constants::USER_PASSWD 	=> $new_passwd);
+	$phone->init( $IPPhone::Constants::DST_IP => $old_ip );
+	my %args = (	
+					$IPPhone::Constants::PROXY				=> $new_ip,
+					$IPPhone::Constants::USER_ID 			=> $new_name,
+					$IPPhone::Constants::PASSWD 			=> $new_passwd 
+			   );
 	if ( $phone->update( %args ) ){
 		$self->app()->log()->debug( "Looks good\n" );	
 	}

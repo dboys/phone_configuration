@@ -1,0 +1,671 @@
+[Fri Mar 22 15:33:10 2013] [debug] Rendering template "phones/main.html.ep".
+[Fri Mar 22 15:33:10 2013] [debug] Rendering template "layouts/default.html.ep".
+[Fri Mar 22 15:33:10 2013] [debug] 200 OK (36.230096s, 0.028/s).
+[Fri Mar 22 15:33:33 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 15:33:33 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Fri Mar 22 15:33:33 2013] [debug] new ip= 195.69.76.159
+new name= 10000
+new passwd= qwerty1
+old ip= 192.168.73.129
+
+[Fri Mar 22 15:33:49 2013] [debug] Looks good
+
+[Fri Mar 22 15:33:49 2013] [debug] Template "phones/update.html.ep" not found.
+[Fri Mar 22 15:33:49 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Fri Mar 22 15:35:37 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 15:35:37 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Fri Mar 22 15:35:37 2013] [debug] new ip= 195.69.76.159
+new name= 10000
+new passwd= qwerty1
+old ip= 192.168.73.129
+
+[Fri Mar 22 15:35:54 2013] [debug] Looks good
+
+[Fri Mar 22 15:35:54 2013] [debug] Template "phones/update.html.ep" not found.
+[Fri Mar 22 15:35:54 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Fri Mar 22 15:35:54 2013] [debug] Inactivity timeout.
+[Fri Mar 22 15:37:45 2013] [info] Listening at "http://*:3000".
+[Fri Mar 22 15:37:48 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 15:37:49 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Fri Mar 22 15:38:24 2013] [debug] Rendering template "phones/main.html.ep".
+[Fri Mar 22 15:38:24 2013] [debug] Rendering template "layouts/default.html.ep".
+[Fri Mar 22 15:38:24 2013] [debug] 200 OK (36.037157s, 0.028/s).
+[Fri Mar 22 15:38:37 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 15:38:37 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Fri Mar 22 15:38:37 2013] [debug] new ip= 195.69.76.159
+new name= 10000
+new passwd= qwerty1
+old ip= 192.168.73.129
+
+[Fri Mar 22 15:38:53 2013] [debug] Looks good
+
+[Fri Mar 22 15:38:53 2013] [debug] Template "phones/update.html.ep" not found.
+[Fri Mar 22 15:38:53 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Fri Mar 22 15:38:53 2013] [debug] Inactivity timeout.
+[Fri Mar 22 15:38:53 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 15:38:53 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Fri Mar 22 15:38:53 2013] [debug] new ip= 195.69.76.159
+new name= 10000
+new passwd= qwerty1
+old ip= 192.168.73.129
+
+[Fri Mar 22 15:39:09 2013] [debug] Looks good
+
+[Fri Mar 22 15:39:09 2013] [debug] Template "phones/update.html.ep" not found.
+[Fri Mar 22 15:39:09 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Fri Mar 22 15:42:55 2013] [info] Listening at "http://*:3000".
+[Fri Mar 22 15:42:59 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 15:43:00 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Fri Mar 22 15:43:35 2013] [debug] Rendering template "phones/main.html.ep".
+[Fri Mar 22 15:43:35 2013] [debug] Rendering template "layouts/default.html.ep".
+[Fri Mar 22 15:43:35 2013] [debug] 200 OK (36.094326s, 0.028/s).
+[Fri Mar 22 15:43:40 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 15:43:40 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Fri Mar 22 15:43:40 2013] [debug] new ip= 195.69.76.159
+new name= 10000
+new passwd= qwerty1
+old ip= 192.168.73.129
+
+[Fri Mar 22 15:43:56 2013] [debug] Looks good
+
+[Fri Mar 22 15:43:56 2013] [debug] Template "phones/update.html.ep" not found.
+[Fri Mar 22 15:43:56 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Fri Mar 22 15:45:31 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 15:45:31 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Fri Mar 22 15:45:31 2013] [debug] new ip= 195.69.76.159
+new name= 10000
+new passwd= qwerty1
+old ip= 192.168.73.129
+
+[Fri Mar 22 15:45:33 2013] [debug] Looks good
+
+[Fri Mar 22 15:45:33 2013] [debug] Template "phones/update.html.ep" not found.
+[Fri Mar 22 15:45:33 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Fri Mar 22 15:45:36 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 15:45:36 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Fri Mar 22 15:46:10 2013] [error] Don't available ip and ports
+
+[Fri Mar 22 15:46:10 2013] [debug] Template "exception.development.html.ep" not found.
+[Fri Mar 22 15:46:10 2013] [debug] Template "exception.html.ep" not found.
+[Fri Mar 22 15:46:10 2013] [debug] Rendering inline template.
+[Fri Mar 22 15:46:10 2013] [debug] Rendering inline template.
+[Fri Mar 22 15:46:10 2013] [debug] 500 Internal Server Error (34.545695s, 0.029/s).
+[Fri Mar 22 15:49:29 2013] [info] Listening at "http://*:3000".
+[Fri Mar 22 15:50:06 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 15:50:06 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Fri Mar 22 15:50:40 2013] [debug] Rendering template "phones/main.html.ep".
+[Fri Mar 22 15:50:40 2013] [debug] Rendering template "layouts/default.html.ep".
+[Fri Mar 22 15:50:40 2013] [debug] 200 OK (34.118708s, 0.029/s).
+[Fri Mar 22 15:52:13 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 15:52:13 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Fri Mar 22 15:52:13 2013] [debug] new ip= 195.69.76.159
+new name= 10000
+new passwd= qwerty1
+old ip= 192.168.73.193
+
+[Fri Mar 22 15:52:15 2013] [debug] Looks good
+
+[Fri Mar 22 15:52:15 2013] [debug] Template "phones/update.html.ep" not found.
+[Fri Mar 22 15:52:15 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Fri Mar 22 15:55:39 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 15:55:40 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Fri Mar 22 15:55:40 2013] [debug] new ip= 195.69.76.159
+new name= 10000
+new passwd= qwerty1
+old ip= 192.168.73.193
+
+[Fri Mar 22 15:55:43 2013] [error] ÐÐµÑ Ð¼Ð°ÑÑÑÑÑÐ° Ð´Ð¾ ÑÐ·Ð»Ð° at /home/denis/build/perl/phone_configuration/script/../lib/IPPhone/Settings.pm line 50.
+
+[Fri Mar 22 15:55:43 2013] [debug] Template "exception.development.html.ep" not found.
+[Fri Mar 22 15:55:43 2013] [debug] Template "exception.html.ep" not found.
+[Fri Mar 22 15:55:43 2013] [debug] Rendering inline template.
+[Fri Mar 22 15:55:43 2013] [debug] Rendering inline template.
+[Fri Mar 22 15:55:43 2013] [debug] 500 Internal Server Error (3.605199s, 0.277/s).
+[Fri Mar 22 15:56:30 2013] [info] Listening at "http://*:3000".
+[Fri Mar 22 15:56:34 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 15:56:34 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Fri Mar 22 15:57:08 2013] [debug] Rendering template "phones/main.html.ep".
+[Fri Mar 22 15:57:08 2013] [debug] Rendering template "layouts/default.html.ep".
+[Fri Mar 22 15:57:08 2013] [debug] 200 OK (34.039476s, 0.029/s).
+[Fri Mar 22 15:57:18 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 15:57:18 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Fri Mar 22 15:57:18 2013] [debug] new ip= 195.69.76.159
+new name= 10000
+new passwd= qwerty1
+old ip= 192.168.73.129
+
+[Fri Mar 22 15:57:20 2013] [error] Not found any POST agruments!
+
+[Fri Mar 22 15:57:20 2013] [debug] Template "exception.development.html.ep" not found.
+[Fri Mar 22 15:57:20 2013] [debug] Template "exception.html.ep" not found.
+[Fri Mar 22 15:57:20 2013] [debug] Rendering inline template.
+[Fri Mar 22 15:57:20 2013] [debug] Rendering inline template.
+[Fri Mar 22 15:57:20 2013] [debug] 500 Internal Server Error (2.299045s, 0.435/s).
+[Fri Mar 22 16:01:09 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 16:01:09 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Fri Mar 22 16:01:43 2013] [debug] Rendering template "phones/main.html.ep".
+[Fri Mar 22 16:01:43 2013] [debug] Rendering template "layouts/default.html.ep".
+[Fri Mar 22 16:01:43 2013] [debug] 200 OK (34.100263s, 0.029/s).
+[Fri Mar 22 16:01:47 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 16:01:47 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Fri Mar 22 16:01:47 2013] [debug] new ip= 195.69.76.159
+new name= 10000
+new passwd= qwerty1
+old ip= 192.168.73.129
+
+[Fri Mar 22 16:02:07 2013] [debug] Looks good
+
+[Fri Mar 22 16:02:07 2013] [debug] Template "phones/update.html.ep" not found.
+[Fri Mar 22 16:02:07 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Fri Mar 22 16:02:07 2013] [debug] Inactivity timeout.
+[Fri Mar 22 16:02:07 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 16:02:07 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Fri Mar 22 16:02:07 2013] [debug] new ip= 195.69.76.159
+new name= 10000
+new passwd= qwerty1
+old ip= 192.168.73.129
+
+[Fri Mar 22 16:05:08 2013] [error] Not found any POST agruments!
+
+[Fri Mar 22 16:05:08 2013] [debug] Template "exception.development.html.ep" not found.
+[Fri Mar 22 16:05:08 2013] [debug] Template "exception.html.ep" not found.
+[Fri Mar 22 16:05:08 2013] [debug] Rendering inline template.
+[Fri Mar 22 16:05:08 2013] [debug] Rendering inline template.
+[Fri Mar 22 16:05:08 2013] [debug] 500 Internal Server Error (180.757157s, 0.006/s).
+[Fri Mar 22 16:08:39 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 16:08:39 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Fri Mar 22 16:09:16 2013] [debug] Rendering template "phones/main.html.ep".
+[Fri Mar 22 16:09:16 2013] [debug] Rendering template "layouts/default.html.ep".
+[Fri Mar 22 16:09:16 2013] [debug] 200 OK (37.335422s, 0.027/s).
+[Fri Mar 22 16:09:37 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 16:09:37 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Fri Mar 22 16:09:37 2013] [debug] new ip= 195.69.76.159
+new name= 10001
+new passwd= qwerty1
+old ip= 192.168.73.193
+
+[Fri Mar 22 16:09:54 2013] [debug] Looks good
+
+[Fri Mar 22 16:09:54 2013] [debug] Template "phones/update.html.ep" not found.
+[Fri Mar 22 16:09:54 2013] [debug] Nothing has been rendered, expecting delayed response.
+[Fri Mar 22 16:15:51 2013] [info] Listening at "http://*:3000".
+[Fri Mar 22 16:16:03 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 16:16:03 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Fri Mar 22 16:16:40 2013] [debug] Rendering template "phones/main.html.ep".
+[Fri Mar 22 16:16:40 2013] [debug] Rendering template "layouts/default.html.ep".
+[Fri Mar 22 16:16:40 2013] [debug] 200 OK (37.291253s, 0.027/s).
+[Fri Mar 22 16:22:02 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 16:22:03 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Fri Mar 22 16:22:38 2013] [debug] Rendering template "phones/main.html.ep".
+[Fri Mar 22 16:22:38 2013] [debug] Rendering template "layouts/default.html.ep".
+[Fri Mar 22 16:22:38 2013] [debug] 200 OK (35.400025s, 0.028/s).
+[Fri Mar 22 16:23:27 2013] [info] Listening at "http://*:3000".
+[Fri Mar 22 16:23:31 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 16:23:31 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Fri Mar 22 16:24:06 2013] [debug] Rendering template "phones/main.html.ep".
+[Fri Mar 22 16:24:06 2013] [debug] Rendering template "layouts/default.html.ep".
+[Fri Mar 22 16:24:06 2013] [debug] 200 OK (35.165081s, 0.028/s).
+[Fri Mar 22 16:31:12 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 16:31:12 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Fri Mar 22 16:31:47 2013] [debug] Rendering template "phones/main.html.ep".
+[Fri Mar 22 16:31:47 2013] [error] Global symbol "@phones" requires explicit package name at template phones/main.html.ep line 22.
+17: 	    </table>
+18: 	    
+19: 	    <table border="0">
+20: 			<tr>
+21: 				<td>
+22: 					<% foreach (@phones)	{ %>
+23: 					<% while( my($key,$value) = each( %$_ ) ) { %>
+24: 						<div id="<%= $key %>" class="left_layer">
+25: 			    			<img src="/image/telephone.ico">
+26: 							<p><div id="name"></div></p>
+27: 							<p><div id="passwd"></div></p>
+
+[Fri Mar 22 16:31:47 2013] [debug] Template "exception.development.html.ep" not found.
+[Fri Mar 22 16:31:47 2013] [debug] Template "exception.html.ep" not found.
+[Fri Mar 22 16:31:47 2013] [debug] Rendering inline template.
+[Fri Mar 22 16:31:47 2013] [debug] Rendering inline template.
+[Fri Mar 22 16:31:47 2013] [debug] 500 Internal Server Error (35.396740s, 0.028/s).
+[Fri Mar 22 16:32:05 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 16:32:06 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Fri Mar 22 16:32:40 2013] [debug] Rendering template "phones/main.html.ep".
+[Fri Mar 22 16:32:40 2013] [error] Not a HASH reference at template phones/main.html.ep line 54.
+49: 			    var dragObjects = document.getElementById('dragObjects').getElementsByTagName('div')
+50: 			    for(var i=0; i<dragObjects.length; i++) {
+51: 			        new DragObject(dragObjects[i])
+52: 			    }
+53: 
+54: 			    <% while( my($key,$value) = each( %$phones ) ) { %>
+55: 			    	new DropTarget(document.getElementById('<%= $key %>'))
+56: 			    <% } %>	
+57: 			    
+58: 			}
+59: 		</script>
+
+[Fri Mar 22 16:32:40 2013] [debug] Template "exception.development.html.ep" not found.
+[Fri Mar 22 16:32:40 2013] [debug] Template "exception.html.ep" not found.
+[Fri Mar 22 16:32:40 2013] [debug] Rendering inline template.
+[Fri Mar 22 16:32:40 2013] [debug] Rendering inline template.
+[Fri Mar 22 16:32:40 2013] [debug] 500 Internal Server Error (35.265641s, 0.028/s).
+[Fri Mar 22 16:33:13 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Fri Mar 22 16:33:14 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Fri Mar 22 16:33:48 2013] [debug] Rendering template "phones/main.html.ep".
+[Fri Mar 22 16:33:48 2013] [debug] Rendering template "layouts/default.html.ep".
+[Fri Mar 22 16:33:48 2013] [debug] 200 OK (35.159732s, 0.028/s).
+[Mon Mar 25 09:53:23 2013] [info] Listening at "http://*:3000".
+[Mon Mar 25 09:53:39 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 09:53:39 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 09:53:39 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 09:53:39 2013] [error] Global symbol "$phones" requires explicit package name at template phones/main.html.ep line 22.
+Global symbol "$users" requires explicit package name at template phones/main.html.ep line 35.
+Global symbol "$phones" requires explicit package name at template phones/main.html.ep line 53.
+48: 			onload = function() {
+49: 			    var dragObjects = document.getElementById('dragObjects').getElementsByTagName('div')
+50: 			    for(var i=0; i<dragObjects.length; i++) {
+51: 			        new DragObject(dragObjects[i])
+52: 			    }
+53: 				<% foreach (@$phones)	{ %>
+54: 			    <% while( my($key,$value) = each( %$_ ) ) { %>
+55: 			    	new DropTarget(document.getElementById('<%= $key %>'))
+56: 			    <% } %>	
+57: 			    <% } %>
+58: 			    
+
+[Mon Mar 25 09:53:39 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 09:53:39 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 09:53:39 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:53:39 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:53:39 2013] [debug] 500 Internal Server Error (0.647859s, 1.544/s).
+[Mon Mar 25 09:54:24 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 09:54:24 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 09:54:24 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 09:54:25 2013] [error] Global symbol "$phones" requires explicit package name at template phones/main.html.ep line 22.
+Global symbol "$users" requires explicit package name at template phones/main.html.ep line 35.
+Global symbol "$phones" requires explicit package name at template phones/main.html.ep line 53.
+48: 			onload = function() {
+49: 			    var dragObjects = document.getElementById('dragObjects').getElementsByTagName('div')
+50: 			    for(var i=0; i<dragObjects.length; i++) {
+51: 			        new DragObject(dragObjects[i])
+52: 			    }
+53: 				<% foreach (@$phones)	{ %>
+54: 			    <% while( my($key,$value) = each( %$_ ) ) { %>
+55: 			    	new DropTarget(document.getElementById('<%= $key %>'))
+56: 			    <% } %>	
+57: 			    <% } %>
+58: 			    
+
+[Mon Mar 25 09:54:25 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 09:54:25 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 09:54:25 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:54:25 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:54:25 2013] [debug] 500 Internal Server Error (0.590870s, 1.692/s).
+[Mon Mar 25 09:54:42 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 09:54:43 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 09:54:43 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 09:54:43 2013] [error] Global symbol "$phones" requires explicit package name at template phones/main.html.ep line 22.
+Global symbol "$users" requires explicit package name at template phones/main.html.ep line 35.
+Global symbol "$phones" requires explicit package name at template phones/main.html.ep line 53.
+48: 			onload = function() {
+49: 			    var dragObjects = document.getElementById('dragObjects').getElementsByTagName('div')
+50: 			    for(var i=0; i<dragObjects.length; i++) {
+51: 			        new DragObject(dragObjects[i])
+52: 			    }
+53: 				<!-- <% foreach (@$phones)	{ %>
+54: 			    <% while( my($key,$value) = each( %$_ ) ) { %>
+55: 			    	new DropTarget(document.getElementById('<%= $key %>'))
+56: 			    <% } %>	
+57: 			    <% } %>-->
+58: 			    
+
+[Mon Mar 25 09:54:43 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 09:54:43 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 09:54:43 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:54:43 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:54:43 2013] [debug] 500 Internal Server Error (0.584512s, 1.711/s).
+[Mon Mar 25 09:55:09 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 09:55:10 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 09:55:10 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 09:55:10 2013] [error] Global symbol "$phones" requires explicit package name at template phones/main.html.ep line 22.
+Global symbol "$users" requires explicit package name at template phones/main.html.ep line 35.
+Global symbol "$phones" requires explicit package name at template phones/main.html.ep line 53.
+48: 			onload = function() {
+49: 			    var dragObjects = document.getElementById('dragObjects').getElementsByTagName('div')
+50: 			    for(var i=0; i<dragObjects.length; i++) {
+51: 			        new DragObject(dragObjects[i])
+52: 			    }
+53: 				<#<% foreach (@$phones)	{ %>
+54: 			    <% while( my($key,$value) = each( %$_ ) ) { %>
+55: 			    	new DropTarget(document.getElementById('<%= $key %>'))
+56: 			    <% } %>	
+57: 			    <% } %>#>
+58: 			    
+
+[Mon Mar 25 09:55:10 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 09:55:10 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 09:55:10 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:55:10 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:55:10 2013] [debug] 500 Internal Server Error (0.599626s, 1.668/s).
+[Mon Mar 25 09:55:32 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 09:55:33 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 09:55:33 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 09:55:33 2013] [error] Global symbol "$phones" requires explicit package name at template phones/main.html.ep line 22.
+Global symbol "$users" requires explicit package name at template phones/main.html.ep line 35.
+Global symbol "$phones" requires explicit package name at template phones/main.html.ep line 53.
+48: 			onload = function() {
+49: 			    var dragObjects = document.getElementById('dragObjects').getElementsByTagName('div')
+50: 			    for(var i=0; i<dragObjects.length; i++) {
+51: 			        new DragObject(dragObjects[i])
+52: 			    }
+53: 				<!--<% foreach (@$phones)	{ %>-->
+54: 			    <% while( my($key,$value) = each( %$_ ) ) { %>
+55: 			    	new DropTarget(document.getElementById('<%= $key %>'))
+56: 			    <% } %>	
+57: 			    <% } %>
+58: 			    
+
+[Mon Mar 25 09:55:33 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 09:55:33 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 09:55:33 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:55:33 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:55:33 2013] [debug] 500 Internal Server Error (0.583965s, 1.712/s).
+[Mon Mar 25 09:56:14 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 09:56:14 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 09:56:14 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 09:56:14 2013] [error] Global symbol "$phones" requires explicit package name at template phones/main.html.ep line 22.
+Global symbol "$users" requires explicit package name at template phones/main.html.ep line 35.
+Global symbol "$phones" requires explicit package name at template phones/main.html.ep line 53.
+48: 			onload = function() {
+49: 			    var dragObjects = document.getElementById('dragObjects').getElementsByTagName('div')
+50: 			    for(var i=0; i<dragObjects.length; i++) {
+51: 			        new DragObject(dragObjects[i])
+52: 			    }
+53: 				<!--<% foreach (@$phones)	{ %>-->
+54: 			    <!--<% while( my($key,$value) = each( %$_ ) ) { %>-->
+55: 			    <!--	new DropTarget(document.getElementById('<%= $key %>'))-->
+56: 			    <!--<% } %>-->
+57: 			    <!--<% } %>-->
+58: 			    
+
+[Mon Mar 25 09:56:14 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 09:56:14 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 09:56:14 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:56:14 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:56:14 2013] [debug] 500 Internal Server Error (0.581862s, 1.719/s).
+[Mon Mar 25 09:58:23 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 09:58:23 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 09:58:23 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 09:58:23 2013] [error] Global symbol "$phones" requires explicit package name at template phones/main.html.ep line 22.
+Global symbol "$users" requires explicit package name at template phones/main.html.ep line 35.
+Global symbol "$key" requires explicit package name at template phones/main.html.ep line 55.
+50: 			    for(var i=0; i<dragObjects.length; i++) {
+51: 			        new DragObject(dragObjects[i])
+52: 			    }
+53: 				<%# foreach (@$phones)	{ %>
+54: 			    	<%# while( my($key,$value) = each( %$_ ) ) { %>
+55: 			    		new DropTarget(document.getElementById('<%= $key %>'))
+56: 			    	<%# } %>
+57: 			    <%# } %>
+58: 			    
+59: 			}
+60: 		</script>
+
+[Mon Mar 25 09:58:23 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 09:58:23 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 09:58:23 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:58:23 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:58:23 2013] [debug] 500 Internal Server Error (0.597852s, 1.673/s).
+[Mon Mar 25 09:58:53 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 09:58:54 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 09:58:54 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 09:58:54 2013] [error] Global symbol "$phones" requires explicit package name at template phones/main.html.ep line 22.
+Global symbol "$users" requires explicit package name at template phones/main.html.ep line 35.
+Global symbol "$key" requires explicit package name at template phones/main.html.ep line 55.
+50: 			    for(var i=0; i<dragObjects.length; i++) {
+51: 			        new DragObject(dragObjects[i])
+52: 			    }
+53: 				<%# foreach (@$phones)	{ %>
+54: 			    	<%# while( my($key,$value) = each( %$_ ) ) { %>
+55: 			    		<!--new DropTarget(document.getElementById('<%= $key %>'))-->
+56: 			    	<%# } %>
+57: 			    <%# } %>
+58: 			    
+59: 			}
+60: 		</script>
+
+[Mon Mar 25 09:58:54 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 09:58:54 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 09:58:54 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:58:54 2013] [debug] Rendering inline template.
+[Mon Mar 25 09:58:54 2013] [debug] 500 Internal Server Error (0.591945s, 1.689/s).
+[Mon Mar 25 10:00:27 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 10:00:27 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 10:00:27 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 10:00:28 2013] [error] Global symbol "$users" requires explicit package name at template phones/main.html.ep line 35.
+30: 						</div>
+31: 					<% }%>
+32: 					<% }%>
+33: 				</td>
+34: 				<div id="dragObjects">
+35: 					<% foreach my $user( @$users ) { %>
+36: 						<div class="right_layer">
+37: 		    				<img src="/image/user.ico">
+38: 							<p><div id="name"><%= $user->name() %></div></p>
+39: 							<p><div id="passwd"><%= $user->passwd() %></div></p>
+40: 							<p><div id="ip"><%= $user->ip() %></div></p>
+
+[Mon Mar 25 10:00:28 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 10:00:28 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 10:00:28 2013] [debug] Rendering inline template.
+[Mon Mar 25 10:00:28 2013] [debug] Rendering inline template.
+[Mon Mar 25 10:00:28 2013] [debug] 500 Internal Server Error (0.603927s, 1.656/s).
+[Mon Mar 25 10:00:43 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 10:00:44 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 10:00:44 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 10:00:44 2013] [error] Not a HASH reference at template phones/main.html.ep line 23.
+18: 	    
+19: 	    <table border="0">
+20: 			<tr>
+21: 				<td>
+22: 					<% foreach (@$phones)	{ %>
+23: 					<% while( my($key,$value) = each( %$_ ) ) { %>
+24: 						<div id="<%= $key %>" class="left_layer">
+25: 			    			<img src="/image/telephone.ico">
+26: 							<p><div id="name"></div></p>
+27: 							<p><div id="passwd"></div></p>
+28: 							<p><div id="ip"><%= $key %></div></p>
+
+[Mon Mar 25 10:00:44 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 10:00:44 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 10:00:44 2013] [debug] Rendering inline template.
+[Mon Mar 25 10:00:44 2013] [debug] Rendering inline template.
+[Mon Mar 25 10:00:44 2013] [debug] 500 Internal Server Error (0.811296s, 1.233/s).
+[Mon Mar 25 10:01:25 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 10:01:26 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 10:01:26 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 10:01:26 2013] [error] Not a HASH reference at template phones/main.html.ep line 23.
+18: 	    
+19: 	    <table border="0">
+20: 			<tr>
+21: 				<td>
+22: 					<% foreach (@$phones)	{ %>
+23: 					<% while( my($key,$value) = each( %$_ ) ) { %>
+24: 						<div id="<%= $key %>" class="left_layer">
+25: 			    			<img src="/image/telephone.ico">
+26: 							<p><div id="name"></div></p>
+27: 							<p><div id="passwd"></div></p>
+28: 							<p><div id="ip"><%= $key %></div></p>
+
+[Mon Mar 25 10:01:26 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 10:01:26 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 10:01:26 2013] [debug] Rendering inline template.
+[Mon Mar 25 10:01:26 2013] [debug] Rendering inline template.
+[Mon Mar 25 10:01:26 2013] [debug] 500 Internal Server Error (0.905262s, 1.105/s).
+[Mon Mar 25 10:02:33 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 10:02:34 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 10:02:34 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 10:02:34 2013] [error] Not a HASH reference at template phones/main.html.ep line 23.
+18: 	    
+19: 	    <table border="0">
+20: 			<tr>
+21: 				<td>
+22: 					<% foreach (@$phones)	{ %>
+23: 					<% while( my($key,$value) = each( %$_ ) ) { %>
+24: 						<div id="<%= $key %>" class="left_layer">
+25: 			    			<img src="/image/telephone.ico">
+26: 							<p><div id="name"></div></p>
+27: 							<p><div id="passwd"></div></p>
+28: 							<p><div id="ip"><%= $key %></div></p>
+
+[Mon Mar 25 10:02:34 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 10:02:34 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 10:02:34 2013] [debug] Rendering inline template.
+[Mon Mar 25 10:02:34 2013] [debug] Rendering inline template.
+[Mon Mar 25 10:02:34 2013] [debug] 500 Internal Server Error (0.817998s, 1.222/s).
+[Mon Mar 25 10:10:39 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 10:10:40 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 10:10:40 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 10:10:40 2013] [error] Not a HASH reference at template phones/main.html.ep line 23.
+18: 	    
+19: 	    <table border="0">
+20: 			<tr>
+21: 				<td>
+22: 					<% foreach my $phone (@$phones)	{ %>
+23: 					<% while( my($key,$value) = each( %$_ ) ) { %>
+24: 						<div id="<%= $key %>" class="left_layer">
+25: 			    			<img src="/image/telephone.ico">
+26: 							<p><div id="name"></div></p>
+27: 							<p><div id="passwd"></div></p>
+28: 							<p><div id="ip"><%= $key %></div></p>
+
+[Mon Mar 25 10:10:40 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 10:10:40 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 10:10:40 2013] [debug] Rendering inline template.
+[Mon Mar 25 10:10:40 2013] [debug] Rendering inline template.
+[Mon Mar 25 10:10:40 2013] [debug] 500 Internal Server Error (0.599460s, 1.668/s).
+[Mon Mar 25 10:11:04 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 10:11:04 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 10:11:04 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 10:11:04 2013] [error] Not a HASH reference at template phones/main.html.ep line 23.
+18: 	    
+19: 	    <table border="0">
+20: 			<tr>
+21: 				<td>
+22: 					<% foreach my $phone (@$phones)	{ %>
+23: 					<% while( my($key,$value) = each( %$phone ) ) { %>
+24: 						<div id="<%= $key %>" class="left_layer">
+25: 			    			<img src="/image/telephone.ico">
+26: 							<p><div id="name"></div></p>
+27: 							<p><div id="passwd"></div></p>
+28: 							<p><div id="ip"><%= $key %></div></p>
+
+[Mon Mar 25 10:11:04 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 10:11:04 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 10:11:04 2013] [debug] Rendering inline template.
+[Mon Mar 25 10:11:04 2013] [debug] Rendering inline template.
+[Mon Mar 25 10:11:04 2013] [debug] 500 Internal Server Error (0.516732s, 1.935/s).
+[Mon Mar 25 10:12:05 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 10:12:05 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 10:12:05 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 10:12:06 2013] [debug] Rendering template "layouts/default.html.ep".
+[Mon Mar 25 10:12:06 2013] [debug] 200 OK (0.598750s, 1.670/s).
+[Mon Mar 25 10:12:43 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 10:12:44 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 10:12:44 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 10:12:44 2013] [debug] Rendering template "layouts/default.html.ep".
+[Mon Mar 25 10:12:44 2013] [debug] 200 OK (0.739432s, 1.352/s).
+[Mon Mar 25 10:14:50 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 10:14:50 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 10:14:50 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 10:14:50 2013] [debug] Rendering template "layouts/default.html.ep".
+[Mon Mar 25 10:14:50 2013] [debug] 200 OK (0.472900s, 2.115/s).
+[Mon Mar 25 10:15:22 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 10:15:22 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 10:15:23 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 10:15:23 2013] [error] Can't use string ("1") as a HASH ref while "strict refs" in use at template phones/main.html.ep line 23.
+18: 	    
+19: 	    <table border="0">
+20: 			<tr>
+21: 				<td>
+22: 					<% foreach my $phone (@$phones)	{ %>
+23: 					<% while( my($key,$value) = each( %$phone ) ) { %>
+24: 						<div id="<%= $key %>" class="left_layer">
+25: 			    			<img src="/image/telephone.ico">
+26: 							<p><div id="name"></div></p>
+27: 							<p><div id="passwd"></div></p>
+28: 							<p><div id="ip"><%= $key %></div></p>
+
+[Mon Mar 25 10:15:23 2013] [debug] Template "exception.development.html.ep" not found.
+[Mon Mar 25 10:15:23 2013] [debug] Template "exception.html.ep" not found.
+[Mon Mar 25 10:15:23 2013] [debug] Rendering inline template.
+[Mon Mar 25 10:15:23 2013] [debug] Rendering inline template.
+[Mon Mar 25 10:15:23 2013] [debug] 500 Internal Server Error (0.813770s, 1.229/s).
+[Mon Mar 25 10:16:15 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 10:16:16 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 10:16:16 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 10:16:16 2013] [debug] Rendering template "layouts/default.html.ep".
+[Mon Mar 25 10:16:16 2013] [debug] 200 OK (0.735903s, 1.359/s).
+[Mon Mar 25 10:29:07 2013] [debug] GET / (Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:19.0) Gecko/20100101 Firefox/19.0).
+[Mon Mar 25 10:29:08 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Mon Mar 25 10:29:08 2013] [debug] Rendering template "phones/main.html.ep".
+[Mon Mar 25 10:29:08 2013] [debug] Rendering template "layouts/default.html.ep".
+[Mon Mar 25 10:29:08 2013] [debug] 200 OK (0.737955s, 1.355/s).
+[Wed Mar 27 11:04:47 2013] [info] Listening at "http://*:3000".
+[Wed Mar 27 11:22:42 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Wed Mar 27 11:22:43 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Wed Mar 27 11:22:43 2013] [debug] Rendering template "phones/main.html.ep".
+[Wed Mar 27 11:22:43 2013] [debug] Rendering template "layouts/default.html.ep".
+[Wed Mar 27 11:22:43 2013] [debug] 200 OK (1.545217s, 0.647/s).
+[Wed Mar 27 11:23:37 2013] [debug] POST / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Wed Mar 27 11:23:37 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "update".
+[Wed Mar 27 11:23:37 2013] [debug] new ip= 195.69.76.159
+new name= 10001
+new passwd= qwerty1
+old ip= 2
+
+[Wed Mar 27 11:23:37 2013] [error] 0 parameters were passed to IPPhone::Settings::__get but 1 was expected
+ at /home/denis/build/perl/phone_configuration/script/../lib/IPPhone/Settings.pm line 44.
+	IPPhone::Settings::__get(undef) called at /home/denis/build/perl/phone_configuration/script/../lib/IPPhone/Settings.pm line 99
+	IPPhone::Settings::update('IPPhone::Settings=HASH(0xb4f2964)', 'Proxy', 195.69.76.159, 'Password', 'qwerty1', 'User ID', 10001) called at /home/denis/build/perl/phone_configuration/script/../lib/PhoneConfiguration/Phones.pm line 54
+	PhoneConfiguration::Phones::update('PhoneConfiguration::Phones=HASH(0xa9e0230)') called at /usr/local/share/perl/5.14.2/Mojolicious/Routes.pm line 182
+	Mojolicious::Routes::_controller('Mojolicious::Routes=HASH(0xa7ed74c)', 'Mojolicious::Controller=HASH(0xa86cd80)', 'HASH(0xa9df560)', 0) called at /usr/local/share/perl/5.14.2/Mojolicious/Routes.pm line 235
+	Mojolicious::Routes::_walk('Mojolicious::Routes=HASH(0xa7ed74c)', 'Mojolicious::Controller=HASH(0xa86cd80)') called at /usr/local/share/perl/5.14.2/Mojolicious/Routes.pm line 67
+	Mojolicious::Routes::dispatch('Mojolicious::Routes=HASH(0xa7ed74c)', 'Mojolicious::Controller=HASH(0xa86cd80)') called at /usr/local/share/perl/5.14.2/Mojolicious.pm line 136
+	Mojolicious::dispatch('PhoneConfiguration=HASH(0xa7ecff4)', 'Mojolicious::Controller=HASH(0xa86cd80)') called at /usr/local/share/perl/5.14.2/Mojolicious.pm line 156
+	Mojolicious::__ANON__(undef, 'Mojolicious::Controller=HASH(0xa86cd80)') called at /usr/local/share/perl/5.14.2/Mojolicious/Plugins.pm line 20
+	Mojolicious::Plugins::__ANON__() called at /usr/local/share/perl/5.14.2/Mojolicious.pm line 194
+	eval {...} called at /usr/local/share/perl/5.14.2/Mojolicious.pm line 194
+	Mojolicious::_exception('CODE(0xa86ce0c)', 'Mojolicious::Controller=HASH(0xa86cd80)') called at /usr/local/share/perl/5.14.2/Mojolicious/Plugins.pm line 20
+	Mojolicious::Plugins::__ANON__() called at /usr/local/share/perl/5.14.2/Mojolicious/Plugins.pm line 22
+	Mojolicious::Plugins::emit_chain('Mojolicious::Plugins=HASH(0xa7f0754)', 'around_dispatch', 'Mojolicious::Controller=HASH(0xa86cd80)') called at /usr/local/share/perl/5.14.2/Mojolicious.pm line 160
+	eval {...} called at /usr/local/share/perl/5.14.2/Mojolicious.pm line 160
+	Mojolicious::handler('PhoneConfiguration=HASH(0xa7ecff4)', 'Mojo::Transaction::HTTP=HASH(0xb4f26d0)') called at /usr/local/share/perl/5.14.2/Mojo/Server.pm line 14
+	Mojo::Server::__ANON__('Mojo::Server::Daemon=HASH(0x9c4ca64)', 'Mojo::Transaction::HTTP=HASH(0xb4f26d0)') called at /usr/local/share/perl/5.14.2/Mojo/EventEmitter.pm line 13
+	Mojo::EventEmitter::emit('Mojo::Server::Daemon=HASH(0x9c4ca64)', 'request', 'Mojo::Transaction::HTTP=HASH(0xb4f26d0)') called at /usr/local/share/perl/5.14.2/Mojo/Server/Daemon.pm line 105
+	Mojo::Server::Daemon::__ANON__('Mojo::Transaction::HTTP=HASH(0xb4f26d0)') called at /usr/local/share/perl/5.14.2/Mojo/EventEmitter.pm line 13
+	Mojo::EventEmitter::emit('Mojo::Transaction::HTTP=HASH(0xb4f26d0)', 'request') called at /usr/local/share/perl/5.14.2/Mojo/Transaction/HTTP.pm line 52
+	Mojo::Transaction::HTTP::server_read('Mojo::Transaction::HTTP=HASH(0xb4f26d0)', 'POST / HTTP/1.1\x{d}\x{a}Host: 127.0.0.1:3000\x{d}\x{a}Connection: keep-alive...') called at /usr/local/share/perl/5.14.2/Mojo/Server/Daemon.pm line 216
+	Mojo::Server::Daemon::_read('Mojo::Server::Daemon=HASH(0x9c4ca64)', '873744a6260911de7267022673388d5b', 'POST / HTTP/1.1\x{d}\x{a}Host: 127.0.0.1:3000\x{d}\x{a}Connection: keep-alive...') called at /usr/local/share/perl/5.14.2/Mojo/Server/Daemon.pm line 196
+	Mojo::Server::Daemon::__ANON__('Mojo::IOLoop::Stream=HASH(0xa9df808)') called at /usr/local/share/perl/5.14.2/Mojo/EventEmitter.pm line 30
+	eval {...} called at /usr/local/share/perl/5.14.2/Mojo/EventEmitter.pm line 30
+	Mojo::EventEmitter::emit_safe('Mojo::IOLoop::Stream=HASH(0xa9df808)', 'read', 'POST / HTTP/1.1\x{d}\x{a}Host: 127.0.0.1:3000\x{d}\x{a}Connection: keep-alive...') called at /usr/local/share/perl/5.14.2/Mojo/IOLoop/Stream.pm line 95
+	Mojo::IOLoop::Stream::_read('Mojo::IOLoop::Stream=HASH(0xa9df808)') called at /usr/local/share/perl/5.14.2/Mojo/IOLoop/Stream.pm line 111
+	Mojo::IOLoop::Stream::__ANON__('Mojo::Reactor::Poll=HASH(0x9fde5e0)') called at /usr/local/share/perl/5.14.2/Mojo/Reactor/Poll.pm line 102
+	eval {...} called at /usr/local/share/perl/5.14.2/Mojo/Reactor/Poll.pm line 102
+	Mojo::Reactor::Poll::_sandbox('Mojo::Reactor::Poll=HASH(0x9fde5e0)', 'Read', 'CODE(0xb4f2860)', 0) called at /usr/local/share/perl/5.14.2/Mojo/Reactor/Poll.pm line 41
+	Mojo::Reactor::Poll::one_tick('Mojo::Reactor::Poll=HASH(0x9fde5e0)') called at /usr/local/share/perl/5.14.2/Mojo/Reactor/Poll.pm line 79
+	Mojo::Reactor::Poll::start('Mojo::Reactor::Poll=HASH(0x9fde5e0)') called at /usr/local/share/perl/5.14.2/Mojo/IOLoop.pm line 157
+	Mojo::IOLoop::start('Mojo::IOLoop=HASH(0x9fde554)') called at /usr/local/share/perl/5.14.2/Mojo/Server/Morbo.pm line 98
+	Mojo::Server::Morbo::_spawn('Mojo::Server::Morbo=HASH(0x9b0b034)') called at /usr/local/share/perl/5.14.2/Mojo/Server/Morbo.pm line 68
+	Mojo::Server::Morbo::_manage('Mojo::Server::Morbo=HASH(0x9b0b034)') called at /usr/local/share/perl/5.14.2/Mojo/Server/Morbo.pm line 41
+	Mojo::Server::Morbo::run('Mojo::Server::Morbo=HASH(0x9b0b034)', 'script/phone_configuration') called at /usr/local/bin/morbo line 43
+
+[Wed Mar 27 11:23:37 2013] [debug] Template "exception.development.html.ep" not found.
+[Wed Mar 27 11:23:37 2013] [debug] Template "exception.html.ep" not found.
+[Wed Mar 27 11:23:37 2013] [debug] Rendering inline template.
+[Wed Mar 27 11:23:37 2013] [debug] Rendering inline template.
+[Wed Mar 27 11:23:37 2013] [debug] 500 Internal Server Error (0.087362s, 11.447/s).
+[Wed Mar 27 11:38:56 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22).
+[Wed Mar 27 11:38:57 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Wed Mar 27 11:38:57 2013] [debug] Rendering template "phones/main.html.ep".
+[Wed Mar 27 11:38:57 2013] [debug] Rendering template "layouts/default.html.ep".
+[Wed Mar 27 11:38:57 2013] [debug] 200 OK (0.514806s, 1.942/s).

@@ -59,7 +59,6 @@ sub __ip_detect {
     my $pinger = Net::Ping->new();
 	for my $ip ($block->enumerate) {
 	    if ( $pinger->ping($ip, PING_TIMEOUT) ) {
-	        print( STDERR "$ip is alive" );
 	        push( @alive_ip, $ip );
 	    }
 	}
@@ -102,7 +101,10 @@ sub __ip_scaner {
 
       while (my $port = $ports->get_next()) {
       	if ( $port->state() =~ /open.*/ ) {
-        	$ip_port{(map {$_->addr()} $host->addresses())[0]} = $port->portid();
+      		my $ip = (map {$_->addr()} $host->addresses())[0];
+        	$ip_port{$ip} = $port->portid();
+        	say ("IP=".$ip);
+        	say ("Port=".$port->portid());
         }
       }
   	}
@@ -113,7 +115,7 @@ sub __ip_scaner {
 sub devices_info {
 	my ( $self ) = @_;
 	
-	my %resp;
+	my @out;
 	if ( scalar(keys %ip_port) != 0 ) {
 		while ( my ($ip, $port) = each (%ip_port) ) {
 			my %inet = (
@@ -121,14 +123,15 @@ sub devices_info {
 						PeerPort => $port, #always 5060
 						Proto   => "udp"
 					   );
-			%resp = $self->__send_recv_sip( %inet );
+			my %resp = $self->__send_recv_sip( %inet );
+			push (@out,\%resp);
 		}
 	}
 	else {
 		die( "Don't available ip and ports\n" );
 	}
 
-	return %resp;
+	return @out;
 }
 
 sub __send_recv_sip {
@@ -174,15 +177,10 @@ sub __send_recv_sip {
 
 sub detect {
 	my ( $self ) = @_;
-	
-	#eval {
-		$self->__read_config();
-		$self->__ip_detect();
-		$self->__ports_detect();
-	#};
-	#if ( $! ) {
-	#	die( $! );
-	#}
+
+	$self->__read_config();
+	$self->__ip_detect();
+	$self->__ports_detect();
 	
 	return %ip_port;
 }

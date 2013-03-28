@@ -9,6 +9,7 @@ use warnings;
 use LWP::UserAgent;
 use HTTP::Request::Common;
 use Scalar::Util qw(refaddr);
+use Params::Validate qw(:all);
 
 use IPPhone::Constants;
 
@@ -18,7 +19,7 @@ use constant {
 	POST_TRAILER	=> "admin/asipura.spa"
 };
 
-my %ip;
+our %dst_ip;
 
 sub new {
 	my ( $class ) = @_;
@@ -27,24 +28,27 @@ sub new {
 }
 
 sub init {
-	my ( $self, %args ) = @_;
-	if ( scalar( keys( %args ) ) != 0 ){
-		$ip{refaddr $self} = $args{$IPPhone::Constants::IP};
-	}
-	else {
-		die( "Not found IP address!\n" );
-	}
+	my $self = shift;
+	my %args = validate(
+               @_, {
+                   $IPPhone::Constants::DST_IP => { type => SCALAR }
+               }
+           );
+	$dst_ip{refaddr $self} = $args{$IPPhone::Constants::DST_IP};
 	
 	return 1;
 }
 
 sub __get {
-	my ( $self ) = @_;
+	my $self = shift;
+	my $dst_ip = validate_pos( @_,
+               		{ type => SCALAR }
+    );
 
 	my $ua = LWP::UserAgent->new();
 	my $content = undef;
 	eval {
-		$content = $ua->request( GET "http://$ip{refaddr $self}/".GET_TRAILER );
+		$content = $ua->request( GET "http://$dst_ip/".GET_TRAILER );
 	};
 	if ( $! ) {
 		die( $! );
@@ -54,39 +58,48 @@ sub __get {
 }
 
 sub __post {
-	my ( $self, %args ) = @_;
-	if ( scalar( keys( %args ) ) != 0 ){
-		my $ua = LWP::UserAgent->new();
+	my $self = shift;
+	my $dst_ip = validate_pos( @_,
+               		{ type => SCALAR }
+    );
+    my %post_args = validate( @_, {
+                   			$IPPhone::Constants::PROXY 		=> { type => SCALAR },
+                   			$IPPhone::Constants::USER_ID 	=> { type => SCALAR },
+                   			$IPPhone::Constants::PASSWD 	=> { type => SCALAR }
+               			 }
+               		   );
+               		   
+	my $ua = LWP::UserAgent->new();
 
-		eval {
-			$ua->request( POST "http://$ip{refaddr $self}/".POST_TRAILER, [%args] );
-		};
-		if ( $! ) {
-			die( $! );
-		} 
+	eval {
+		$ua->request( POST "http://$dst_ip/".POST_TRAILER, [%post_args] );
+	};
+	if ( $! ) {
+		die( $! );
 	}
-	else {
-		die( "Not found any POST agruments!\n" );
-	}
-	
+
 	return 1;
 }
 
 sub __regex_policy {
-	my ( $self, $content, %args ) = @_;
+	my $self = shift;
+	my $content = validate_pos( @_,
+               		{ type => SCALAR }
+    );
+	my %args = validate ( @_, {
+                   			$IPPhone::Constants::PROXY 		=> { type => SCALAR },
+                   			$IPPhone::Constants::USER_ID 	=> { type => SCALAR },
+                   			$IPPhone::Constants::PASSWD 	=> { type => SCALAR }
+               			 }
+               			);
 	if ( !defined( $content ) || scalar(keys( %args )) == 0 ){
 		die( "Not all agruments found!\n" ); 	
-	}
-
-	#need DHCP->no when add static ip
-	if ( exists( $args{$IPPhone::Constants::IP} ) ){
-		$args{$IPPhone::Constants::DHCP} = 0;
 	}
 
 	my %id;
 	while ( my( $key, $value ) = each( %args ) ) {
 		#Warn: static regex special to parse select and input html fields
-		if ( $content =~ /.*$key:<td[^>]*><[select|input][^>]*name="(\w+)".*/ ){
+		if ( $content =~ /.*>$key:<td[^>]*><[input?][^>]*name="(\w+)".*/ ){
 			$id{ $1 } = $value;
 		}
 	}
@@ -96,6 +109,7 @@ sub __regex_policy {
 
 sub update {
 	my ( $self, %args ) = @_;
+
 	my $html = $self->__get();
 	my %conf = $self->__regex_policy( $html, %args );
 	$self->__post( %conf );
