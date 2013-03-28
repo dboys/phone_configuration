@@ -8,8 +8,8 @@ use v5.14;
 use warnings;
 use LWP::UserAgent;
 use HTTP::Request::Common;
-use Scalar::Util qw(refaddr);
 use Params::Validate qw(:all);
+use Class::InsideOut qw(:all);
 
 use IPPhone::Constants;
 
@@ -19,22 +19,15 @@ use constant {
 	POST_TRAILER	=> "admin/asipura.spa"
 };
 
-our %dst_ip;
-
-sub new {
-	my ( $class ) = @_;
-	my $self = bless ( {}, $class );
-	return $self;
-}
+readonly dst_ip => my %dst_ip;
 
 sub init {
 	my $self = shift;
-	my %args = validate(
-               @_, {
+	my %args = validate( @_, {
                    $IPPhone::Constants::DST_IP => { type => SCALAR }
                }
-           );
-	$dst_ip{refaddr $self} = $args{$IPPhone::Constants::DST_IP};
+    );
+	$dst_ip{ id $self } = $args{$IPPhone::Constants::DST_IP};
 	
 	return 1;
 }
@@ -63,11 +56,11 @@ sub __post {
                		{ type => SCALAR }
     );
     my %post_args = validate( @_, {
-                   			$IPPhone::Constants::PROXY 		=> { type => SCALAR },
-                   			$IPPhone::Constants::USER_ID 	=> { type => SCALAR },
-                   			$IPPhone::Constants::PASSWD 	=> { type => SCALAR }
-               			 }
-               		   );
+                   			{ type => HASHREF },
+                   			{ type => HASHREF },
+                   			{ type => HASHREF }
+               		}
+    );
                		   
 	my $ua = LWP::UserAgent->new();
 
@@ -87,14 +80,11 @@ sub __regex_policy {
                		{ type => SCALAR }
     );
 	my %args = validate ( @_, {
-                   			$IPPhone::Constants::PROXY 		=> { type => SCALAR },
-                   			$IPPhone::Constants::USER_ID 	=> { type => SCALAR },
-                   			$IPPhone::Constants::PASSWD 	=> { type => SCALAR }
-               			 }
-               			);
-	if ( !defined( $content ) || scalar(keys( %args )) == 0 ){
-		die( "Not all agruments found!\n" ); 	
-	}
+                   		$IPPhone::Constants::PROXY 		=> { type => SCALAR },
+                   		$IPPhone::Constants::USER_ID 	=> { type => SCALAR },
+                   		$IPPhone::Constants::PASSWD 	=> { type => SCALAR }
+               }
+    );
 
 	my %id;
 	while ( my( $key, $value ) = each( %args ) ) {
@@ -108,11 +98,17 @@ sub __regex_policy {
 }
 
 sub update {
-	my ( $self, %args ) = @_;
+	my $self = shift;
+	my %args = validate ( @_, {
+                   		$IPPhone::Constants::PROXY 		=> { type => SCALAR },
+                   		$IPPhone::Constants::USER_ID 	=> { type => SCALAR },
+                   		$IPPhone::Constants::PASSWD 	=> { type => SCALAR }
+               }
+    ); 
 
-	my $html = $self->__get();
+	my $html = $self->__get( $self->dst_ip() );
 	my %conf = $self->__regex_policy( $html, %args );
-	$self->__post( %conf );
+	$self->__post( %conf, $self->dst_ip() );
 	
 	return 1;
 }
