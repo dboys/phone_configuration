@@ -31,7 +31,7 @@ sub new {
 	return $self;
 }
 
-sub __net_addr {
+sub config_net_addr {
 	my ( $self ) = @_;
 	my %net = %{$config{refaddr $self}};
 	if ( exists( $net{&SECTION_NET}{&NET_ADDR} ) ) {
@@ -53,9 +53,9 @@ sub __read_config {
 sub __ip_detect {
 	my ( $self ) = @_;
 	
-	my $netmask = $self->__net_addr();
-	my $block   = Net::Netmask->new2( $netmask )
-    							or die "$netmask is not a valid netmask\n";
+	my $net_addr = $self->config_net_addr();
+	my $block   = Net::Netmask->new2( $net_addr )
+    							or die ("$net_addr is not a valid address\n");
     my $pinger = Net::Ping->new();
 	for my $ip ($block->enumerate) {
 	    if ( $pinger->ping($ip, PING_TIMEOUT) ) {
@@ -183,6 +183,12 @@ sub detect {
 	$self->__ports_detect();
 	
 	return %ip_port;
+}
+
+our $AUTOLOAD;
+sub AUTOLOAD {
+  my ($self) = @_;
+  die ("Doesn't found $AUTOLOAD");
 }
 
 1;

@@ -13,6 +13,8 @@ use Class::InsideOut qw(:all);
 
 use IPPhone::Constants;
 
+use Data::Dumper;
+
 
 use constant {
 	GET_TRAILER 	=> "admin/advanced",
@@ -27,12 +29,16 @@ sub init {
                    $IPPhone::Constants::DST_IP => { type => SCALAR }
                }
     );
-	$dst_ip{ id $self } = $args{$IPPhone::Constants::DST_IP};
+	$self->set_dst_ip($args{$IPPhone::Constants::DST_IP});
 	
 	return 1;
 }
 
-sub __get {
+sub set_dst_ip {
+	$dst_ip{ id $_[0] } = $_[1];
+}
+
+sub _get_ {
 	my $self = shift;
 	my $dst_ip = validate_pos( @_,
                		{ type => SCALAR }
@@ -50,22 +56,18 @@ sub __get {
 	return $content->content;
 }
 
-sub __post {
-	my $self = shift;
-	my $dst_ip = validate_pos( @_,
-               		{ type => SCALAR }
-    );
-    my %post_args = validate( @_, {
-                   			{ type => HASHREF },
-                   			{ type => HASHREF },
-                   			{ type => HASHREF }
-               		}
+sub _post_ {
+	my $self 	= shift;
+	
+    my ($dst_ip, $post_args) = validate_pos( @_,
+    									{ type => SCALAR },
+                   						{ type => HASHREF }
     );
                		   
 	my $ua = LWP::UserAgent->new();
 
 	eval {
-		$ua->request( POST "http://$dst_ip/".POST_TRAILER, [%post_args] );
+		$ua->request( POST "http://$dst_ip/".POST_TRAILER, [%$post_args] );
 	};
 	if ( $! ) {
 		die( $! );
@@ -74,27 +76,22 @@ sub __post {
 	return 1;
 }
 
-sub __regex_policy {
+sub regex_policy {
 	my $self = shift;
-	my $content = validate_pos( @_,
-               		{ type => SCALAR }
-    );
-	my %args = validate ( @_, {
-                   		$IPPhone::Constants::PROXY 		=> { type => SCALAR },
-                   		$IPPhone::Constants::USER_ID 	=> { type => SCALAR },
-                   		$IPPhone::Constants::PASSWD 	=> { type => SCALAR }
-               }
+	my ($content,$args) = validate_pos( @_,
+               						{ type => SCALAR  },
+               						{ type => HASHREF }
     );
 
-	my %id;
-	while ( my( $key, $value ) = each( %args ) ) {
+	my %html_id;
+	while ( my( $key, $value ) = each( %$args ) ) {
 		#Warn: static regex special to parse select and input html fields
 		if ( $content =~ /.*>$key:<td[^>]*><[input?][^>]*name="(\w+)".*/ ){
-			$id{ $1 } = $value;
+			$html_id{ $1 } = $value;
 		}
 	}
 	
-	return %id;
+	return %html_id;
 }
 
 sub update {
@@ -106,11 +103,17 @@ sub update {
                }
     ); 
 
-	my $html = $self->__get( $self->dst_ip() );
-	my %conf = $self->__regex_policy( $html, %args );
-	$self->__post( %conf, $self->dst_ip() );
+	my $html = $self->_get_( $self->dst_ip() );
+	my %html_id = $self->regex_policy( $html, \%args );
+	$self->_post_( $self->dst_ip(), \%html_id );
 	
 	return 1;
+}
+
+our $AUTOLOAD;
+sub AUTOLOAD {
+  my ($self) = @_;
+  die ("Doesn't found $AUTOLOAD");
 }
 
 1;
