@@ -1,10 +1,14 @@
 package LAN::Settings;
 
+BEGIN {
+	push ( @INC, "../" );
+}
+
 use v5.14;
 use warnings;
 
 use Net::Ping;
-use Net::Netmask;
+use Net::IP;
 use Scalar::Util qw (refaddr);
 use Config::IniFiles;
 use Nmap::Scanner;
@@ -14,14 +18,11 @@ use constant {
 	SCAN_PORT		=> 5060,
 	PING_TIMEOUT	=> 0.1,
 	PORT_TIMEOUT	=> 200,
-	CONFIG_FILE		=> "/home/denis/build/perl/phone_configuration/lib/LAN/config",
-	SECTION_NET		=> "network",
-	NET_ADDR 		=> "net_addr"
+	CONFIG_FILE		=> "/home/denis/build/perl/phone_configuration/lib/LAN/config"
+
 };
 
 our %config;
-
-our @alive_ip;
 
 our %ip_port;
 
@@ -31,11 +32,17 @@ sub new {
 	return $self;
 }
 
+sub init {
+	my $self = shift;	
+	$self->__read_config();
+	return 1;
+}
+
 sub config_net_addr {
 	my ( $self ) = @_;
-	my %net = %{$config{refaddr $self}};
-	if ( exists( $net{&SECTION_NET}{&NET_ADDR} ) ) {
-		return $net{&SECTION_NET}{&NET_ADDR};
+	my %net = %{$config{refaddr $self}->{v}} if( exists($config{refaddr $self}) );
+	if ( exists( $net{&LAN::Constants::SECTION_NET}{&LAN::Constants::NET_ADDR} ) ) {
+		return $net{&LAN::Constants::SECTION_NET}{&LAN::Constants::NET_ADDR};
 	}
 	else {
 		die ( "Couldn't return network address \n" );
@@ -46,39 +53,50 @@ sub __read_config {
 	my ( $self ) = @_;
 	my $iniconf = Config::IniFiles->new( -file => CONFIG_FILE )
             						or die( @Config::IniFiles::errors );
-    $config{refaddr $self} = $iniconf->{v};
+    $config{refaddr $self} = $iniconf;
     return 1;
 }
 
-sub __ip_detect {
-	my ( $self ) = @_;
-	
-	my $net_addr = $self->config_net_addr();
-	my $block   = Net::Netmask->new2( $net_addr )
-    							or die ("$net_addr is not a valid address\n");
-    my $pinger = Net::Ping->new();
-	for my $ip ($block->enumerate) {
-	    if ( $pinger->ping($ip, PING_TIMEOUT) ) {
-	        push( @alive_ip, $ip );
-	    }
+sub update_config {
+	my $self 	= shift;
+	my $config 	= shift;
+
+	my $iniconf = $config{refaddr $self};
+	while ( my($sect_name,$sect_ref) = each(%$config) ) {
+		my($param,$value) = each( %$sect_ref );
+		
+		if ( $iniconf->exists($sect_name,$param) ){
+			$iniconf->setval( $sect_name, $param, $value );
+		}
+		else {
+			$iniconf->newval( $sect_name, $param, $value );
+		}
 	}
-	$pinger->close();
+
+	$iniconf->WriteConfig( CONFIG_FILE, -delta=>1 );
 
 	return 1;
 }
 
-sub __ports_detect {
-	my ( $self ) = @_;
-	if ( scalar( @alive_ip ) != 0 ) {
-		foreach my $ip ( @alive_ip ) {
-			$self->__ip_scaner( $ip );
-		}
-	}
-	else {
-		die( "Don't have alive ip\n" );
-	}
+sub ip_detect {
+	my ( $self, $range_ip ) = @_;
 	
-	return 1;
+	if ( !defined($range_ip) ) {
+		$range_ip = $self->config_net_addr();
+	}
+
+	my $ip = new Net::IP($range_ip) or
+					die(Net::IP::Error());
+
+    my $pinger = Net::Ping->new();
+    do {
+    	if ( $pinger->ping($ip->ip(), PING_TIMEOUT) ) {
+	        $self->__ip_scaner($ip->ip());
+	    }
+  	} while (++$ip);
+	$pinger->close();
+
+	return %ip_port;
 }
 
 sub __ip_scaner {
@@ -113,7 +131,7 @@ sub __ip_scaner {
 }
 
 sub devices_info {
-	my ( $self ) = @_;
+	my ( $self, %ip_port ) = @_;
 	
 	my @out;
 	if ( scalar(keys %ip_port) != 0 ) {
@@ -175,20 +193,14 @@ sub __send_recv_sip {
 	return %out;
 }
 
-sub detect {
-	my ( $self ) = @_;
-
-	$self->__read_config();
-	$self->__ip_detect();
-	$self->__ports_detect();
-	
-	return %ip_port;
-}
-
 our $AUTOLOAD;
 sub AUTOLOAD {
   my ($self) = @_;
   die ("Doesn't found $AUTOLOAD");
+}
+
+sub DESTROY {
+	
 }
 
 1;

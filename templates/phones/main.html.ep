@@ -1,7 +1,7 @@
 % layout 'default';
 % title 'Phone Configuration';
 
-</head>
+<head>
 	<LINK href="css/layers.css" rel="stylesheet" type="text/css">
 	<body>
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
@@ -20,15 +20,15 @@
 			<tr>
 				<td>
 					<% foreach my $phone (@$phones)	{ %>
-					<% while( my($key,$value) = each( %$phone ) ) { %>
-						<div id="<%= $key %>" class="left_layer">
-			    			<img src="/image/telephone.ico">
-							<p><div id="name"></div></p>
-							<p><div id="passwd"></div></p>
-							<p><div id="ip"><%= $key %></div></p>
-							<p><div id="phone"><%= $value %></div></p>
-						</div>
-					<% }%>
+						<% while( my($key,$value) = each( %$phone ) ) { %>
+							<div id="<%= $key %>" class="left_layer">
+			    				<img src="/image/telephone.ico">
+								<p><div id="name"></div></p>
+								<p><div id="passwd"></div></p>
+								<p><div id="ip"><%= $key %></div></p>
+								<p><div id="phone"><%= $value %></div></p>
+							</div>
+						<% }%>
 					<% }%>
 				</td>
 				<div id="dragObjects">

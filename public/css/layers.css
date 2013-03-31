@@ -12,6 +12,14 @@
 .uponMe { 
 	background-color: yellow;
 }
-.busyMe { 
-	background-color: red;
+.labelcntr {
+  font-family:	Verdana, Geneva, sans-serif;
+  font-size : 15px;
+  color : #990000;
+}
+.inputc {
+  font-family:	Verdana, Geneva, sans-serif;
+  font-size : 11px;
+  border : 0px;
+  color : darkblue;
 }

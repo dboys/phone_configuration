@@ -1,11 +1,784 @@
-[Fri Mar 29 10:12:36 2013] [info] Listening at "http://*:3000".
-[Fri Mar 29 10:12:40 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
-[Fri Mar 29 10:12:40 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
-[Fri Mar 29 10:12:41 2013] [debug] Rendering template "phones/main.html.ep".
-[Fri Mar 29 10:12:41 2013] [debug] Rendering template "layouts/default.html.ep".
-[Fri Mar 29 10:12:41 2013] [debug] 200 OK (1.801120s, 0.555/s).
-[Fri Mar 29 10:12:52 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
-[Fri Mar 29 10:12:52 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
-[Fri Mar 29 10:12:53 2013] [debug] Rendering template "phones/main.html.ep".
-[Fri Mar 29 10:12:53 2013] [debug] Rendering template "layouts/default.html.ep".
-[Fri Mar 29 10:12:53 2013] [debug] 200 OK (1.260010s, 0.794/s).
+[Sun Mar 31 14:46:51 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 14:46:52 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 14:46:52 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 14:46:52 2013] [debug] phone settings
+[Sun Mar 31 14:46:52 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 14:46:52 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 14:46:52 2013] [debug] 200 OK (0.601434s, 1.663/s).
+[Sun Mar 31 14:46:55 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 14:46:55 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 14:46:55 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '192.168.1.1-192.168.1.10'
+                       }
+        };
+
+[Sun Mar 31 14:46:55 2013] [error] Can't use string ("network") as a HASH ref while "strict refs" in use at /home/denis/build/perl/phone_configuration/script/../lib/LAN/Settings.pm line 66.
+
+[Sun Mar 31 14:46:55 2013] [debug] Template "exception.development.html.ep" not found.
+[Sun Mar 31 14:46:55 2013] [debug] Template "exception.html.ep" not found.
+[Sun Mar 31 14:46:55 2013] [debug] Rendering inline template.
+[Sun Mar 31 14:46:55 2013] [debug] Rendering inline template.
+[Sun Mar 31 14:46:55 2013] [debug] 500 Internal Server Error (0.084126s, 11.887/s).
+[Sun Mar 31 15:06:23 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:06:24 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:06:24 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:06:24 2013] [debug] phone settings
+[Sun Mar 31 15:06:24 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:06:24 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:06:24 2013] [debug] 200 OK (0.601545s, 1.662/s).
+[Sun Mar 31 15:06:27 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:06:27 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:06:27 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => 'asd-asdas'
+                       }
+        };
+
+[Sun Mar 31 15:06:27 2013] [debug] 302 Found (0.004837s, 206.740/s).
+[Sun Mar 31 15:06:27 2013] [debug] phone settings
+[Sun Mar 31 15:06:27 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:06:27 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:06:28 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:06:28 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:06:28 2013] [debug] 200 OK (0.246453s, 4.058/s).
+[Sun Mar 31 15:06:28 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:09:34 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:09:35 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:09:35 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:09:35 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:09:35 2013] [debug] 200 OK (0.834465s, 1.198/s).
+[Sun Mar 31 15:09:35 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:09:37 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:09:37 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:09:37 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:09:37 2013] [debug] phone settings
+[Sun Mar 31 15:09:37 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:09:37 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:09:37 2013] [debug] 200 OK (0.018990s, 52.659/s).
+[Sun Mar 31 15:09:41 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:09:41 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:09:41 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => 'asd-asdasdasd'
+                       }
+        };
+
+[Sun Mar 31 15:09:41 2013] [error] HASH(0xac5f358)net_addrasd-asdasdasd at /home/denis/build/perl/phone_configuration/script/../lib/LAN/Settings.pm line 69.
+
+[Sun Mar 31 15:09:41 2013] [debug] Template "exception.development.html.ep" not found.
+[Sun Mar 31 15:09:41 2013] [debug] Template "exception.html.ep" not found.
+[Sun Mar 31 15:09:41 2013] [debug] Rendering inline template.
+[Sun Mar 31 15:09:41 2013] [debug] Rendering inline template.
+[Sun Mar 31 15:09:41 2013] [debug] 500 Internal Server Error (0.084678s, 11.809/s).
+[Sun Mar 31 15:16:10 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:16:11 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:16:11 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:16:11 2013] [debug] phone settings
+[Sun Mar 31 15:16:11 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:16:11 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:16:11 2013] [debug] 200 OK (0.598233s, 1.672/s).
+[Sun Mar 31 15:16:16 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:16:16 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:16:16 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '192.168.1.1-192.168.1.10'
+                       }
+        };
+
+[Sun Mar 31 15:16:16 2013] [debug] 302 Found (0.005057s, 197.746/s).
+[Sun Mar 31 15:16:16 2013] [debug] phone settings
+[Sun Mar 31 15:16:16 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:16:16 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:16:16 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:16:16 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:16:16 2013] [debug] 200 OK (0.247226s, 4.045/s).
+[Sun Mar 31 15:16:16 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:17:39 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:17:39 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:17:40 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:17:40 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:17:40 2013] [debug] 200 OK (0.832447s, 1.201/s).
+[Sun Mar 31 15:17:40 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:17:41 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:17:41 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:17:41 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:17:41 2013] [debug] phone settings
+[Sun Mar 31 15:17:41 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:17:41 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:17:41 2013] [debug] 200 OK (0.020587s, 48.574/s).
+[Sun Mar 31 15:17:45 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:17:45 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:17:45 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '192.168.1.1-192.168.1.10'
+                       }
+        };
+
+[Sun Mar 31 15:17:45 2013] [error] not existsnetworknet_addr192.168.1.1-192.168.1.10 at /home/denis/build/perl/phone_configuration/script/../lib/LAN/Settings.pm line 76.
+
+[Sun Mar 31 15:17:45 2013] [debug] Template "exception.development.html.ep" not found.
+[Sun Mar 31 15:17:45 2013] [debug] Template "exception.html.ep" not found.
+[Sun Mar 31 15:17:45 2013] [debug] Rendering inline template.
+[Sun Mar 31 15:17:45 2013] [debug] Rendering inline template.
+[Sun Mar 31 15:17:45 2013] [debug] 500 Internal Server Error (0.085015s, 11.763/s).
+[Sun Mar 31 15:22:19 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:22:20 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:22:20 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '192.168.1.1-192.168.1.10'
+                       }
+        };
+
+[Sun Mar 31 15:22:20 2013] [error] not existsnetworknet_addr192.168.1.1-192.168.1.10 at /home/denis/build/perl/phone_configuration/script/../lib/LAN/Settings.pm line 76.
+
+[Sun Mar 31 15:22:20 2013] [debug] Template "exception.development.html.ep" not found.
+[Sun Mar 31 15:22:20 2013] [debug] Template "exception.html.ep" not found.
+[Sun Mar 31 15:22:20 2013] [debug] Rendering inline template.
+[Sun Mar 31 15:22:20 2013] [debug] Rendering inline template.
+[Sun Mar 31 15:22:20 2013] [debug] 500 Internal Server Error (0.700954s, 1.427/s).
+[Sun Mar 31 15:22:24 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:22:24 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:22:24 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:22:24 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:22:24 2013] [debug] 200 OK (0.242055s, 4.131/s).
+[Sun Mar 31 15:22:24 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:22:26 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:22:26 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:22:26 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:22:26 2013] [debug] phone settings
+[Sun Mar 31 15:22:26 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:22:26 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:22:26 2013] [debug] 200 OK (0.018837s, 53.087/s).
+[Sun Mar 31 15:22:30 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:22:30 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:22:30 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => 'asdas-192.168.1.10'
+                       }
+        };
+
+[Sun Mar 31 15:22:30 2013] [error] not existsnetworknet_addrasdas-192.168.1.10 at /home/denis/build/perl/phone_configuration/script/../lib/LAN/Settings.pm line 76.
+
+[Sun Mar 31 15:22:30 2013] [debug] Template "exception.development.html.ep" not found.
+[Sun Mar 31 15:22:30 2013] [debug] Template "exception.html.ep" not found.
+[Sun Mar 31 15:22:30 2013] [debug] Rendering cached inline template.
+[Sun Mar 31 15:22:30 2013] [debug] Rendering cached inline template.
+[Sun Mar 31 15:22:30 2013] [debug] 500 Internal Server Error (0.030011s, 33.321/s).
+[Sun Mar 31 15:22:38 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:22:39 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:22:39 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:22:39 2013] [debug] phone settings
+[Sun Mar 31 15:22:39 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:22:39 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:22:39 2013] [debug] 200 OK (0.677043s, 1.477/s).
+[Sun Mar 31 15:22:43 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:22:43 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:22:43 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => 'asd-192.168.1.10'
+                       }
+        };
+
+[Sun Mar 31 15:22:43 2013] [debug] 302 Found (0.005984s, 167.112/s).
+[Sun Mar 31 15:22:43 2013] [debug] phone settings
+[Sun Mar 31 15:22:43 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:22:43 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:22:43 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:22:43 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:22:43 2013] [debug] 200 OK (0.246623s, 4.055/s).
+[Sun Mar 31 15:22:43 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:23:01 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:23:01 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:23:02 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:23:02 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:23:02 2013] [debug] 200 OK (0.867327s, 1.153/s).
+[Sun Mar 31 15:23:02 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:23:03 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:23:03 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:23:03 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:23:03 2013] [debug] phone settings
+[Sun Mar 31 15:23:03 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:23:03 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:23:03 2013] [debug] 200 OK (0.019190s, 52.110/s).
+[Sun Mar 31 15:23:07 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:23:07 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:23:07 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '192.168.1.1-192.168.1.10'
+                       }
+        };
+
+[Sun Mar 31 15:23:07 2013] [debug] 302 Found (0.006247s, 160.077/s).
+[Sun Mar 31 15:23:07 2013] [debug] phone settings
+[Sun Mar 31 15:23:07 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:23:07 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:23:07 2013] [debug] Rendering cached template phones/main.html.ep.
+[Sun Mar 31 15:23:07 2013] [debug] Rendering cached template layouts/default.html.ep.
+[Sun Mar 31 15:23:07 2013] [debug] 200 OK (0.006637s, 150.670/s).
+[Sun Mar 31 15:23:07 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:23:37 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:23:37 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:23:37 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:23:37 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:23:37 2013] [debug] 200 OK (0.831028s, 1.203/s).
+[Sun Mar 31 15:23:37 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:23:39 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:23:39 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:23:39 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:23:39 2013] [debug] phone settings
+[Sun Mar 31 15:23:39 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:23:39 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:23:39 2013] [debug] 200 OK (0.018944s, 52.787/s).
+[Sun Mar 31 15:23:43 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:23:43 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:23:43 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => 'asd-asdasd'
+                       }
+        };
+
+[Sun Mar 31 15:23:43 2013] [debug] 302 Found (0.006783s, 147.427/s).
+[Sun Mar 31 15:23:43 2013] [debug] phone settings
+[Sun Mar 31 15:23:43 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:23:43 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:23:43 2013] [debug] Rendering cached template phones/main.html.ep.
+[Sun Mar 31 15:23:43 2013] [debug] Rendering cached template layouts/default.html.ep.
+[Sun Mar 31 15:23:43 2013] [debug] 200 OK (0.006647s, 150.444/s).
+[Sun Mar 31 15:23:43 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:24:13 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:24:14 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:24:14 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:24:14 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:24:14 2013] [debug] 200 OK (0.908987s, 1.100/s).
+[Sun Mar 31 15:24:14 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:24:15 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:24:15 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:24:15 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:24:15 2013] [debug] phone settings
+[Sun Mar 31 15:24:15 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:24:15 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:24:15 2013] [debug] 200 OK (0.019019s, 52.579/s).
+[Sun Mar 31 15:24:18 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:24:18 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:24:18 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '192.168.1.1-192.168.1.10'
+                       }
+        };
+
+[Sun Mar 31 15:24:18 2013] [debug] 302 Found (0.008276s, 120.831/s).
+[Sun Mar 31 15:24:18 2013] [debug] phone settings
+[Sun Mar 31 15:24:18 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:24:18 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:24:18 2013] [debug] Rendering cached template phones/main.html.ep.
+[Sun Mar 31 15:24:18 2013] [debug] Rendering cached template layouts/default.html.ep.
+[Sun Mar 31 15:24:18 2013] [debug] 200 OK (0.006563s, 152.369/s).
+[Sun Mar 31 15:24:18 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:25:12 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:25:13 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:25:13 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:25:13 2013] [debug] phone settings
+[Sun Mar 31 15:25:13 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:25:13 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:25:13 2013] [debug] 200 OK (0.604301s, 1.655/s).
+[Sun Mar 31 15:25:17 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:25:17 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:25:17 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '192.168.1.1-192.168.1.10'
+                       }
+        };
+
+[Sun Mar 31 15:25:17 2013] [debug] 302 Found (0.006982s, 143.225/s).
+[Sun Mar 31 15:25:17 2013] [debug] phone settings
+[Sun Mar 31 15:25:17 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:25:17 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:25:17 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:25:17 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:25:17 2013] [debug] 200 OK (0.245129s, 4.079/s).
+[Sun Mar 31 15:25:17 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:27:43 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:27:43 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:27:43 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:27:43 2013] [debug] phone settings
+[Sun Mar 31 15:27:43 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:27:43 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:27:43 2013] [debug] 200 OK (0.605849s, 1.651/s).
+[Sun Mar 31 15:27:45 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:27:45 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:27:45 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '-'
+                       }
+        };
+
+[Sun Mar 31 15:27:45 2013] [error] exists at /home/denis/build/perl/phone_configuration/script/../lib/LAN/Settings.pm line 71.
+
+[Sun Mar 31 15:27:45 2013] [debug] Template "exception.development.html.ep" not found.
+[Sun Mar 31 15:27:45 2013] [debug] Template "exception.html.ep" not found.
+[Sun Mar 31 15:27:45 2013] [debug] Rendering inline template.
+[Sun Mar 31 15:27:45 2013] [debug] Rendering inline template.
+[Sun Mar 31 15:27:45 2013] [debug] 500 Internal Server Error (0.084181s, 11.879/s).
+[Sun Mar 31 15:28:26 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:28:26 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:28:26 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:28:26 2013] [debug] phone settings
+[Sun Mar 31 15:28:26 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:28:27 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:28:27 2013] [debug] 200 OK (0.599741s, 1.667/s).
+[Sun Mar 31 15:28:28 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:28:28 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:28:28 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '-'
+                       }
+        };
+
+[Sun Mar 31 15:28:28 2013] [error] networknet_addr- at /home/denis/build/perl/phone_configuration/script/../lib/LAN/Settings.pm line 71.
+
+[Sun Mar 31 15:28:28 2013] [debug] Template "exception.development.html.ep" not found.
+[Sun Mar 31 15:28:28 2013] [debug] Template "exception.html.ep" not found.
+[Sun Mar 31 15:28:28 2013] [debug] Rendering inline template.
+[Sun Mar 31 15:28:28 2013] [debug] Rendering inline template.
+[Sun Mar 31 15:28:28 2013] [debug] 500 Internal Server Error (0.084753s, 11.799/s).
+[Sun Mar 31 15:30:16 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:30:16 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:30:16 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:30:16 2013] [debug] phone settings
+[Sun Mar 31 15:30:16 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:30:16 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:30:16 2013] [debug] 200 OK (0.600285s, 1.666/s).
+[Sun Mar 31 15:30:17 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:30:17 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:30:17 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '-'
+                       }
+        };
+
+[Sun Mar 31 15:30:17 2013] [debug] 302 Found (0.005955s, 167.926/s).
+[Sun Mar 31 15:30:17 2013] [debug] phone settings
+[Sun Mar 31 15:30:18 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:30:18 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:30:18 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:30:18 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:30:18 2013] [debug] 200 OK (0.248703s, 4.021/s).
+[Sun Mar 31 15:30:18 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:31:05 2013] [info] Listening at "http://*:3000".
+[Sun Mar 31 15:31:09 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:31:10 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:31:10 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:31:10 2013] [debug] phone settings
+[Sun Mar 31 15:31:10 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:31:10 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:31:10 2013] [debug] 200 OK (0.607785s, 1.645/s).
+[Sun Mar 31 15:31:13 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:31:13 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:31:13 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => 'asd-asdasd'
+                       }
+        };
+
+[Sun Mar 31 15:31:13 2013] [debug] 302 Found (0.006291s, 158.957/s).
+[Sun Mar 31 15:31:13 2013] [debug] phone settings
+[Sun Mar 31 15:31:13 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:31:13 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:31:13 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:31:13 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:31:13 2013] [debug] 200 OK (0.245791s, 4.068/s).
+[Sun Mar 31 15:31:13 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:32:36 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:32:36 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:32:36 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:32:36 2013] [debug] phone settings
+[Sun Mar 31 15:32:36 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:32:36 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:32:36 2013] [debug] 200 OK (0.602826s, 1.659/s).
+[Sun Mar 31 15:32:40 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:32:40 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:32:40 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => 'asd-192.168.1.10'
+                       }
+        };
+
+[Sun Mar 31 15:32:40 2013] [debug] 302 Found (0.006490s, 154.083/s).
+[Sun Mar 31 15:32:40 2013] [debug] phone settings
+[Sun Mar 31 15:32:40 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:32:40 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:32:40 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:32:40 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:32:40 2013] [debug] 200 OK (0.248657s, 4.022/s).
+[Sun Mar 31 15:32:40 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:33:48 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:33:48 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:33:48 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:33:48 2013] [debug] phone settings
+[Sun Mar 31 15:33:48 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:33:49 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:33:49 2013] [debug] 200 OK (0.602791s, 1.659/s).
+[Sun Mar 31 15:33:50 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:33:50 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:33:50 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '-'
+                       }
+        };
+
+[Sun Mar 31 15:33:50 2013] [debug] 302 Found (0.007724s, 129.467/s).
+[Sun Mar 31 15:33:50 2013] [debug] phone settings
+[Sun Mar 31 15:33:50 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:33:50 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:33:50 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:33:50 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:33:50 2013] [debug] 200 OK (0.245730s, 4.070/s).
+[Sun Mar 31 15:33:50 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:34:47 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:34:47 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:34:47 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:34:47 2013] [debug] phone settings
+[Sun Mar 31 15:34:47 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:34:47 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:34:47 2013] [debug] 200 OK (0.601632s, 1.662/s).
+[Sun Mar 31 15:34:51 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:34:51 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:34:51 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => 'asd-192.168.1.10'
+                       }
+        };
+
+[Sun Mar 31 15:34:51 2013] [debug] 302 Found (0.006791s, 147.254/s).
+[Sun Mar 31 15:34:51 2013] [debug] phone settings
+[Sun Mar 31 15:34:51 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:34:51 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:34:51 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:34:51 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:34:51 2013] [debug] 200 OK (0.248532s, 4.024/s).
+[Sun Mar 31 15:34:51 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:37:35 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:37:36 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:37:36 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:37:36 2013] [debug] phone settings
+[Sun Mar 31 15:37:36 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:37:36 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:37:36 2013] [debug] 200 OK (0.605527s, 1.651/s).
+[Sun Mar 31 15:37:39 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:37:39 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:37:39 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '192.168.1.1-192.168.1.10'
+                       }
+        };
+
+[Sun Mar 31 15:37:39 2013] [debug] 302 Found (0.006023s, 166.030/s).
+[Sun Mar 31 15:37:39 2013] [debug] phone settings
+[Sun Mar 31 15:37:39 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:37:39 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:37:40 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:37:40 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:37:40 2013] [debug] 200 OK (0.247534s, 4.040/s).
+[Sun Mar 31 15:37:40 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:41:23 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:41:24 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:41:24 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:41:24 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:41:24 2013] [debug] 200 OK (0.888871s, 1.125/s).
+[Sun Mar 31 15:41:24 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:41:26 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:41:26 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:41:26 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:41:26 2013] [debug] phone settings
+[Sun Mar 31 15:41:26 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:41:26 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:41:26 2013] [debug] 200 OK (0.018749s, 53.336/s).
+[Sun Mar 31 15:41:27 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:41:27 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:41:27 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '-'
+                       }
+        };
+
+[Sun Mar 31 15:41:27 2013] [debug] 302 Found (0.008283s, 120.729/s).
+[Sun Mar 31 15:41:27 2013] [debug] phone settings
+[Sun Mar 31 15:41:27 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:41:27 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:41:27 2013] [debug] Rendering cached template phones/main.html.ep.
+[Sun Mar 31 15:41:27 2013] [debug] Rendering cached template layouts/default.html.ep.
+[Sun Mar 31 15:41:27 2013] [debug] 200 OK (0.006550s, 152.672/s).
+[Sun Mar 31 15:41:27 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:47:04 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:47:05 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:47:05 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:47:05 2013] [debug] phone settings
+[Sun Mar 31 15:47:05 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:47:05 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:47:05 2013] [debug] 200 OK (0.606745s, 1.648/s).
+[Sun Mar 31 15:47:06 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:47:06 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:47:06 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '-'
+                       }
+        };
+
+[Sun Mar 31 15:47:06 2013] [debug] 302 Found (0.006700s, 149.254/s).
+[Sun Mar 31 15:47:06 2013] [debug] phone settings
+[Sun Mar 31 15:47:06 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:47:06 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:47:06 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:47:06 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:47:06 2013] [debug] 200 OK (0.249040s, 4.015/s).
+[Sun Mar 31 15:47:06 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:47:53 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:47:54 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:47:54 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:47:54 2013] [debug] phone settings
+[Sun Mar 31 15:47:54 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:47:54 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:47:54 2013] [debug] 200 OK (0.602586s, 1.660/s).
+[Sun Mar 31 15:47:55 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:47:55 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:47:55 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '-'
+                       }
+        };
+
+[Sun Mar 31 15:47:55 2013] [debug] 302 Found (0.007279s, 137.382/s).
+[Sun Mar 31 15:47:55 2013] [debug] phone settings
+[Sun Mar 31 15:47:55 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:47:55 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:47:55 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:47:55 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:47:55 2013] [debug] 200 OK (0.245548s, 4.073/s).
+[Sun Mar 31 15:47:55 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:49:52 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:49:53 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:49:53 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:49:53 2013] [debug] phone settings
+[Sun Mar 31 15:49:53 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:49:53 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:49:53 2013] [debug] 200 OK (0.613306s, 1.631/s).
+[Sun Mar 31 15:49:56 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:49:56 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:49:56 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => 'asd-192.168.1.10'
+                       }
+        };
+
+[Sun Mar 31 15:49:56 2013] [debug] 302 Found (0.007161s, 139.645/s).
+[Sun Mar 31 15:49:56 2013] [debug] phone settings
+[Sun Mar 31 15:49:56 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:49:56 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:49:57 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:49:57 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:49:57 2013] [debug] 200 OK (0.248427s, 4.025/s).
+[Sun Mar 31 15:49:57 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:51:47 2013] [info] Listening at "http://*:3000".
+[Sun Mar 31 15:51:50 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:51:51 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:51:51 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:51:51 2013] [debug] phone settings
+[Sun Mar 31 15:51:51 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:51:51 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:51:51 2013] [debug] 200 OK (0.603813s, 1.656/s).
+[Sun Mar 31 15:51:52 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:51:52 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:51:52 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '-'
+                       }
+        };
+
+[Sun Mar 31 15:51:52 2013] [debug] 302 Found (0.007489s, 133.529/s).
+[Sun Mar 31 15:51:52 2013] [debug] phone settings
+[Sun Mar 31 15:51:52 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:51:52 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:51:53 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:51:53 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:51:53 2013] [debug] 200 OK (0.250726s, 3.988/s).
+[Sun Mar 31 15:51:53 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:52:23 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:52:24 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:52:24 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:52:24 2013] [debug] phone settings
+[Sun Mar 31 15:52:24 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:52:24 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:52:24 2013] [debug] 200 OK (0.611137s, 1.636/s).
+[Sun Mar 31 15:52:25 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:52:25 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:52:25 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '-'
+                       }
+        };
+
+[Sun Mar 31 15:52:25 2013] [debug] 302 Found (0.006966s, 143.554/s).
+[Sun Mar 31 15:52:25 2013] [debug] phone settings
+[Sun Mar 31 15:52:25 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:52:25 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:52:25 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:52:25 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:52:25 2013] [debug] 200 OK (0.245821s, 4.068/s).
+[Sun Mar 31 15:52:25 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 15:54:10 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:54:11 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:54:11 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:54:11 2013] [debug] phone settings
+[Sun Mar 31 15:54:11 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:54:11 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:54:11 2013] [debug] 200 OK (0.662146s, 1.510/s).
+[Sun Mar 31 15:54:12 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:54:12 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:54:12 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '-'
+                       }
+        };
+
+[Sun Mar 31 15:54:12 2013] [error] Died at /home/denis/build/perl/phone_configuration/script/../lib/LAN/Settings.pm line 64.
+
+[Sun Mar 31 15:54:12 2013] [debug] Template "exception.development.html.ep" not found.
+[Sun Mar 31 15:54:12 2013] [debug] Template "exception.html.ep" not found.
+[Sun Mar 31 15:54:12 2013] [debug] Rendering inline template.
+[Sun Mar 31 15:54:12 2013] [debug] Rendering inline template.
+[Sun Mar 31 15:54:12 2013] [debug] 500 Internal Server Error (0.085034s, 11.760/s).
+[Sun Mar 31 15:54:41 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:54:42 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:54:42 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 15:54:42 2013] [debug] phone settings
+[Sun Mar 31 15:54:42 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 15:54:42 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:54:42 2013] [debug] 200 OK (0.599315s, 1.669/s).
+[Sun Mar 31 15:54:43 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:54:43 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 15:54:43 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '-'
+                       }
+        };
+
+[Sun Mar 31 15:54:43 2013] [debug] 302 Found (0.007425s, 134.680/s).
+[Sun Mar 31 15:54:43 2013] [debug] phone settings
+[Sun Mar 31 15:54:43 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 15:54:43 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 15:54:43 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 15:54:43 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 15:54:43 2013] [debug] 200 OK (0.248779s, 4.020/s).
+[Sun Mar 31 15:54:43 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 16:10:55 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 16:10:55 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 16:10:56 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 16:10:56 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 16:10:56 2013] [debug] 200 OK (0.824488s, 1.213/s).
+[Sun Mar 31 16:10:56 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 16:10:57 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 16:10:57 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 16:10:57 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 16:10:57 2013] [debug] phone settings
+[Sun Mar 31 16:10:57 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 16:10:57 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 16:10:57 2013] [debug] 200 OK (0.019430s, 51.467/s).
+[Sun Mar 31 16:11:01 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 16:11:01 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 16:11:01 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '192.168.1.1-192.168.1.10'
+                       }
+        };
+
+[Sun Mar 31 16:11:01 2013] [debug] 302 Found (0.007009s, 142.674/s).
+[Sun Mar 31 16:11:01 2013] [debug] phone settings
+[Sun Mar 31 16:11:01 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 16:11:01 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 16:11:01 2013] [debug] Rendering cached template phones/main.html.ep.
+[Sun Mar 31 16:11:01 2013] [debug] Rendering cached template layouts/default.html.ep.
+[Sun Mar 31 16:11:01 2013] [debug] 200 OK (0.007202s, 138.850/s).
+[Sun Mar 31 16:11:01 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+
+[Sun Mar 31 16:11:14 2013] [debug] GET /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 16:11:14 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 16:11:14 2013] [debug] $VAR1 = 'GET';
+
+[Sun Mar 31 16:11:14 2013] [debug] phone settings
+[Sun Mar 31 16:11:14 2013] [debug] Rendering template "phones/settings.html.ep".
+[Sun Mar 31 16:11:15 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 16:11:15 2013] [debug] 200 OK (0.618716s, 1.616/s).
+[Sun Mar 31 16:11:22 2013] [debug] POST /settings (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 16:11:22 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "settings".
+[Sun Mar 31 16:11:22 2013] [debug] $VAR1 = {
+          'network' => {
+                         'net_addr' => '192.168.1.1-192.168.1.13'
+                       }
+        };
+
+[Sun Mar 31 16:11:22 2013] [debug] 302 Found (0.006413s, 155.933/s).
+[Sun Mar 31 16:11:22 2013] [debug] phone settings
+[Sun Mar 31 16:11:22 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31).
+[Sun Mar 31 16:11:22 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sun Mar 31 16:11:23 2013] [debug] Rendering template "phones/main.html.ep".
+[Sun Mar 31 16:11:23 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sun Mar 31 16:11:23 2013] [debug] 200 OK (0.244214s, 4.095/s).
+[Sun Mar 31 16:11:23 2013] [debug] $VAR1 = bless( {}, 'LAN::Settings' );
+

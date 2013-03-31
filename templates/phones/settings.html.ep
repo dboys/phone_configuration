@@ -1,0 +1,30 @@
+% layout 'default';
+% title 'Settings';
+
+<head>
+	<LINK href="css/layers.css" rel="stylesheet" type="text/css">
+	<body>
+	
+		<table width="100%" border="0" cellspacing="0" cellpadding="4">
+	       <tr align="center" bgcolor="#999999">
+	            <td colspan="3" style="font-size: 160%; font-family: sans-serif">Settings</td>
+	    </table>
+	    
+	    <form action="/settings" method="post">
+		    <table width="100%" >
+		    	<tr bgcolor="#d3d3d3">
+		    		<td colspan="4" align="center"><font class="labelcntr">NetWork Settings</font></td>
+		    	</tr>	
+		    	<tr bgcolor="#dcdcdc">
+		    		<td align="center">IP Range:<input class="inputc" size="20" value="" name="ip_start_range" maxlength=2047>-<input class="inputc" size="20" value="" name="ip_fin_range" maxlength=2047></td>
+		    	</tr>
+		    </table>
+	    
+		    <table width="100%">
+				<tr><td align=right>
+				<input type="reset" value="Undo All Changes">&nbsp;
+				<td align=left>&nbsp;<input type="submit" value="Submit All Changes">
+			</table>
+		</form>	
+	</body>
+</head>

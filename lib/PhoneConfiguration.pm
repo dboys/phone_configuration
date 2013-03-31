@@ -31,6 +31,10 @@ sub startup {
   $r->get('/')->to('phones#main');
   
   $r->post('/')->to('phones#update');
+  
+  $r->get('/settings')->to('phones#settings');
+  
+  $r->post('/settings')->to('phones#settings');
 }
 
 1;

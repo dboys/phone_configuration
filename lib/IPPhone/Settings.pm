@@ -26,10 +26,10 @@ readonly dst_ip => my %dst_ip;
 sub init {
 	my $self = shift;
 	my %args = validate( @_, {
-                   $IPPhone::Constants::DST_IP => { type => SCALAR }
+                   &IPPhone::Constants::DST_IP => { type => SCALAR }
                }
     );
-	$self->set_dst_ip($args{$IPPhone::Constants::DST_IP});
+	$self->set_dst_ip($args{&IPPhone::Constants::DST_IP});
 	
 	return 1;
 }
@@ -97,9 +97,9 @@ sub regex_policy {
 sub update {
 	my $self = shift;
 	my %args = validate ( @_, {
-                   		$IPPhone::Constants::PROXY 		=> { type => SCALAR },
-                   		$IPPhone::Constants::USER_ID 	=> { type => SCALAR },
-                   		$IPPhone::Constants::PASSWD 	=> { type => SCALAR }
+                   		&IPPhone::Constants::PROXY 		=> { type => SCALAR },
+                   		&IPPhone::Constants::USER_ID 	=> { type => SCALAR },
+                   		&IPPhone::Constants::PASSWD 	=> { type => SCALAR }
                }
     ); 
 

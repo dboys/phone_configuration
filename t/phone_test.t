@@ -27,7 +27,7 @@ ok( eval {$phone->init(%dst_ip)},"phone->init" );
 #print Dumper($content) if (defined($content));
 #
 #my $FH;
-#open( $FH, '<', "content_html" );
+#open( $FH, '<', "content_html.html" );
 #my $html;
 #while ( <$FH> ){
 #	$html .= $_;	
