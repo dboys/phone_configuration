@@ -9,9 +9,6 @@ use LAN::Settings;
 use Mojo::UserAgent;
 use Data::Dumper;
 
-my $lan;
-my $phone;
-
 # This action will render a template
 sub main {
   	my $self = shift;
@@ -21,15 +18,15 @@ sub main {
 #	
   	$self->stash( users => [ $self->db->resultset('User')->all() ] );
 #  	
-  	$lan = LAN::Settings->new();
-  	$lan->init();
+  	
 #	my %ip_port = $lan->ip_detect();
 #	my @device_info = $lan->devices_info(%ip_port);
 	
 	my @device_info = test();
 
 	$self->render(phones => [@device_info]);
-	$self->app()->log()->debug(Dumper($lan));
+	
+	$self->lan();
 }
 
 sub test {
@@ -56,7 +53,7 @@ sub update {
 								'new passwd= '.$new_passwd."\n".
 								'old ip= '.$old_ip."\n" );
 								
-	$phone = IPPhone::Settings->new();
+	my $phone = IPPhone::Settings->new();
 	$phone->init( $IPPhone::Constants::DST_IP => $old_ip );
 	my %args = (	
 					$IPPhone::Constants::PROXY				=> $new_ip,
@@ -74,24 +71,31 @@ sub update {
 sub settings {
 	my $self = shift;
 	
-	$lan = LAN::Settings->new();
-  	$lan->init();
-	
 	if ( $self->match()->{'method'} =~ "POST" ) {
 		my $config = { &LAN::Constants::SECTION_NET => {
 					   &LAN::Constants::NET_ADDR => $self->param('ip_start_range')."-".$self->param('ip_fin_range')
 													   }	
 					 };
 		$self->app()->log()->debug( Dumper($config)  );
-		$lan->update_config($config);
+		$self->lan()->update_config($config);
 
 		$self->redirect_to('/');
 	}
 	elsif ( $self->match()->{'method'} =~ "GET" ) {
-		$self->app()->log()->debug(Dumper($self->match()->{'method'}));
+		my $net_addr = $self->lan()->config_net_addr();
+		$self->stash(range_ip => [ split('-',$net_addr) ]);
+		$self->app()->log()->debug($net_addr);
 	}
 
 	$self->app()->log()->debug("phone settings");
+}
+
+sub users {
+	my $self = shift;
+	
+	$self->stash( users => [ $self->db->resultset('User')->all() ] );
+	
+	$self->app()->log()->debug("users");
 }
 
 1;

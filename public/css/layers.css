@@ -9,6 +9,9 @@
 	    width: 100px;
 	    clear: both;
 }
+.center_layer {
+	float: center;
+}
 .uponMe { 
 	background-color: yellow;
 }

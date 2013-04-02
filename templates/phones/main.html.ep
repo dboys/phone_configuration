@@ -10,6 +10,12 @@
 		<script src="js/dragMaster.js"></script>
 		<script src="js/helpers.js"></script>
 		
+		<div align="right">
+			<input type=button onClick="location.href='/settings'" value='Settings'>
+			<input type=button onClick="location.href='/users'" value='Users'>
+			<input type=button onClick="location.href='#'" value='Find Phones'>
+		</div>
+		
 		<table width="100%" border="0" cellspacing="0" cellpadding="4">
 	       <tr align="center" bgcolor="#999999">
 	            <td colspan="3" style="font-size: 160%; font-family: sans-serif">Phones Configuration</td>
@@ -54,8 +60,7 @@
 			    	<% while( my($key,$value) = each( %$_ ) ) { %>
 			    		new DropTarget(document.getElementById('<%= $key %>'))
 			    	<% } %>
-			    <% } %>
-			    
+			    <% } %>	    
 			}
 		</script>
 

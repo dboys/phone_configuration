@@ -16,7 +16,8 @@
 		    		<td colspan="4" align="center"><font class="labelcntr">NetWork Settings</font></td>
 		    	</tr>	
 		    	<tr bgcolor="#dcdcdc">
-		    		<td align="center">IP Range:<input class="inputc" size="20" value="" name="ip_start_range" maxlength=2047>-<input class="inputc" size="20" value="" name="ip_fin_range" maxlength=2047></td>
+		    		<td align="center">IP Range:<input class="inputc" size="20" value="<%=$range_ip->[0]%>" name="ip_start_range" maxlength=2047>-
+		    		<input class="inputc" size="20" value="<%=$range_ip->[1]%>" name="ip_fin_range" maxlength=2047></td>
 		    	</tr>
 		    </table>
 	    

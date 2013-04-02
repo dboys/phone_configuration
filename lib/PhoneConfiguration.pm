@@ -3,6 +3,8 @@ use Mojo::Base 'Mojolicious';
 use Mojo::IOLoop;
 
 use DB::Schema;
+use LAN::Settings;
+use IPPhone::Settings;
 
 has schema => sub {
 	my %dbi_params = (
@@ -13,12 +15,27 @@ has schema => sub {
 	return $schema;
 };
 
+my $lan 	= undef;
+
 # This method will run once at server start
 sub startup {
   my $self = shift;
   
   #alias $self->db
-  $self->helper(db => sub { $self->app->schema });
+  $self->helper(db => sub { 
+  	$self->app->schema 
+  });
+  
+  $self->helper(lan => sub {
+  	if (!defined($lan)){
+  		$lan = LAN::Settings->new();
+  		$self->app()->log()->debug("Not defined\n")
+  	}	
+  	
+  	$lan->init();
+  	
+  	return $lan;
+  });
 
   # Documentation browser under "/perldoc"
   $self->plugin('PODRenderer');
@@ -35,6 +52,8 @@ sub startup {
   $r->get('/settings')->to('phones#settings');
   
   $r->post('/settings')->to('phones#settings');
+
+  $r->get('/users')->to('phones#users');
 }
 
 1;

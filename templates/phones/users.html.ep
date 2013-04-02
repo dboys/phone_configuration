@@ -1,0 +1,23 @@
+% layout 'default';
+% title 'Users';
+
+<head>
+	<LINK href="css/layers.css" rel="stylesheet" type="text/css">
+	<body>
+		<table width="100%" border="0" cellspacing="0" cellpadding="4">
+	       <tr align="center" bgcolor="#999999">
+	            <td colspan="3" style="font-size: 160%; font-family: sans-serif">Users Settings</td>
+	    </table>
+	    
+	    <table border="0" align="center">
+    		<% foreach my $user( @$users ) { %>
+    			<tr>
+					<td><img src="/image/user.ico"></td>
+					<td><div id="name"><%= $user->name() %></div></td>
+					<td><div id="passwd"><%= $user->passwd() %></div></td>
+					<td><div id="ip"><%= $user->ip() %></div></td>
+				</tr>
+			<% } %>
+	    </table>
+	</body>
+</head>
