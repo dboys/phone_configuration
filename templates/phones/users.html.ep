@@ -17,13 +17,13 @@
 		    
 		    <form id="users">
 		    <table id="users_info" border="1" align="center" width="100%">
-	    		<% foreach my $user( @$users ) { %>
-	    			<tr id="row_<%= $user->name() %>">
+	    		<% for ( my $i = 0; $i < scalar(@$users); $i++ ) { %>
+	    			<tr id="row_<%= $i %>">
 						<td align="center"><img src="/image/user.ico"></td>
-						<td><div id="name"><%= $user->name() %></div></td>
-						<td><div id="passwd"><%= $user->passwd() %></div></td>
-						<td><div id="ip"><%= $user->ip() %></div></td>
-						<td align="center"><input class="inputImg" name="del" id="del_<%= $user->name() %>" type="image" src="image/remove.ico" onClick='deleteTableRow("<%= $user->name() %>")' alt="Submit Form"></td>
+						<td id="name"><%= $users->[$i]->name() %></td>
+						<td id="passwd"><%= $users->[$i]->passwd() %></td>
+						<td id="ip"><%= $users->[$i]->ip() %></td>
+						<td align="center"><input class="inputImg" name="del" id="del_<%= $i %>" type="image" src="image/remove.ico" onClick='deleteTableRow("<%= $i %>","<%= $users->[$i]->name() %>","<%= $users->[$i]->passwd() %>","<%= $users->[$i]->ip() %>")' alt="Submit Form"></td>
 					</tr>
 				<% } %>
 		    </table>
@@ -53,15 +53,14 @@
 			
 			<script>
 			
-				function deleteTableRow(row_id){
+				function deleteTableRow(row_id,name,passwd,ip){
 					$('#row_'+row_id).remove();
-
 					$.ajax({  
 	                    type: "POST",  
 	                    url: "/users",  
-	                    data: 'mode=del',
+	                    data: 'mode=del'+'&name='+name+'&passwd='+passwd+'&ip='+ip,
 	                    success: function(){
-
+							
 	                    }
 	                });
 				}
@@ -71,14 +70,14 @@
     				jQtable.each(function(){
 				        var $table = $(this);
 				        // Number of td's in the last table row
-				        var n = $('tr:last td', this).length;
-				        var tds = '<tr id="row_'+name.value+'">';
+				        var n = $('tr', this).size()+1;
+				        var tds = '<tr id="row_'+n+'">';
 				        
-				        tds += '<td align="center"><img src="/image/user.ico"></td>';
-				        tds += '<td><div id="name">'+name.value+'</div></td>';
-				        tds += '<td><div id="passwd">'+passwd.value+'</div></td>';
-				        tds += '<td><div id="ip">'+ip.value+'</div></td>';
-				        tds += '<td align="center"><input class="inputImg" name="del" id="del_'+name.value+'" type="image" src="image/remove.ico" onClick=\'deleteTableRow("'+name.value+'")\' alt="Submit Form"></td>';
+				        tds += '<td align="center"><img src="image/user.ico"></td>';
+				        tds += '<td id="name">'+name.value+'</td>';
+				        tds += '<td id="passwd">'+passwd.value+'</td>';
+				        tds += '<td id="ip">'+ip.value+'</td>';
+				        tds += '<td align="center"><input class="inputImg" name="del" type="image" src="image/remove.ico" onClick=\'deleteTableRow("'+n+'","'+name.value+'","'+passwd.value+'","'+ip.value+'")\' alt="Submit Form"></td>';
 				        
 				        tds += '</tr>';
 				        if($('tbody', this).length > 0){

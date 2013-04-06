@@ -113,27 +113,30 @@ sub users {
 		$self->stash( users => [ $self->db->resultset('User')->all() ] );
 	}
 	elsif ( $self->match()->{'method'} =~ "POST" ) {
-		if ( $self->param('mode') =~ "m/add/i" ){
+		
+		$self->app()->log()->debug("POST");
+		
+		if ( $self->param('mode') =~ m/add/i ){
 
 			$self->app()->log()->debug("add");
 			
-			$self->stash( users => [ $self->db->resultset('User')->all() ] );
-			
-#			$self->db->resultset('User')->create({
-#				'name' 		=> $self->param('name'),
-#				'passwd'	=> $self->param('passwd'),
-#				'ip'		=> $self->param('ip')	
-#			});
+			$self->db->resultset('User')->create({
+				'name' 		=> $self->param('name'),
+				'passwd'	=> $self->param('passwd'),
+				'ip'		=> $self->param('ip')	
+			});
 		}
 		elsif ( $self->param('mode') =~ m/del/i ){
 			$self->app()->log()->debug("del");
+			
+			my $user = $self->db->resultset('User')->search({
+				'name'		=> $self->param('name'),
+				'passwd'	=> $self->param('passwd'),
+				'ip'		=> $self->param('ip')
+			});
+			
+			$user->delete();
 		}
-
-		$self->app()->log()->debug("POST");
-		$self->app()->log()->debug( "User name".$self->param('name') );
-		$self->app()->log()->debug( "Passwd".$self->param('passwd') );
-		$self->app()->log()->debug( "IP".$self->param('ip') );
-		$self->app()->log()->debug( "Mode".$self->param('mode') );
 	}
 }
 
