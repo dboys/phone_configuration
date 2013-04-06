@@ -46,14 +46,16 @@ sub startup {
 
   # Normal route to controller
   $r->get('/')->to('phones#main');
-  
   $r->post('/')->to('phones#update');
   
-  $r->get('/settings')->to('phones#settings');
-  
+  $r->get('/settings')->to('phones#settings'); 
   $r->post('/settings')->to('phones#settings');
 
   $r->get('/users')->to('phones#users');
+  $r->post('/users')->to('phones#users');
+  
+  $r->get('/test')->to('phones#test');
+  $r->post('/test')->to('phones#test');
 }
 
 1;

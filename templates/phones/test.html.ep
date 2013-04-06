@@ -1,0 +1,39 @@
+% layout 'default';
+% title 'Test';
+
+<html>  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">  
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script> 
+</head>  
+  
+<body>  
+      
+    <form id="myForm">  
+    Введите имя:<br/>  
+        <input id="username" type="text" size="20"><br/><br/>  
+        <input type="submit" value="Отправить">  
+    </form>  
+      
+    <div id="content"></div>  
+      
+    <script>  
+        $(document).ready(function(){  
+          
+            $('#myForm').submit(function(){  
+                $.ajax({  
+                    type: "POST",  
+                    url: "/test",  
+                    data: "username="+$("#username").val(),  
+                    success: function(html){  
+                        $("#content").html(html);  
+                    }  
+                });  
+                return false;  
+            });  
+              
+        });  
+    </script>  
+      
+</body>  
+</html>

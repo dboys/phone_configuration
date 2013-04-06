@@ -22,7 +22,11 @@ sub main {
 #	my %ip_port = $lan->ip_detect();
 #	my @device_info = $lan->devices_info(%ip_port);
 	
-	my @device_info = test();
+	my @device_info ;
+	foreach (1..2 ){
+		my %hash = ($_=>$_);
+		push(@device_info, \%hash);
+	}
 
 	$self->render(phones => [@device_info]);
 	
@@ -30,23 +34,30 @@ sub main {
 }
 
 sub test {
-	my @device_info ;
-	foreach (1..2 ){
-		my %hash = ($_=>$_);
-		push(@device_info, \%hash);
-	}
+	my $self = shift;
 	
-	return @device_info;
+	$self->app()->log()->debug($self->param("username"));
+#	my $header = $self->req->headers->header('X-Requested-With');
+#
+#    # AJAX request
+#    if ($header && $header eq 'XMLHttpRequest') {
+#        $self->render_json({answer => "Hello from AJAX!"});
+#    }
+#
+#    # Normal request
+#    else {
+#        $self->render(answer => 'Hello from Mojolicious!');
+#    }
 }
 
 sub update {
 	my $self = shift;
 	my $headers = $self->req->headers();
 
-	my $old_ip 		= $headers->{'headers'}->{'x-oldip'}->[0]->[0];
-	my $new_passwd 	= $headers->{'headers'}->{'x-passwd'}->[0]->[0];
-	my $new_name 	= $headers->{'headers'}->{'x-name'}->[0]->[0];
-	my $new_ip 		= $headers->{'headers'}->{'x-ip'}->[0]->[0];
+	my $old_ip 		= $headers->header('x-oldip');
+	my $new_passwd 	= $headers->header('x-passwd');
+	my $new_name 	= $headers->header('x-name');
+	my $new_ip 		= $headers->header('x-ip');;
 	
 	$self->app()->log()->debug(	'new ip= '.$new_ip."\n".
 								'new name= '.$new_name."\n".
@@ -93,9 +104,37 @@ sub settings {
 sub users {
 	my $self = shift;
 	
+	$self->app()->log()->debug("users");
 	$self->stash( users => [ $self->db->resultset('User')->all() ] );
 	
-	$self->app()->log()->debug("users");
+	if ( $self->match()->{'method'} =~ "GET" ) {
+		
+		$self->app()->log()->debug("GET");
+		$self->stash( users => [ $self->db->resultset('User')->all() ] );
+	}
+	elsif ( $self->match()->{'method'} =~ "POST" ) {
+		if ( $self->param('mode') =~ "m/add/i" ){
+
+			$self->app()->log()->debug("add");
+			
+			$self->stash( users => [ $self->db->resultset('User')->all() ] );
+			
+#			$self->db->resultset('User')->create({
+#				'name' 		=> $self->param('name'),
+#				'passwd'	=> $self->param('passwd'),
+#				'ip'		=> $self->param('ip')	
+#			});
+		}
+		elsif ( $self->param('mode') =~ m/del/i ){
+			$self->app()->log()->debug("del");
+		}
+
+		$self->app()->log()->debug("POST");
+		$self->app()->log()->debug( "User name".$self->param('name') );
+		$self->app()->log()->debug( "Passwd".$self->param('passwd') );
+		$self->app()->log()->debug( "IP".$self->param('ip') );
+		$self->app()->log()->debug( "Mode".$self->param('mode') );
+	}
 }
 
 1;

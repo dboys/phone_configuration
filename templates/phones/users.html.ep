@@ -1,23 +1,119 @@
 % layout 'default';
 % title 'Users';
 
-<head>
-	<LINK href="css/layers.css" rel="stylesheet" type="text/css">
-	<body>
-		<table width="100%" border="0" cellspacing="0" cellpadding="4">
-	       <tr align="center" bgcolor="#999999">
-	            <td colspan="3" style="font-size: 160%; font-family: sans-serif">Users Settings</td>
-	    </table>
-	    
-	    <table border="0" align="center">
-    		<% foreach my $user( @$users ) { %>
-    			<tr>
-					<td><img src="/image/user.ico"></td>
-					<td><div id="name"><%= $user->name() %></div></td>
-					<td><div id="passwd"><%= $user->passwd() %></div></td>
-					<td><div id="ip"><%= $user->ip() %></div></td>
+<html>
+	<head>
+		<LINK href="css/layers.css" rel="stylesheet" type="text/css">
+		 
+		<body>
+		
+			<script src="js/helpers.js"></script>
+			<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		
+			<table width="100%" border="0" cellspacing="0" cellpadding="4">
+		       <tr align="center" bgcolor="#999999">
+		            <td colspan="3" style="font-size: 160%; font-family: sans-serif">Users Settings</td>
+		    </table>
+		    
+		    <form id="users">
+		    <table id="users_info" border="1" align="center" width="100%">
+	    		<% foreach my $user( @$users ) { %>
+	    			<tr id="row_<%= $user->name() %>">
+						<td align="center"><img src="/image/user.ico"></td>
+						<td><div id="name"><%= $user->name() %></div></td>
+						<td><div id="passwd"><%= $user->passwd() %></div></td>
+						<td><div id="ip"><%= $user->ip() %></div></td>
+						<td align="center"><input class="inputImg" name="del" id="del_<%= $user->name() %>" type="image" src="image/remove.ico" onClick='deleteTableRow("<%= $user->name() %>")' alt="Submit Form"></td>
+					</tr>
+				<% } %>
+		    </table>
+		    </br>
+		    </form>
+		    
+		    <table id="userView" border="1"align="center">
+		    	<tr>
+		    		<td>Login</td>
+		    		<td>Password</td>
+		    		<td>Server IP</td>
+		    	</tr>
+		    	<tr>
+					<td><input id="new_name" 	class="inputu" type="text" size="20" value="" 	maxlength=2047></td>
+					<td><input id="new_passwd" 	class="inputu" type="text" size="20" value=""  	maxlength=2047></td> 
+					<td><input id="new_ip" 		class="inputu" type="text" size="20" value="" 	maxlength=2047></td>
+					
 				</tr>
-			<% } %>
-	    </table>
-	</body>
-</head>
+			</table>
+
+			<form id="controls">
+			<table align="center">
+				<td ><input id="add" type="submit" value="Add" name="add"></td>
+				<td ><input id="save" type="button" value="Save" onClick="location.href='/'"></td>
+			</table>
+			</form> 
+			
+			<script>
+			
+				function deleteTableRow(row_id){
+					$('#row_'+row_id).remove();
+
+					$.ajax({  
+	                    type: "POST",  
+	                    url: "/users",  
+	                    data: 'mode=del',
+	                    success: function(){
+
+	                    }
+	                });
+				}
+				
+			
+				function addTableRow(jQtable,name,passwd,ip){
+    				jQtable.each(function(){
+				        var $table = $(this);
+				        // Number of td's in the last table row
+				        var n = $('tr:last td', this).length;
+				        var tds = '<tr id="row_'+name.value+'">';
+				        
+				        tds += '<td align="center"><img src="/image/user.ico"></td>';
+				        tds += '<td><div id="name">'+name.value+'</div></td>';
+				        tds += '<td><div id="passwd">'+passwd.value+'</div></td>';
+				        tds += '<td><div id="ip">'+ip.value+'</div></td>';
+				        tds += '<td align="center"><input class="inputImg" name="del" id="del_'+name.value+'" type="image" src="image/remove.ico" onClick=\'deleteTableRow("'+name.value+'")\' alt="Submit Form"></td>';
+				        
+				        tds += '</tr>';
+				        if($('tbody', this).length > 0){
+				            $('tbody', this).append(tds);
+				        }else {
+				            $(this).append(tds);
+				        }
+    				});
+				}
+			
+		        $(document).ready(function(){
+		        	
+					var name ;
+					var passwd ;
+					var ip ;
+
+		            $('#controls').submit(function(){
+		            	name = document.getElementById("new_name");
+		            	passwd = document.getElementById("new_passwd");
+		            	ip = document.getElementById("new_ip");
+		            	
+		                $.ajax({  
+		                    type: "POST",  
+		                    url: "/users",  
+		                    data: 'mode=add'+'&name='+name.value+'&passwd='+passwd.value+'&ip='+ip.value,
+		                    success: function(){
+		                    	addTableRow($('#users_info'),name,passwd,ip);
+		                    }
+		                });
+ 
+		                return false;  
+		            });
+		              
+		        });
+    		</script>
+		</body>
+	</head>
+</html>
