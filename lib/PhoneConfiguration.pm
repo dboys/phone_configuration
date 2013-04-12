@@ -1,10 +1,10 @@
 package PhoneConfiguration;
 use Mojo::Base 'Mojolicious';
-use Mojo::IOLoop;
 
 use DB::Schema;
 use LAN::Settings;
 use IPPhone::Settings;
+use IPPhone::Constants;
 
 has schema => sub {
 	my %dbi_params = (
@@ -16,6 +16,7 @@ has schema => sub {
 };
 
 my $lan 	= undef;
+my $phone	= undef;
 
 # This method will run once at server start
 sub startup {
@@ -26,12 +27,25 @@ sub startup {
   	$self->app->schema 
   });
   
+  $self->helper(phone => sub{
+	my ( $self, %phone_ip ) = @_;
+ 	if( !defined($phone) ){
+		$phone = IPPhone::Settings->new();
+	}
+	
+	if ( exists($phone_ip{&IPPhone::Constants::DST_IP}) ) {
+		$phone->init( %phone_ip );
+	}
+	
+	return $phone;
+  });
+  
   $self->helper(lan => sub {
+	my ( $self ) = @_;
   	if (!defined($lan)){
   		$lan = LAN::Settings->new();
-  		$self->app()->log()->debug("Not defined\n")
   	}	
-  	
+
   	$lan->init();
   	
   	return $lan;
@@ -46,7 +60,7 @@ sub startup {
 
   # Normal route to controller
   $r->get('/')->to('phones#main');
-  $r->post('/')->to('phones#update');
+  $r->post('/')->to('phones#main');
   
   $r->get('/settings')->to('phones#settings'); 
   $r->post('/settings')->to('phones#settings');

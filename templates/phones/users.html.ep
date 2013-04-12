@@ -65,7 +65,6 @@
 	                });
 				}
 				
-			
 				function addTableRow(jQtable,name,passwd,ip){
     				jQtable.each(function(){
 				        var $table = $(this);
@@ -87,7 +86,7 @@
 				        }
     				});
 				}
-			
+
 		        $(document).ready(function(){
 		        	
 					var name ;

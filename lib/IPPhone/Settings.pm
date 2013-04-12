@@ -1,18 +1,11 @@
 package IPPhone::Settings;
 
-BEGIN {
-	push ( @INC, "../" );
-}
-
 use v5.14;
 use warnings;
 use LWP::UserAgent;
 use HTTP::Request::Common;
 use Params::Validate qw(:all);
 use Class::InsideOut qw(:all);
-
-use IPPhone::Constants;
-
 use Data::Dumper;
 
 
@@ -60,8 +53,8 @@ sub _post_ {
 	my $self 	= shift;
 	
     my ($dst_ip, $post_args) = validate_pos( @_,
-    									{ type => SCALAR },
-                   						{ type => HASHREF }
+    								{ type => SCALAR },
+                   					{ type => HASHREF }
     );
                		   
 	my $ua = LWP::UserAgent->new();
@@ -80,7 +73,7 @@ sub regex_policy {
 	my $self = shift;
 	my ($content,$args) = validate_pos( @_,
                						{ type => SCALAR  },
-               						{ type => HASHREF }
+		      						{ type => HASHREF }
     );
 
 	my %html_id;
@@ -95,14 +88,14 @@ sub regex_policy {
 }
 
 sub update {
-	my $self = shift;
+    my $self = shift;
 	my %args = validate ( @_, {
                    		&IPPhone::Constants::PROXY 		=> { type => SCALAR },
                    		&IPPhone::Constants::USER_ID 	=> { type => SCALAR },
                    		&IPPhone::Constants::PASSWD 	=> { type => SCALAR }
                }
-    ); 
-
+    );
+	
 	my $html = $self->_get_( $self->dst_ip() );
 	my %html_id = $self->regex_policy( $html, \%args );
 	$self->_post_( $self->dst_ip(), \%html_id );

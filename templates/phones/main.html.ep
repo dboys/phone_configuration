@@ -11,58 +11,93 @@
 			<script src="js/dragMaster.js"></script>
 			<script src="js/helpers.js"></script>
 			
-			<div align="right">
-				<input type=button onClick="location.href='/settings'" value='Settings'>
-				<input type=button onClick="location.href='/users'" value='Users'>
-				<input type=button onClick="location.href='#'" value='Find Phones'>
-			</div>
+			<form id="find_phones">
+				<div align="right">
+					<input type=button onClick="location.href='/settings'" value='Settings'>
+					<input type=button onClick="location.href='/users'" value='Users'>
+					<input id="input_find_phones" type="submit" value='Find Phones'>
+				</div>
+			</form>	
 			
 			<table width="100%" border="0" cellspacing="0" cellpadding="4">
 		       <tr align="center" bgcolor="#999999">
 		            <td colspan="3" style="font-size: 160%; font-family: sans-serif">Phones Configuration</td>
-		    <form action="$url" method="post">    
+		    <form action="$url" method="post">  
 		    </table>
-		    
-		    <table border="0">
-				<tr>
-					<td>
-						<% foreach my $phone (@$phones)	{ %>
-							<% while( my($key,$value) = each( %$phone ) ) { %>
-								<div id="<%= $key %>" class="left_layer">
-				    				<img src="/image/telephone.ico">
-									<p><div id="name"></div></p>
-									<p><div id="passwd"></div></p>
-									<p><div id="ip"><%= $key %></div></p>
-									<p><div id="phone"><%= $value %></div></p>
-								</div>
-							<% }%>
-						<% }%>
-					</td>
-					<div id="dragObjects">
-						<% foreach my $user( @$users ) { %>
-							<div class="right_layer">
-			    				<img src="/image/user.ico">
-								<p><div id="name"><%= $user->name() %></div></p>
-								<p><div id="passwd"><%= $user->passwd() %></div></p>
-								<p><div id="ip"><%= $user->ip() %></div></p>
-							</div>
-						<% } %>
-					</div>
-				</tr>
+			
+			<table id="info">
+				
 			</table>
 			
 			<script>
-				onload = function() {
+				function setTarget() {
 				    var dragObjects = document.getElementById('dragObjects').getElementsByTagName('div')
 				    for(var i=0; i<dragObjects.length; i++) {
 				        new DragObject(dragObjects[i])
 				    }
-					<% foreach (@$phones)	{ %>
-				    	<% while( my($key,$value) = each( %$_ ) ) { %>
+					<% foreach my $phone ( @$phones ) 	{ %>
+				    	<% while( my($key,$value) = each( %$phone ) ) { %>
 				    		new DropTarget(document.getElementById('<%= $key %>'))
 				    	<% } %>
-				    <% } %>	    
+				    <% } %>
 				}
+
+				function addTableRow(jQtable){
+				        var $table = $(this);
+				        // Number of td's in the last table row
+				        var n = $('tr', this).size()+1;
+				        var tds = '<tr id="row_'+n+'">';
+				        
+				        tds += '<td align="center"><img src="image/remove.ico"></td>';
+				        tds += '</tr>';
+				        if($('tbody', this).length > 0){
+				            $('tbody', this).append(tds);
+				        }else {
+				            $(this).append(tds);
+						}
+				}
+				
+				$(document).ready(function(){
+					$('#find_phones').submit(function(){
+						$.ajax({  
+							type: "POST",  
+							url: "/",  
+							data: 'mode=find_phones',
+							success: function(){
+								$('#info').html('\
+												<tr>\
+													<td>\
+														<% foreach my $phone ( @$phones )	{ %>\
+															<% while( my($key,$value) = each( %$phone ) ) { %>\
+																<div id="<%= $key %>" class="left_layer">\
+																	<img src="/image/telephone.ico">\
+																	<p><div id="name"></div></p>\
+																	<p><div id="passwd"></div></p>\
+																	<p><div id="ip"><%= $key %></div></p>\
+																	<p><div id="phone"><%= $value %></div></p>\
+																</div>\
+															<% }%>\
+														<% }%>\
+													</td>\
+													<td id="dragObjects" width="100%">\
+														<% foreach my $user( @$users ) { %>\
+															<div class="right_layer">\
+																<img src="/image/user.ico">\
+																<p><div id="name"><%= $user->name() %></div></p>\
+																<p><div id="passwd"><%= $user->passwd() %></div></p>\
+																<p><div id="ip"><%= $user->ip() %></div></p>\
+															</div>\
+														<% } %>\
+													</td>\
+												</tr>\
+												');
+								setTarget();
+							}
+						});
+	
+						return false;  
+					});
+				});
 			</script>
 	
 		</body>

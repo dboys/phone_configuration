@@ -8,7 +8,16 @@
 </head>  
   
 <body>  
-      
+    
+    <table width="100%">
+ <tr width="100%">
+  <td width="100%">
+   <span style="float:left;">left</span>
+   <span style="float:right;">right</span>
+  </td>
+ </tr>
+</table>
+    
     <form id="myForm">  
     Введите имя:<br/>  
         <input id="username" type="text" size="20"><br/><br/>  

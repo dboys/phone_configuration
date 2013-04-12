@@ -1,9 +1,5 @@
 package LAN::Settings;
 
-BEGIN {
-	push ( @INC, "../" );
-}
-
 use v5.14;
 use warnings;
 
@@ -28,7 +24,7 @@ our %ip_port;
 
 sub new {
 	my ( $class ) = @_;
-	my $self = bless ( {}, $class );
+	my $self = bless ( {}, $class );	
 	return $self;
 }
 

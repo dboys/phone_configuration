@@ -1,5 +1,6 @@
 package PhoneConfiguration::Phones;
 use Mojo::Base 'Mojolicious::Controller';
+use Mojo::IOLoop;
 
 use lib "../../lib";
 use IPPhone::Settings;
@@ -13,24 +14,32 @@ use Data::Dumper;
 sub main {
   	my $self = shift;
 	
-	#another timeout variant
-#	Mojo::IOLoop->stream($self->tx->connection)->timeout(300);
-#	
-  	$self->stash( users => [ $self->db->resultset('User')->all() ] );
-#  	
-  	
-#	my %ip_port = $lan->ip_detect();
-#	my @device_info = $lan->devices_info(%ip_port);
-	
-	my @device_info ;
-	foreach (1..2 ){
-		my %hash = ($_=>$_);
-		push(@device_info, \%hash);
-	}
+	if ( $self->match()->{'method'} =~ "POST" ) {
+		$self->app()->log()->debug( "POST" );
+		#Mojo::IOLoop->stream($self->tx->connection)->timeout(300);
+		$self->stash( users => [ $self->db->resultset('User')->all() ] );
 
-	$self->render(phones => [@device_info]);
-	
-	$self->lan();
+		my @device_info ;
+		foreach (1..2 ){
+			my %hash = ($_=>$_);
+			push(@device_info, \%hash);
+		}
+		
+		$self->render(phones => [@device_info]);
+	}
+	elsif ( $self->match()->{'method'} =~ "GET" ) {
+		$self->app()->log()->debug( "GET" );
+		#Mojo::IOLoop->stream($self->tx->connection)->timeout(300);
+		$self->stash( users => [ $self->db->resultset('User')->all() ] );
+
+		my @device_info ;
+		foreach (1..2 ){
+			my %hash = ($_=>$_);
+			push(@device_info, \%hash);
+		}
+		
+		$self->stash(phones => [@device_info]);
+	}
 }
 
 sub test {
@@ -52,30 +61,47 @@ sub test {
 
 sub update {
 	my $self = shift;
-	my $headers = $self->req->headers();
 
+	my $headers = $self->req->headers();
+	
 	my $old_ip 		= $headers->header('x-oldip');
 	my $new_passwd 	= $headers->header('x-passwd');
 	my $new_name 	= $headers->header('x-name');
-	my $new_ip 		= $headers->header('x-ip');;
+	my $new_ip 		= $headers->header('x-ip');
+	my $mode		= $headers->header('x-mode');
 	
-	$self->app()->log()->debug(	'new ip= '.$new_ip."\n".
-								'new name= '.$new_name."\n".
-								'new passwd= '.$new_passwd."\n".
-								'old ip= '.$old_ip."\n" );
-								
-	my $phone = IPPhone::Settings->new();
-	$phone->init( $IPPhone::Constants::DST_IP => $old_ip );
-	my %args = (	
-					$IPPhone::Constants::PROXY				=> $new_ip,
-					$IPPhone::Constants::USER_ID 			=> $new_name,
-					$IPPhone::Constants::PASSWD 			=> $new_passwd 
-			   );
-	if ( $phone->update( %args ) ){
-		$self->app()->log()->debug( "Looks good\n" );	
+	if ( (defined($mode)) && ($mode =~ m/drag_drop/i) ) {
+		#my $phone = IPPhone::Settings->new();
+		#$phone->init( $IPPhone::Constants::DST_IP => $old_ip );
+	
+		$self->phone( &IPPhone::Constants::DST_IP => $old_ip  );
+		my %args = (	
+						&IPPhone::Constants::PROXY				=> $new_ip,
+						&IPPhone::Constants::USER_ID 			=> $new_name,
+						&IPPhone::Constants::PASSWD 			=> $new_passwd 
+				   );
+		if ( $self->phone()->update( %args ) ){
+			$self->app()->log()->debug( "Looks good\n" );	
+		}
+		else {
+			$self->app()->log()->debug( "Bad\n" );
+		}	
 	}
-	else {
-		$self->app()->log()->debug( "Bad\n" );
+	elsif ( $self->param('mode') =~ m/find_phones/i ) {
+		$self->app()->log()->debug( "find_phones" );
+	
+		#$self->stash( users => [ $self->db->resultset('User')->all() ] );
+		#	
+		##my %ip_port = $lan->ip_detect();
+		##my @device_info = $lan->devices_info(%ip_port);
+		#
+		#my @device_info ;
+		#foreach (1..2 ){
+		#	my %hash = ($_=>$_);
+		#	push(@device_info, \%hash);
+		#}
+		#
+		#$self->render(phones => [@device_info]);
 	}
 }
 
