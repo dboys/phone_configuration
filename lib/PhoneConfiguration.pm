@@ -5,6 +5,7 @@ use DB::Schema;
 use LAN::Settings;
 use IPPhone::Settings;
 use IPPhone::Constants;
+use Data::Dumper;
 
 has schema => sub {
 	my %dbi_params = (
@@ -28,13 +29,13 @@ sub startup {
   });
   
   $self->helper(phone => sub{
-	my ( $self, %phone_ip ) = @_;
+	my ( $self, %dst_ip ) = @_;
  	if( !defined($phone) ){
 		$phone = IPPhone::Settings->new();
 	}
-	
-	if ( exists($phone_ip{&IPPhone::Constants::DST_IP}) ) {
-		$phone->init( %phone_ip );
+
+	if ( %dst_ip ) {
+		$phone->init_phone(%dst_ip);
 	}
 	
 	return $phone;
@@ -44,15 +45,15 @@ sub startup {
 	my ( $self ) = @_;
   	if (!defined($lan)){
   		$lan = LAN::Settings->new();
-  	}	
-
-  	$lan->init();
+		$lan->init();
+  	}
   	
   	return $lan;
   });
 
   # Documentation browser under "/perldoc"
   $self->plugin('PODRenderer');
+  $self->plugin('Parallol');
   $self->secret('*pOpRTm;M<;5?fk{');
 
   # Router
@@ -70,6 +71,8 @@ sub startup {
   
   $r->get('/test')->to('phones#test');
   $r->post('/test')->to('phones#test');
+  
+  $r->get('/update')->to('phones#update');
 }
 
 1;

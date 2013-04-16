@@ -7,7 +7,8 @@ use constant {
 	PROXY 			=> "Proxy",
 	USER_ID	 		=> "User ID",
 	PASSWD			=> "Password",
-	DST_IP			=> "Dest IP"
+	DST_IP			=> "Dest IP",
+	NULL			=> ""
 };
 
 1;

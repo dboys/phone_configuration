@@ -1,0 +1,70 @@
+% layout 'default';
+% title 'Phone Configuration';
+
+<html>
+	<head>
+		<LINK href="css/layers.css" rel="stylesheet" type="text/css">
+		<body>
+			<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+			<script src="js/DragObject.js"></script>
+			<script src="js/DropTarget.js"></script>
+			<script src="js/dragMaster.js"></script>
+			<script src="js/helpers.js"></script>
+			
+			<form id="find_phones">
+				<div align="right">
+					<input type=button onClick="location.href='/'" value='Main'>
+				</div>
+			</form>	
+			
+			<table width="100%" border="0" cellspacing="0" cellpadding="4">
+		       <tr align="center" bgcolor="#999999">
+		            <td colspan="3" style="font-size: 160%; font-family: sans-serif">Phones Configuration</td>
+		    <form action="$url" method="post">  
+		    </table>
+
+            <table>
+                <tr>
+                    <td>
+                        <% foreach my $phone ( @$phones )	{ %>
+                            <% while( my($ip,$vendor) = each( %$phone ) ) { %>
+                                <div id="<%= $ip %>" class="left_layer">
+                                    <img src="/image/telephone.ico">
+                                    <p><div id="name"></div></p>
+                                    <p><div id="passwd"></div></p>
+                                    <p><div id="ip"><%= $ip %></div></p>
+                                    <p><div id="phone"><%= $vendor %></div></p>
+                                </div>
+                            <% }%>
+                        <% }%>
+                    </td>
+                    <td id="dragObjects" width="100%">
+                        <% foreach my $user( @$users ) { %>
+                            <div class="right_layer">
+                                <img src="/image/user.ico">
+                                <p><div id="name"><%= $user->name() %></div></p>
+                                <p><div id="passwd"><%= $user->passwd() %></div></p>
+                                <p><div id="ip"><%= $user->ip() %></div></p>
+                            </div>
+                        <% } %>
+                    </td>
+                </tr>
+			</table>
+            
+			<script>
+				onload = function() {
+				    var dragObjects = document.getElementById('dragObjects').getElementsByTagName('div')
+				    for(var i=0; i<dragObjects.length; i++) {
+				        new DragObject(dragObjects[i])
+				    }
+					<% foreach (@$phones)	{ %>
+				    	<% while( my($key,$value) = each( %$_ ) ) { %>
+				    		new DropTarget(document.getElementById('<%= $key %>'))
+				    	<% } %>
+				    <% } %>	    
+				}
+			</script>
+	
+		</body>
+	</head>
+</html>	

@@ -22,6 +22,8 @@ our %config;
 
 our %ip_port;
 
+our @device_info;
+
 sub new {
 	my ( $class ) = @_;
 	my $self = bless ( {}, $class );	
@@ -129,8 +131,8 @@ sub __ip_scaner {
 sub devices_info {
 	my ( $self, %ip_port ) = @_;
 	
-	my @out;
-	if ( scalar(keys %ip_port) != 0 ) {
+	if ( (scalar(keys %ip_port) != 0) &&
+		 (scalar(@device_info)) == 0) {
 		while ( my ($ip, $port) = each (%ip_port) ) {
 			my %inet = (
 						PeerAddr => $ip,
@@ -138,14 +140,14 @@ sub devices_info {
 						Proto   => "udp"
 					   );
 			my %resp = $self->__send_recv_sip( %inet );
-			push (@out,\%resp);
+			push (@device_info,\%resp);
 		}
 	}
 	else {
 		die( "Don't available ip and ports\n" );
 	}
 
-	return @out;
+	return @device_info;
 }
 
 sub __send_recv_sip {

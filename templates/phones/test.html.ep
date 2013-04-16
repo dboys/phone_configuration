@@ -2,47 +2,34 @@
 % title 'Test';
 
 <html>  
-<head>  
-<meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">  
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script> 
-</head>  
+    <head>  
+        <meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">  
+        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script> 
+    </head>  
   
-<body>  
-    
-    <table width="100%">
- <tr width="100%">
-  <td width="100%">
-   <span style="float:left;">left</span>
-   <span style="float:right;">right</span>
-  </td>
- </tr>
-</table>
-    
-    <form id="myForm">  
-    Введите имя:<br/>  
-        <input id="username" type="text" size="20"><br/><br/>  
-        <input type="submit" value="Отправить">  
-    </form>  
-      
-    <div id="content"></div>  
-      
-    <script>  
-        $(document).ready(function(){  
-          
-            $('#myForm').submit(function(){  
-                $.ajax({  
-                    type: "POST",  
-                    url: "/test",  
-                    data: "username="+$("#username").val(),  
-                    success: function(html){  
-                        $("#content").html(html);  
-                    }  
-                });  
-                return false;  
-            });  
-              
-        });  
-    </script>  
-      
-</body>  
+    <body>  
+        <form id="post">
+            <div align="right">
+                <input id="post" type="submit" value='Post'>
+            </div>
+        </form>
+        
+        <div id="test"></div>
+        
+        <script>
+            $(document).ready(function(){
+					$('#post').submit(function(){
+						$.ajax({  
+							type: "POST",  
+							url: "/test",  
+							data: '',
+							success: function(){
+								$('#test').html('<p><%= $$test %></p>');
+							}
+						});
+						return false;  
+					});
+				});
+        </script>
+    </body>  
 </html>
