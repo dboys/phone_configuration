@@ -13,8 +13,9 @@ use constant {
 	POST_TRAILER	=> "admin/asipura.spa"
 };
 
-private dst_ip 	=> my %dst_ip;
-private html_id	=> my %html_id;
+private dst_ip 		=> my %dst_ip;
+private html_id		=> my %html_id;
+private post_param	=> my %post_param;
 
 sub set_html_id {
 	$html_id{id $_[0]} = $_[1];
@@ -30,6 +31,14 @@ sub dst_ip {
 
 sub html_id {
 	return $html_id{id $_[0]};
+}
+
+sub set_post_param {
+	$post_param{id $_[0]} = $_[1];
+}
+
+sub post_param {
+	return $post_param{id $_[0]};
 }
 
 sub proxy {
@@ -56,7 +65,11 @@ sub login {
 
 sub passwd {
 	my $self = shift;
+	
 	my $html_id = $self->html_id();
+	
+	print Dumper $html_id;
+	
 	if (exists($html_id->{&IPPhone::Constants::PASSWD})) {
 		return $html_id->{&IPPhone::Constants::PASSWD};
 	}
@@ -71,11 +84,11 @@ sub _get_ {
                		{ type => SCALAR }
     );
 
-	say ("dst ip2".$dst_ip);
+	say ("dst ip2".$dst_ip->[0]);
 	my $ua = LWP::UserAgent->new();
 	my $content = undef;
 	eval {
-		$content = $ua->request( GET "http://$dst_ip/".GET_TRAILER );
+		$content = $ua->request( GET "http://$dst_ip->[0]/".GET_TRAILER );
 	};
 	if ( $! ) {
 		die( $! );
@@ -146,13 +159,34 @@ sub init_phone {
 	return 1;
 }
 
-sub update {
-    my $self = shift;
-	my $post_param = validate_pos( @_,
-						{ type => HASHREF }
+sub init_post_param {
+	my $self = shift;
+	my %args = validate_pos( @_,
+						&IPPhone::Constants::DST_IP 	=> { type => SCALAR },
+						&IPPhone::Constants::PROXY		=> { type => SCALAR },
+						&IPPhone::Constants::USER_ID 	=> { type => SCALAR },
+						&IPPhone::Constants::PASSWD		=> { type => SCALAR }
     );
+	
+	print Dumper %args;
+	
+	my %post =	( 	$html_id{&IPPhone::Constants::USER_ID}	=> $args{&IPPhone::Constants::USER_ID},
+					$html_id{&IPPhone::Constants::PROXY}	=> $args{&IPPhone::Constants::PROXY},
+					$html_id{&IPPhone::Constants::PASSWD}	=> $args{&IPPhone::Constants::PASSWD}
+				);
+	
+	print Dumper %post;
+	
+	$self->set_post_param(\%post);
+}
 
-	$self->_post_( $self->dst_ip(), $post_param );
+sub update {
+    my ($self,$dst_ip,$post_param) = @_;
+#	my $post_param = validate_pos( @_,
+#						{ type => HASHREF }
+#    );
+
+	$self->_post_( $dst_ip, $post_param );
 	
 	return 1;
 }

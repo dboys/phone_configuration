@@ -14,7 +14,6 @@
 			<form id="find_phones">
 				<div align="right">
 					<input type=button onClick="location.href='/settings'" value='Settings'>
-					<input type=button onClick="location.href='/users'" value='Users'>
 					<input id="input_find_phones" type="submit" value='Find Phones'>
 				</div>
 			</form>	
@@ -46,7 +45,7 @@
 							url: "/",  
 							data: 'mode=find_phones',
 							success: function(data){
-
+								window.location.href="/update";
 							}
 						});
 	

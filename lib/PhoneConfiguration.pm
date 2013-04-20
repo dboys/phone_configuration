@@ -73,6 +73,7 @@ sub startup {
   $r->post('/test')->to('phones#test');
   
   $r->get('/update')->to('phones#update');
+  $r->post('/update')->to('phones#update');
 }
 
 1;

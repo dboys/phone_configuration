@@ -13,6 +13,7 @@
 			
 			<form id="find_phones">
 				<div align="right">
+					<input type=button onClick="location.href='/users'" value='Users'>
 					<input type=button onClick="location.href='/'" value='Main'>
 				</div>
 			</form>	

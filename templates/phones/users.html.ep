@@ -47,7 +47,7 @@
 			<form id="controls">
 			<table align="center">
 				<td ><input id="add" type="submit" value="Add" name="add"></td>
-				<td ><input id="save" type="button" value="Save" onClick="location.href='/'"></td>
+				<td ><input id="save" type="button" value="Save" onClick="location.href='/update'"></td>
 			</table>
 			</form> 
 			

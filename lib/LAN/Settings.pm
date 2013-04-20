@@ -131,8 +131,7 @@ sub __ip_scaner {
 sub devices_info {
 	my ( $self, %ip_port ) = @_;
 	
-	if ( (scalar(keys %ip_port) != 0) &&
-		 (scalar(@device_info)) == 0) {
+	if ( %ip_port ) {
 		while ( my ($ip, $port) = each (%ip_port) ) {
 			my %inet = (
 						PeerAddr => $ip,
@@ -148,6 +147,12 @@ sub devices_info {
 	}
 
 	return @device_info;
+}
+
+sub cache_devices_info {
+	my $self = shift;
+	return @device_info if( @device_info );
+	die("Not found any device");
 }
 
 sub __send_recv_sip {

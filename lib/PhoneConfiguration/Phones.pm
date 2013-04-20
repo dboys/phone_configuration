@@ -15,8 +15,6 @@ use Data::Dumper;
 sub main {
   	my $self = shift;
 	
-	#Mojo::IOLoop->stream($self->tx->connection)->timeout(300);
-	
 	if ( $self->req->method =~ "POST" ) {
 		$self->app()->log()->debug( "POST" );
 		Mojo::IOLoop->stream($self->tx->connection)->timeout(300);
@@ -35,8 +33,6 @@ sub main {
 				});
 			}
 		}
-		
-		$self->redirect_to('/update');
 	}
 }
 
@@ -55,57 +51,69 @@ sub test {
 
 sub update {
 	my $self = shift;
+	$self->app()->log()->debug("Update");
 	
 	if ( $self->req->method =~ m/post/i ) {
+		$self->app()->log()->debug("POST Update");
 		
 		my $headers 	= $self->req->headers();
-		my $old_ip 		= $headers->header('x-oldip');
-		my $new_passwd 	= $headers->header('x-passwd');
-		my $new_name 	= $headers->header('x-name');
-		my $new_ip 		= $headers->header('x-ip');
+		my $ip 			= $headers->header('x-oldip');
+		my $passwd 		= $headers->header('x-passwd');
+		my $login 		= $headers->header('x-name');
+		my $proxy 		= $headers->header('x-ip');
 		my $mode		= $headers->header('x-mode');
 		
 		if ( (defined($mode)) && ($mode =~ m/drag_drop/i) ) {
-			#my $phone = IPPhone::Settings->new();
-			#$phone->init( $IPPhone::Constants::DST_IP => $old_ip );
+			$self->app()->log()->debug("drag&drop");
+			
+			$self->stash( users => [ $self->db->resultset('User')->all() ] );
+			
+			$self->render(phones => [$self->lan->cache_devices_info]);
 	 	
 			my %phone_param = (
-							&IPPhone::Constants::DST_IP 			=> $old_ip,
-							&IPPhone::Constants::PROXY				=> $new_ip,
-							&IPPhone::Constants::USER_ID 			=> $new_name,
-							&IPPhone::Constants::PASSWD 			=> $new_passwd 
+							&IPPhone::Constants::DST_IP 			=> $ip,
+							&IPPhone::Constants::PROXY				=> $proxy,
+							&IPPhone::Constants::USER_ID 			=> $login,
+							&IPPhone::Constants::PASSWD 			=> $passwd 
 					   );
-			$self->phone( %phone_param );
+			my $html_info = $self->db->resultset('HtmlInfo')->single({
+				'ip'	=> $ip
+			});
 			
-			if ( $self->phone()->update( $self->phone->post_param ) ){
+			my $proxy_id 	= $html_info->proxy_id ;
+			my $login_id	= $html_info->login_id ;
+			my $passwd_id 	= $html_info->passwd_id;
+			
+			my %post_param = (
+							   $proxy_id 	=> $proxy,
+							   $login_id 	=> $login,
+							   $passwd_id 	=> $passwd
+							 );
+			
+			$self->app->log->debug("Dst ip $ip");
+			$self->app->log->debug( Dumper(%post_param) );
+			#$self->phone->init_post_param( %phone_param );
+			
+			if ( $self->phone()->update( $ip, \%post_param ) ){
 				$self->app()->log()->debug( "Looks good\n" );	
 			}
 			else {
 				$self->app()->log()->debug( "Bad\n" );
-			}	
+			}
 		}	
 	}
 	elsif ( $self->req->method =~ m/get/i ) {
 
 		$self->stash( users => [ $self->db->resultset('User')->all() ] );
-			
-		#my %ip_port = $lan->ip_detect();
-		#my @device_info = $lan->devices_info(%ip_port);
-		
-		my @device_info ;
-		foreach (1..2 ){
-			my %hash = ($_=>$_);
-			push(@device_info, \%hash);
-		}
 
-		$self->render(phones => [@device_info]);
+		$self->stash( phones => [$self->lan->cache_devices_info]);
 	}
 }
 
 sub settings {
 	my $self = shift;
 	
-	if ( $self->match()->{'method'} =~ "POST" ) {
+	if ( $self->req->method =~ "POST" ) {
 		my $config = { &LAN::Constants::SECTION_NET => {
 					   &LAN::Constants::NET_ADDR => $self->param('ip_start_range')."-".$self->param('ip_fin_range')
 													   }	
@@ -115,7 +123,7 @@ sub settings {
 
 		$self->redirect_to('/');
 	}
-	elsif ( $self->match()->{'method'} =~ "GET" ) {
+	elsif ( $self->req->method =~ "GET" ) {
 		my $net_addr = $self->lan()->config_net_addr();
 		$self->stash(range_ip => [ split('-',$net_addr) ]);
 		$self->app()->log()->debug($net_addr);
