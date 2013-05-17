@@ -19,20 +19,20 @@ sub main {
 		$self->app()->log()->debug( "POST" );
 		Mojo::IOLoop->stream($self->tx->connection)->timeout(300);
 		
-		my %ip_port 	= $self->lan()->ip_detect();
-		my @device_info	= $self->lan()->devices_info(%ip_port);
-		foreach my $phone ( @device_info ) {
-			while( my($ip,$vendor) = each( %$phone ) ) {
-				my %dst_ip = (&IPPhone::Constants::DST_IP => $ip);
-				my $phone = $self->phone( %dst_ip );
-				$self->db->resultset('HtmlInfo')->create({
-					'proxy_id'	=> $phone->proxy,
-					'login_id'	=> $phone->login,
-					'passwd_id'	=> $phone->passwd,
-					'ip'		=> $phone->dst_ip
-				});
-			}
-		}
+		#my %ip_port 	= $self->lan()->ip_detect();
+		#my @device_info	= $self->lan()->devices_info(%ip_port);
+		#foreach my $phone ( @device_info ) {
+		#	while( my($ip,$vendor) = each( %$phone ) ) {
+		#		my %dst_ip = (&IPPhone::Constants::DST_IP => $ip);
+		#		my $phone = $self->phone( %dst_ip );
+		#		$self->db->resultset('HtmlInfo')->create({
+		#			'proxy_id'	=> $phone->proxy,
+		#			'login_id'	=> $phone->login,
+		#			'passwd_id'	=> $phone->passwd,
+		#			'ip'		=> $phone->dst_ip
+		#		});
+		#	}
+		#}
 	}
 }
 
@@ -57,18 +57,24 @@ sub update {
 		$self->app()->log()->debug("POST Update");
 		
 		my $headers 	= $self->req->headers();
-		my $ip 			= $headers->header('x-oldip');
+		my $ip 			= $headers->header('x-ip');
 		my $passwd 		= $headers->header('x-passwd');
 		my $login 		= $headers->header('x-name');
-		my $proxy 		= $headers->header('x-ip');
+		my $proxy 		= $headers->header('x-proxy');
 		my $mode		= $headers->header('x-mode');
+		
+		$self->app()->log()->debug("IP $ip");
+		$self->app()->log()->debug("PASSWD $passwd");
+		$self->app()->log()->debug("Login $login");
+		$self->app()->log()->debug("Proxy $proxy");
+		$self->app()->log()->debug("Mode $mode");
 		
 		if ( (defined($mode)) && ($mode =~ m/drag_drop/i) ) {
 			$self->app()->log()->debug("drag&drop");
 			
 			$self->stash( users => [ $self->db->resultset('User')->all() ] );
 			
-			$self->render(phones => [$self->lan->cache_devices_info]);
+			$self->stash( phones => [$self->lan->test_devices_info] );
 	 	
 			my %phone_param = (
 							&IPPhone::Constants::DST_IP 			=> $ip,
@@ -92,7 +98,6 @@ sub update {
 			
 			$self->app->log->debug("Dst ip $ip");
 			$self->app->log->debug( Dumper(%post_param) );
-			#$self->phone->init_post_param( %phone_param );
 			
 			if ( $self->phone()->update( $ip, \%post_param ) ){
 				$self->app()->log()->debug( "Looks good\n" );	
@@ -106,7 +111,7 @@ sub update {
 
 		$self->stash( users => [ $self->db->resultset('User')->all() ] );
 
-		$self->stash( phones => [$self->lan->cache_devices_info]);
+		$self->stash( phones => [$self->lan->test_devices_info]);
 	}
 }
 

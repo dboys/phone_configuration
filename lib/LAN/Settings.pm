@@ -131,6 +131,9 @@ sub __ip_scaner {
 sub devices_info {
 	my ( $self, %ip_port ) = @_;
 	
+	#clear old device info
+	splice(@device_info);
+	
 	if ( %ip_port ) {
 		while ( my ($ip, $port) = each (%ip_port) ) {
 			my %inet = (
@@ -153,6 +156,14 @@ sub cache_devices_info {
 	my $self = shift;
 	return @device_info if( @device_info );
 	die("Not found any device");
+}
+
+sub test_devices_info {
+	my $self = shift;
+	splice(@device_info);
+	my %info = ("192.168.1.1" => "Sipura Spa 2");
+	push (@device_info, \%info);
+	return @device_info;
 }
 
 sub __send_recv_sip {

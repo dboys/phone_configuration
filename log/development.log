@@ -1,0 +1,7 @@
+[Sat Apr 27 13:52:50 2013] [info] Listening at "http://*:3000".
+[Sat Apr 27 13:52:54 2013] [debug] GET / (Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.63 Safari/537.31).
+[Sat Apr 27 13:52:54 2013] [debug] Routing to controller "PhoneConfiguration::Phones" and action "main".
+[Sat Apr 27 13:52:54 2013] [debug] Rendering template "phones/main.html.ep".
+[Sat Apr 27 13:52:54 2013] [debug] Rendering template "layouts/default.html.ep".
+[Sat Apr 27 13:52:54 2013] [debug] 200 OK (0.187208s, 5.342/s).
+[Sat Apr 27 16:05:31 2013] [info] Listening at "http://*:3000".

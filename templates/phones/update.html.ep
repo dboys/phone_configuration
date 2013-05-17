@@ -33,6 +33,7 @@
                                     <img src="/image/telephone.ico">
                                     <p><div id="name"></div></p>
                                     <p><div id="passwd"></div></p>
+									<p><div id="proxy"></div></p>
                                     <p><div id="ip"><%= $ip %></div></p>
                                     <p><div id="phone"><%= $vendor %></div></p>
                                 </div>
@@ -45,7 +46,7 @@
                                 <img src="/image/user.ico">
                                 <p><div id="name"><%= $user->name() %></div></p>
                                 <p><div id="passwd"><%= $user->passwd() %></div></p>
-                                <p><div id="ip"><%= $user->ip() %></div></p>
+                                <p><div id="proxy"><%= $user->ip() %></div></p>
                             </div>
                         <% } %>
                     </td>
